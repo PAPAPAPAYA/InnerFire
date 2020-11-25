@@ -67,8 +67,16 @@ public class DialogueManagerScript : MonoBehaviour
 					CardlessDialogueManager.me.SetCurrentListOf_CD(GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogues);
 					// show question buttons
 					CardlessDialogueManager.me.ShowQuestionButtons();
+					// advance cardless dialogues
+					if (CardlessDialogueManager.me.index_cardlessDialogues < CardlessDialogueManager.me.currentListOf_cardlessDialogue.Count - 1) // cycle through all the cardless dialgoues
+					{
+						CardlessDialogueManager.me.index_cardlessDialogues++;
+					}
+					else // if all the cardless dialogues of the interviewee are cycle through
+					{
+						// disable cardless dialogue manager and spawn player, meaning the player can use cards now
+					}
 				}
-				
 			}
 			timer = interval; // reset timer
 		}

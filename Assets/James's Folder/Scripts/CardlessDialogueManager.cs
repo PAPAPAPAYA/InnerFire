@@ -5,7 +5,7 @@ using UnityEngine;
 public class CardlessDialogueManager : MonoBehaviour
 {
     static public CardlessDialogueManager me;
-	public int index = 0;
+	public int index_cardlessDialogues = 0;
 	public List<CardlessDialogueStruct> currentListOf_cardlessDialogue;
 	public List<QuestionOptionsStruct> currentListOf_questionOptions;
 	public int questionChosen; // 0 = no question chosen, set in question option button script
@@ -19,7 +19,7 @@ public class CardlessDialogueManager : MonoBehaviour
 	public void SetCurrentListOf_CD(List<CardlessDialogueStruct> cdList)
 	{
 		currentListOf_cardlessDialogue = cdList;
-		currentListOf_questionOptions = currentListOf_cardlessDialogue[index].options;
+		currentListOf_questionOptions = currentListOf_cardlessDialogue[index_cardlessDialogues].options;
 	}
 
 	public void ShowQuestionButtons()
