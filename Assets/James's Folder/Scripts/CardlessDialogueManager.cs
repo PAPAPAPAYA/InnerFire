@@ -35,5 +35,20 @@ public class CardlessDialogueManager : MonoBehaviour
 	{
 		currentListOf_correspondingDialogues = currentListOf_questionOptions[questionChosen - 1].dialogues;
 	}
-	
+
+	public void GiveCards_n_changeRelationship()
+	{
+		// based on the question chosen
+		// add the card prefabs to player's hand 
+		if (currentListOf_questionOptions[questionChosen - 1].cardsItGives.Count > 0)
+		{
+			foreach (var card in currentListOf_questionOptions[questionChosen - 1].cardsItGives)
+			{
+				GameManager.me.playerPrefab.GetComponent<PlayerScript>().handPrefabs.Add(card);
+			}
+		}
+		// change interviewee's relationship
+		print("change relationship with amount of " + currentListOf_questionOptions[questionChosen - 1].relationshipChangeAmount);
+	}
+
 }

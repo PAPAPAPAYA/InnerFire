@@ -161,28 +161,14 @@ MonoBehaviour:
   defaultDialogues:
   - sup d
   - im grandma d
-  options:
-  - question: test question 1
-    dialogues:
-    - test dialogue 1 - I
-    - test dialogue 1 - II
-    cardsItGives:
-    - {fileID: 0}
-    relationshipChangeAmount: 0
-  - question: test question 2
-    dialogues:
-    - test dialogue 2 - I
-    - test dialogue 2 - II
-    - test dialogue 2 - III
-    cardsItGives: []
-    relationshipChangeAmount: 0
   cardlessDialogues:
   - options:
     - question: test question 1-1
       dialogues:
       - test dialogue 1-1-1
       - test dialogue 1-1-2
-      cardsItGives: []
+      cardsItGives:
+      - {fileID: 4270974583676908371, guid: a66ca211305c89f4e8f2d2f6e137dc5b, type: 3}
       relationshipChangeAmount: 0
     - question: test question 1-2
       dialogues:
