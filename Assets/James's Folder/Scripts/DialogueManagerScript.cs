@@ -52,12 +52,23 @@ public class DialogueManagerScript : MonoBehaviour
 			else // if dialogue is finished
 			{
 				index = 0; // reset index to the start of the dialogue
-				GiveCard(); // give player the card this approach gives
-				if (GameManager.me.player == null) // if there is no player, make one
+				if (myApproach != Approaches.na) // if the dialogue being displayed is not default dialogue
 				{
-					GameManager.me.player = Instantiate(GameManager.me.playerPrefab);
+					GiveCard(); // give player the card this approach gives
+					if (GameManager.me.player == null) // if there is no player, make one
+					{
+						GameManager.me.player = Instantiate(GameManager.me.playerPrefab);
+					}
+					myApproach = Approaches.na; // set my approach
 				}
-				myApproach = Approaches.na; // set my approach
+				else
+				{
+					// give CDM the list of cardless dialogues
+					CardlessDialogueManager.me.SetCurrentListOf_CD(GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogues);
+					// show question buttons
+					CardlessDialogueManager.me.ShowQuestionButtons();
+				}
+				
 			}
 			timer = interval; // reset timer
 		}
@@ -68,18 +79,17 @@ public class DialogueManagerScript : MonoBehaviour
 		// show default dialogue
 		if (myApproach == Approaches.na)
 		{
-			//foreach (DialogueStruct availableChunk in interviewee.GetComponent<CharacterScript>().dialogues)
-			//{
-			//	if (availableChunk.triggerIDs.Count == 0 &&
-			//		availableChunk.preconditions.Count == 0)
-			//	{
-			//		chunk = availableChunk;
-			//		currentDialogue = chunk.dialogue;
-			//		dDisplayer.text = chunk.dialogue[index];
-			//	}
-			//}
-			currentDialogue = interviewee.GetComponent<CharacterScript>().defaultDialogues;
-			dDisplayer.text = currentDialogue[index];
+			if (CardlessDialogueManager.me.questionChosen == 0) // no question chosen
+			{
+				currentDialogue = interviewee.GetComponent<CharacterScript>().defaultDialogues;
+				dDisplayer.text = currentDialogue[index];
+			}
+			else
+			{
+				currentDialogue = CardlessDialogueManager.me.currentListOf_correspondingDialogues;
+				dDisplayer.text = currentDialogue[index];
+			}
+			
 		}
 		// show inquire/trade/threaten dialogue
 		else
@@ -196,5 +206,10 @@ public class DialogueManagerScript : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	private void DoQuestionsOptions()
+	{
+
 	}
 }

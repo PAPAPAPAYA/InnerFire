@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CharacterScript : MonoBehaviour
 {
-	public List<QuestionOptionsStruct> options; // for choosing different questions before using any cards
 	public List<DialogueStruct> dialogues; // stores all the dialogues for all the approaches
 	[TextArea]
 	public List<string> defaultDialogues;
+	public List<CardlessDialogueStruct> cardlessDialogues; // each cardless dialogue stores two question options, each question option has its own dialogue
+	public int relationship;
 	public Vector3 ogPos; // position in character choosing screen
 	public Vector3 ogScale; // scale in character choosing screen
 

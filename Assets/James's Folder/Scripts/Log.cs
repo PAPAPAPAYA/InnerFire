@@ -17,6 +17,7 @@
 	// 关系
 		// 提升关系
 		// 降低关系
+		// display different dialogue based on different relationship
 // 玩家
 	// x显示手牌
 	// x使用手牌

@@ -95,7 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc78b61d1abea0c489c145ca387b69a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  options: []
   dialogues:
   - preconditions: 
     triggerIDs: 
@@ -162,6 +161,50 @@ MonoBehaviour:
   defaultDialogues:
   - sup d
   - im grandma d
+  options:
+  - question: test question 1
+    dialogues:
+    - test dialogue 1 - I
+    - test dialogue 1 - II
+    cardsItGives:
+    - {fileID: 0}
+    relationshipChangeAmount: 0
+  - question: test question 2
+    dialogues:
+    - test dialogue 2 - I
+    - test dialogue 2 - II
+    - test dialogue 2 - III
+    cardsItGives: []
+    relationshipChangeAmount: 0
+  cardlessDialogues:
+  - options:
+    - question: test question 1-1
+      dialogues:
+      - test dialogue 1-1-1
+      - test dialogue 1-1-2
+      cardsItGives: []
+      relationshipChangeAmount: 0
+    - question: test question 1-2
+      dialogues:
+      - test dialogue 1-2-1
+      - test dialogue 1-2-2
+      - test dialogue 1-2-3
+      cardsItGives: []
+      relationshipChangeAmount: 0
+  - options:
+    - question: test question 2-1
+      dialogues:
+      - test dialogue 2-1-1
+      - test dialogue 2-1-2
+      cardsItGives: []
+      relationshipChangeAmount: 0
+    - question: test question 2-2
+      dialogues:
+      - test dialogue 2-2-1
+      - test dialogue 2-2-2
+      cardsItGives: []
+      relationshipChangeAmount: 0
+  relationship: 0
   ogPos: {x: 0, y: 0, z: 0}
   ogScale: {x: 0, y: 0, z: 0}
 --- !u!61 &-7973237963578344564
