@@ -26,8 +26,32 @@ public class CardlessDialogueManager : MonoBehaviour
 	{
 		for (int i = 0; i < QuestionOptionsManager.me.questionButtons.Count; i++)
 		{
-			QuestionOptionsManager.me.questionButtons[i].SetActive(true);
-			QuestionOptionsManager.me.buttonTexts[i].text = currentListOf_questionOptions[i].question;
+			if (currentListOf_questionOptions.Count>0 && !currentListOf_questionOptions[i].shown)
+			{
+				QuestionOptionsManager.me.questionButtons[i].SetActive(true);
+				QuestionOptionsManager.me.buttonTexts[i].text = currentListOf_questionOptions[i].question;
+				var temp = currentListOf_questionOptions[i];
+				temp.shown = true;
+				currentListOf_questionOptions[i] = temp;
+			}
+			else
+			{
+				// instantiate player
+				if (GameManager.me.player == null)
+				{
+					GameManager.me.player = Instantiate(GameManager.me.playerPrefab);
+				}
+				// set dDispalyer to display defualt message and reset and disable self
+				DialogueManagerScript.me.currentDialogue = GameManager.me.interviewee.GetComponent<CharacterScript>().defaultDialogues;
+				DialogueManagerScript.me.dDisplayer.text = DialogueManagerScript.me.currentDialogue[0];
+				DialogueManagerScript.me.index = 0;
+				questionChosen = 0;
+				index_cardlessDialogues = 0;
+				currentListOf_cardlessDialogue.Clear();
+				currentListOf_correspondingDialogues.Clear();
+				currentListOf_questionOptions.Clear();
+				gameObject.SetActive(false);
+			}
 		}
 	}
 

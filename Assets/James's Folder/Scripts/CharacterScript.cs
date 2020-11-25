@@ -11,6 +11,7 @@ public class CharacterScript : MonoBehaviour
 	public int relationship;
 	public Vector3 ogPos; // position in character choosing screen
 	public Vector3 ogScale; // scale in character choosing screen
+	public bool cardlessDialogueShown = false;
 
 	private void Start()
 	{

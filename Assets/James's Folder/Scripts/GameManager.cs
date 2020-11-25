@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
 	public GameObject player;
 	public GameObject backButton;
 
+	// cardless dialogue
+	public GameObject cardlessDialogueManager;
+
 	private void Start()
 	{
 		me = this;
@@ -54,8 +57,20 @@ public class GameManager : MonoBehaviour
 			// if an interviewee is selected, go to interview state
 			else if (interviewee != null)
 			{
+				// activate cardless dialogue manager if the cardless dialogue for the selected chara hasn't been shown
+				if (!interviewee.GetComponent<CharacterScript>().cardlessDialogueShown)
+				{
+					cardlessDialogueManager.SetActive(true);
+					interviewee.GetComponent<CharacterScript>().cardlessDialogueShown = true;
+				}
+				else
+				{
+					// instantiate player
+					player = Instantiate(playerPrefab);
+				}
+
 				// if not selected, hide
-				foreach(GameObject chara in roster)
+				foreach (GameObject chara in roster)
 				{
 					if (chara != interviewee)
 					{
@@ -65,8 +80,7 @@ public class GameManager : MonoBehaviour
 				// put interviewee chara to interview pos and scale up
 				interviewee.transform.position = interviewee_pos;
 				interviewee.transform.localScale = new Vector3(2, 2, 1);
-				// instantiate player
-				player = Instantiate(playerPrefab);
+				
 				// set state to interview state
 				state = interview;
 			}

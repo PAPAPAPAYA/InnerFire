@@ -1953,6 +1953,7 @@ MonoBehaviour:
     type: 3}
   player: {fileID: 0}
   backButton: {fileID: 959521009}
+  cardlessDialogueManager: {fileID: 2131420318}
 --- !u!4 &1354948620
 Transform:
   m_ObjectHideFlags: 0
@@ -2494,7 +2495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2131420319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2507,10 +2508,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714ad88aa3147024baeca63dd1224ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
+  index_cardlessDialogues: 0
   currentListOf_cardlessDialogue: []
   currentListOf_questionOptions: []
   questionChosen: 0
+  currentListOf_correspondingDialogues: []
 --- !u!4 &2131420320
 Transform:
   m_ObjectHideFlags: 0

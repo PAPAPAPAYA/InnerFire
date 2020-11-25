@@ -63,18 +63,17 @@ public class DialogueManagerScript : MonoBehaviour
 				}
 				else
 				{
-					// give CDM the list of cardless dialogues
-					CardlessDialogueManager.me.SetCurrentListOf_CD(GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogues);
-					// show question buttons
-					CardlessDialogueManager.me.ShowQuestionButtons();
-					// advance cardless dialogues
-					if (CardlessDialogueManager.me.index_cardlessDialogues < CardlessDialogueManager.me.currentListOf_cardlessDialogue.Count - 1) // cycle through all the cardless dialgoues
+					if (GameManager.me.cardlessDialogueManager.activeSelf)
 					{
-						CardlessDialogueManager.me.index_cardlessDialogues++;
-					}
-					else // if all the cardless dialogues of the interviewee are cycle through
-					{
-						// disable cardless dialogue manager and spawn player, meaning the player can use cards now
+						// give CDM the list of cardless dialogues
+						CardlessDialogueManager.me.SetCurrentListOf_CD(GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogues);
+						// show question buttons
+						CardlessDialogueManager.me.ShowQuestionButtons();
+						// advance cardless dialogues
+						if (CardlessDialogueManager.me.index_cardlessDialogues < CardlessDialogueManager.me.currentListOf_cardlessDialogue.Count - 1) // cycle through all the cardless dialgoues
+						{
+							CardlessDialogueManager.me.index_cardlessDialogues++;
+						}
 					}
 				}
 			}
@@ -87,7 +86,7 @@ public class DialogueManagerScript : MonoBehaviour
 		// show default dialogue
 		if (myApproach == Approaches.na)
 		{
-			if (CardlessDialogueManager.me.questionChosen == 0) // no question chosen
+			if (CardlessDialogueManager.me.questionChosen == 0 || CardlessDialogueManager.me.gameObject.activeSelf == false) // no question chosen or no cardless dialogue manager
 			{
 				currentDialogue = interviewee.GetComponent<CharacterScript>().defaultDialogues;
 				dDisplayer.text = currentDialogue[index];

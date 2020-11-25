@@ -11,4 +11,5 @@ public struct QuestionOptionsStruct
     public List<string> dialogues;
     public List<GameObject> cardsItGives;
     public int relationshipChangeAmount;
+    public bool shown;
 }
