@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 648202926039254859}
   - component: {fileID: -7973237963578344564}
   m_Layer: 0
-  m_Name: GP03
+  m_Name: mayor - 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,16 +98,56 @@ MonoBehaviour:
   dialogues:
   - preconditions: 
     triggerIDs: 
-    dialogue:
-    - Sup
-    - im grandma
-    index: 0
+    dialogue_inquiring: []
+    cards_inquiring: []
+    inquiringCard_given: 0
+    charasToUnlock_inquire: 
+    dialogue_threatened: []
+    cards_threatened: []
+    threatenedCard_given: 0
+    charasToUnlock_threat: 
+    dialogue_trading: []
+    cards_trading: []
+    tradingCard_given: 0
+    charasToUnlock_trade: 
   - preconditions: 
     triggerIDs: 00000000
-    dialogue:
-    - that's horrible
-    index: 0
-  unlocked: 0
+    dialogue_inquiring: []
+    cards_inquiring: []
+    inquiringCard_given: 0
+    charasToUnlock_inquire: 
+    dialogue_threatened: []
+    cards_threatened: []
+    threatenedCard_given: 0
+    charasToUnlock_threat: 
+    dialogue_trading: []
+    cards_trading: []
+    tradingCard_given: 0
+    charasToUnlock_trade: 
+  defaultDialogues:
+  - 1
+  - 1
+  cardlessDialogues:
+  - options:
+    - question: 1
+      dialogues:
+      - 1
+      cardsItGives: []
+      relationshipChangeAmount: 0
+      charasToUnlock: 01000000
+      shown: 0
+    - question: 1
+      dialogues:
+      - 1
+      cardsItGives: []
+      relationshipChangeAmount: 0
+      charasToUnlock: 
+      shown: 0
+  relationship: 0
+  ogPos: {x: 0, y: 0, z: 0}
+  ogScale: {x: 0, y: 0, z: 0}
+  cardlessDialogueShown: 0
+  unlocked: 1
 --- !u!61 &-7973237963578344564
 BoxCollider2D:
   m_ObjectHideFlags: 0

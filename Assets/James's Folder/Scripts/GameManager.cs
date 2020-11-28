@@ -7,10 +7,12 @@ public class GameManager : MonoBehaviour
 	static public GameManager me;
 
     public int state;
+	public int pre = 0;
     public int choose = 0;
     public int interview = 1;
 	// for choosing who to interview
 	public List<GameObject> characterPrefabs;
+	public List<GameObject> unlockedCharaPrefabs;
 	public Vector3 rosterSect_startPos;
 	public float rosterSect_length;
 	public List<GameObject> roster;
@@ -25,9 +27,35 @@ public class GameManager : MonoBehaviour
 	// cardless dialogue
 	public GameObject cardlessDialogueManager;
 
+	//
+	public GameObject grandmaP;
+	public GameObject mayor1P;
+	public GameObject mayor2P;
+	public GameObject farmer1P;
+	public GameObject farmer2P;
+	public GameObject worker1P;
+	public GameObject worker2P;
+	public GameObject factory1P;
+	public GameObject factory2P;
+	public GameObject young1P;
+	public GameObject young2P;
+	public GameObject doc1P;
+	public GameObject doc2P;
+
 	private void Start()
 	{
 		me = this;
+		for (int i = 0; i < unlockedCharaPrefabs.Count; i++)
+		{
+			// instantiate
+			GameObject character = Instantiate(unlockedCharaPrefabs[i]);
+			// set its pos
+			Vector3 pos = new Vector3(rosterSect_startPos.x + (i + 1) * rosterSect_length / (unlockedCharaPrefabs.Count + 1), rosterSect_startPos.y, 0);
+			character.transform.position = pos;
+			// add it to roster
+			roster.Add(character);
+		}
+		//state = pre;
 	}
 
 	private void Update()
@@ -41,17 +69,43 @@ public class GameManager : MonoBehaviour
 			{
 				chara.GetComponent<SpriteRenderer>().enabled = true;
 			}
-			// initialize characters
-			if (roster.Count < characterPrefabs.Count && interviewee == null)
+			// initialize roster
+			if (roster.Count < unlockedCharaPrefabs.Count && interviewee == null)
 			{
-				for (int i = 0; i < characterPrefabs.Count; i++)
+				// instantiate unlocked charas
+				for (int i = 0; i < unlockedCharaPrefabs.Count; i++)
 				{
-					// instantiate chara and set pos
-					GameObject character = Instantiate(characterPrefabs[i]);
-					Vector3 pos = new Vector3(rosterSect_startPos.x + (i + 1) * rosterSect_length / (characterPrefabs.Count + 1), rosterSect_startPos.y, 0);
-					character.transform.position = pos;
-					// add it to a list
-					roster.Add(character);
+					// get roster
+					List<GameObject> tempRoster = new List<GameObject>();
+					foreach (var chara in roster)
+					{
+						tempRoster.Add(chara);
+					}
+					// if not instantiated
+					int showUpTime = 0;
+					foreach (var chara in tempRoster)
+					{
+						if (unlockedCharaPrefabs[i].name + "(Clone)" == chara.name)
+						{
+							showUpTime++;
+						}
+					}
+					if (showUpTime == 0)
+					{
+						// instantiate
+						GameObject character = Instantiate(unlockedCharaPrefabs[i]);
+						// set its pos
+						Vector3 pos = new Vector3(rosterSect_startPos.x + (i + 1) * rosterSect_length / (unlockedCharaPrefabs.Count + 1), rosterSect_startPos.y, 0);
+						character.transform.position = pos;
+						// add it to roster
+						roster.Add(character);
+					}
+				}
+				// set roster pos
+				for (int i = 0; i < roster.Count; i++)
+				{
+					Vector3 pos = new Vector3(rosterSect_startPos.x + (i + 1) * rosterSect_length / (roster.Count + 1), rosterSect_startPos.y, 0);
+					roster[i].transform.position = pos;
 				}
 			}
 			// if an interviewee is selected, go to interview state
@@ -103,7 +157,12 @@ public class GameManager : MonoBehaviour
 		state = choose;
 		// reset dialogue
 		DialogueManagerScript.me.dDisplayer.text = "";
-		// tell player to destory itself
-		player.GetComponent<PlayerScript>().destroyMe = true;
+		// tell player to destory itself (if player exists)
+		if (player != null)
+		{
+			player.GetComponent<PlayerScript>().destroyMe = true;
+		}
+		
+		// hide options (if any)
 	}
 }

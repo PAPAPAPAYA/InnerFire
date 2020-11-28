@@ -13,6 +13,8 @@ public class CharacterScript : MonoBehaviour
 	public Vector3 ogScale; // scale in character choosing screen
 	public bool cardlessDialogueShown = false;
 
+	public bool unlocked = false;
+
 	private void Start()
 	{
 		// store og pos and og scale

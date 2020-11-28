@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 648202926039254859}
   - component: {fileID: -7973237963578344564}
   m_Layer: 0
-  m_Name: GP01
+  m_Name: grandma - 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,15 +98,13 @@ MonoBehaviour:
   dialogues:
   - preconditions: 
     triggerIDs: 
-    dialogue:
-    - Sup
-    - im grandma
     dialogue_inquiring:
     - yo
     - hi
     - you are inquiring
     cards_inquiring: []
     inquiringCard_given: 0
+    charasToUnlock_inquire: 
     dialogue_threatened:
     - wow
     - this
@@ -114,50 +112,54 @@ MonoBehaviour:
     - very troublesome
     cards_threatened: []
     threatenedCard_given: 0
+    charasToUnlock_threat: 
     dialogue_trading:
     - i hate
     - programming
     cards_trading: []
     tradingCard_given: 0
+    charasToUnlock_trade: 
   - preconditions: 
     triggerIDs: 00000000
-    dialogue:
-    - that's horrible
     dialogue_inquiring:
     - oh
     - so you want to know about this?
     cards_inquiring:
     - {fileID: 4270974583676908371, guid: df5dcaad410b70c47b84cdb261f9500b, type: 3}
     inquiringCard_given: 0
+    charasToUnlock_inquire: 
     dialogue_threatened:
     - ah
     - i feel threatened
     cards_threatened: []
     threatenedCard_given: 0
+    charasToUnlock_threat: 
     dialogue_trading:
     - okay
     - let's trade
     cards_trading: []
     tradingCard_given: 0
+    charasToUnlock_trade: 
   - preconditions: 
     triggerIDs: 01000000
-    dialogue:
-    - that's horrible
     dialogue_inquiring:
     - oh 1
     - so you want to know about this? 1
     cards_inquiring: []
     inquiringCard_given: 0
+    charasToUnlock_inquire: 
     dialogue_threatened:
     - ah 1
     - i feel threatened 1
     cards_threatened: []
     threatenedCard_given: 0
+    charasToUnlock_threat: 
     dialogue_trading:
     - okay
     - let's trade
     cards_trading: []
     tradingCard_given: 0
+    charasToUnlock_trade: 
   defaultDialogues:
   - sup d
   - im grandma d
@@ -170,6 +172,8 @@ MonoBehaviour:
       cardsItGives:
       - {fileID: 4270974583676908371, guid: a66ca211305c89f4e8f2d2f6e137dc5b, type: 3}
       relationshipChangeAmount: 0
+      charasToUnlock: 04000000
+      shown: 0
     - question: test question 1-2
       dialogues:
       - test dialogue 1-2-1
@@ -177,6 +181,8 @@ MonoBehaviour:
       - test dialogue 1-2-3
       cardsItGives: []
       relationshipChangeAmount: 0
+      charasToUnlock: 
+      shown: 0
   - options:
     - question: test question 2-1
       dialogues:
@@ -184,15 +190,21 @@ MonoBehaviour:
       - test dialogue 2-1-2
       cardsItGives: []
       relationshipChangeAmount: 0
+      charasToUnlock: 
+      shown: 0
     - question: test question 2-2
       dialogues:
       - test dialogue 2-2-1
       - test dialogue 2-2-2
       cardsItGives: []
       relationshipChangeAmount: 0
+      charasToUnlock: 
+      shown: 0
   relationship: 0
   ogPos: {x: 0, y: 0, z: 0}
   ogScale: {x: 0, y: 0, z: 0}
+  cardlessDialogueShown: 0
+  unlocked: 0
 --- !u!61 &-7973237963578344564
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -11,5 +11,6 @@ public struct QuestionOptionsStruct
     public List<string> dialogues;
     public List<GameObject> cardsItGives;
     public int relationshipChangeAmount;
+    public List<StateManagerScript.Charas> charasToUnlock;
     public bool shown;
 }

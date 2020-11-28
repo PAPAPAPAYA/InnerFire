@@ -73,6 +73,14 @@ public class CardlessDialogueManager : MonoBehaviour
 		}
 		// change interviewee's relationship
 		print("change relationship with amount of " + currentListOf_questionOptions[questionChosen - 1].relationshipChangeAmount);
+		// unlock characters
+		if (currentListOf_questionOptions[questionChosen - 1].charasToUnlock.Count > 0)
+		{
+			foreach (var chara in currentListOf_questionOptions[questionChosen - 1].charasToUnlock)
+			{
+				StateManagerScript.me.UnlockChara(chara);
+			}
+		}
 	}
 
 }
