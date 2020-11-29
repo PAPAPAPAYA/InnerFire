@@ -16,6 +16,11 @@ public class CardScript : MonoBehaviour
 	// drag and drop
 	private Vector3 og_pos; // show where the card was before being dragged around
 
+	// limit
+	public bool limited = false;
+	public List<GameObject> limitedTo;
+	public GameObject promisedTo;
+
 	private void Start()
 	{
 		og_pos = transform.position; // set og pos

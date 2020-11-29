@@ -21,6 +21,8 @@ public struct DialogueStruct
     public bool threatenedCard_given; // check if the card is already given
     public List<StateManagerScript.Charas> charasToUnlock_threat; // characters that this approach unlocks
     public int relationshipChangeAmount_threat; // relationship amount this approach changes
+    public List<GameObject> cardsToLimit_threat;
+    public List<GameObject> cardsToDestory_threat;
     [Header("TRADE")]
     [TextArea]
     public List<string> dialogue_trading; // trading thread
@@ -28,4 +30,6 @@ public struct DialogueStruct
     public bool tradingCard_given; // check if the card is already given
     public List<StateManagerScript.Charas> charasToUnlock_trade; // characters that this approach unlocks
     public int relationshipChangeAmount_trading; // relationship amount this approach changes
+    public List<GameObject> cardsToLimit_trade;
+    public List<GameObject> cardsToDestory_trade;
 }

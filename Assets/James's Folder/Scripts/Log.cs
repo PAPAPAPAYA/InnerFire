@@ -16,6 +16,7 @@
 	// xexit to choose state
 	// process card
 		// limit
+			// need to be tested
 		// destroy
 	// 关系
 		// x改变关系

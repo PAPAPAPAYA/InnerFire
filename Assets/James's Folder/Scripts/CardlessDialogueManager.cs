@@ -82,7 +82,17 @@ public class CardlessDialogueManager : MonoBehaviour
 				StateManagerScript.me.UnlockChara(chara);
 			}
 		}
-		
+		// limit cards
+		if (currentListOf_questionOptions[questionChosen - 1].cardsItLimits.Count > 0)
+		{
+			foreach (var cards in currentListOf_questionOptions[questionChosen - 1].cardsItLimits)
+			{
+				cards.GetComponent<CardScript>().limited = true;
+				cards.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
+			}
+		}
+		// destroy cards
+
 	}
 
 }

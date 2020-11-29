@@ -42,15 +42,31 @@ public class CardUsageScript : MonoBehaviour
 	// button functions
 	public void Threaten()
 	{
+		BreakPromise();
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.threaten;
 	}
 	public void Trade()
 	{
+		BreakPromise();
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.trade;
 	}
 	public void Inquire()
 	{
-		print("yo");
+		BreakPromise();
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.inquire;
+	}
+
+	private void BreakPromise()
+	{
+		if (cardInUsed.GetComponent<CardScript>().limited) // if card is limited
+		{
+			foreach (var chara in cardInUsed.GetComponent<CardScript>().limitedTo)
+			{
+				if (chara == GameManager.me.interviewee) // if card is used on a restricted character
+				{
+					cardInUsed.GetComponent<CardScript>().promisedTo.GetComponent<CharacterScript>().relationship--; // decrease relationship with the character that limited the card
+				}
+			}
+		}
 	}
 }

@@ -147,7 +147,24 @@ public class DialogueManagerScript : MonoBehaviour
 		{
 			GameManager.me.player.GetComponent<PlayerScript>().destroyMe = true;
 		}
-		// destroy or limit: implement here
+		// limit cards
+		if (myApproach == Approaches.threaten)
+		{
+			foreach (var card in chunk.cardsToLimit_threat)
+			{
+				card.GetComponent<CardScript>().limited = true;
+				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
+			}
+		}
+		else if (myApproach == Approaches.trade)
+		{
+			foreach (var card in chunk.cardsToLimit_trade)
+			{
+				card.GetComponent<CardScript>().limited = true;
+				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
+			}
+		}
+		// destroy cards
 	}
 
 	public void CardDialogueEnd_Actions()
