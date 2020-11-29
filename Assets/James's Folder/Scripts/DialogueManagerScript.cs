@@ -54,7 +54,7 @@ public class DialogueManagerScript : MonoBehaviour
 				index = 0; // reset index to the start of the dialogue
 				if (myApproach != Approaches.na) // if the dialogue being displayed is not default dialogue
 				{
-					GiveCard(); // give player the card this approach gives
+					CardDialogueEnd_Actions(); // give player the card this approach gives
 					if (GameManager.me.player == null) // if there is no player, make one
 					{
 						GameManager.me.player = Instantiate(GameManager.me.playerPrefab);
@@ -150,37 +150,70 @@ public class DialogueManagerScript : MonoBehaviour
 		// destroy or limit: implement here
 	}
 
-	public void GiveCard()
+	public void CardDialogueEnd_Actions()
 	{
-		if (myApproach == Approaches.inquire &&
-			!chunk.inquiringCard_given)
+		// inquire approach
+		if (myApproach == Approaches.inquire)
 		{
-			// give inquire card
-			if (chunk.cards_inquiring.Count > 0)
+			// give cards
+			if (chunk.cards_inquiring.Count > 0 &&
+				!chunk.inquiringCard_given)
 			{
 				GameManager.me.playerPrefab.GetComponent<PlayerScript>().handPrefabs.Add(chunk.cards_inquiring[0]);
 				SetCardGiven();
 			}
+			// unlock charas
+			if (chunk.charasToUnlock_inquire.Count > 0)
+			{
+				foreach (var chara in chunk.charasToUnlock_inquire)
+				{
+					StateManagerScript.me.UnlockChara(chara);
+				}
+			}
+			// change relationship
+			GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += chunk.relationshipChangeAmount_inquire;
 		}
-		else if (myApproach == Approaches.threaten &&
-				!chunk.threatenedCard_given)
+		// threatened approach
+		else if (myApproach == Approaches.threaten)
 		{
-			// give threatened card
-			if (chunk.cards_inquiring.Count > 0)
+			
+			if (chunk.cards_inquiring.Count > 0 &&
+				!chunk.threatenedCard_given)
 			{
 				GameManager.me.playerPrefab.GetComponent<PlayerScript>().handPrefabs.Add(chunk.cards_threatened[0]);
 				SetCardGiven();
 			}
+			// unlock charas
+			if (chunk.charasToUnlock_threat.Count > 0)
+			{
+				foreach (var chara in chunk.charasToUnlock_threat)
+				{
+					StateManagerScript.me.UnlockChara(chara);
+				}
+			}
+			// change relationship
+			GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += chunk.relationshipChangeAmount_threat;
 		}
-		else if (myApproach == Approaches.trade &&
-				!chunk.tradingCard_given)
+		// trading approach
+		else if (myApproach == Approaches.trade)
 		{
-			// give trading card
-			if (chunk.cards_inquiring.Count > 0)
+			// give card
+			if (chunk.cards_inquiring.Count > 0 &&
+				!chunk.tradingCard_given)
 			{
 				GameManager.me.playerPrefab.GetComponent<PlayerScript>().handPrefabs.Add(chunk.cards_trading[0]);
 				SetCardGiven();
 			}
+			// unlock charas
+			if (chunk.charasToUnlock_trade.Count > 0)
+			{
+				foreach (var chara in chunk.charasToUnlock_trade)
+				{
+					StateManagerScript.me.UnlockChara(chara);
+				}
+			}
+			// change relationship
+			GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += chunk.relationshipChangeAmount_trading;
 		}
 	}
 
@@ -213,10 +246,5 @@ public class DialogueManagerScript : MonoBehaviour
 				}
 			}
 		}
-	}
-
-	private void DoQuestionsOptions()
-	{
-
 	}
 }

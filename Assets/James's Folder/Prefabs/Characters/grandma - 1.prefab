@@ -105,6 +105,7 @@ MonoBehaviour:
     cards_inquiring: []
     inquiringCard_given: 0
     charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
     dialogue_threatened:
     - wow
     - this
@@ -113,12 +114,14 @@ MonoBehaviour:
     cards_threatened: []
     threatenedCard_given: 0
     charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
     dialogue_trading:
     - i hate
     - programming
     cards_trading: []
     tradingCard_given: 0
     charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
   - preconditions: 
     triggerIDs: 00000000
     dialogue_inquiring:
@@ -127,19 +130,22 @@ MonoBehaviour:
     cards_inquiring:
     - {fileID: 4270974583676908371, guid: df5dcaad410b70c47b84cdb261f9500b, type: 3}
     inquiringCard_given: 0
-    charasToUnlock_inquire: 
+    charasToUnlock_inquire: 04000000
+    relationshipChangeAmount_inquire: 0
     dialogue_threatened:
     - ah
     - i feel threatened
     cards_threatened: []
     threatenedCard_given: 0
     charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
     dialogue_trading:
     - okay
     - let's trade
     cards_trading: []
     tradingCard_given: 0
     charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
   - preconditions: 
     triggerIDs: 01000000
     dialogue_inquiring:
@@ -148,18 +154,21 @@ MonoBehaviour:
     cards_inquiring: []
     inquiringCard_given: 0
     charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
     dialogue_threatened:
     - ah 1
     - i feel threatened 1
     cards_threatened: []
     threatenedCard_given: 0
     charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
     dialogue_trading:
     - okay
     - let's trade
     cards_trading: []
     tradingCard_given: 0
     charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
   defaultDialogues:
   - sup d
   - im grandma d

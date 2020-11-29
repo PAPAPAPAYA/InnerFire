@@ -112,10 +112,9 @@ public class GameManager : MonoBehaviour
 			else if (interviewee != null)
 			{
 				// activate cardless dialogue manager if the cardless dialogue for the selected chara hasn't been shown
-				if (!interviewee.GetComponent<CharacterScript>().cardlessDialogueShown)
+				if (!interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished)
 				{
 					cardlessDialogueManager.SetActive(true);
-					interviewee.GetComponent<CharacterScript>().cardlessDialogueShown = true;
 				}
 				else
 				{
@@ -139,8 +138,8 @@ public class GameManager : MonoBehaviour
 				state = interview;
 			}
 		}
-		// when in interview, show [back] button
-		else if (state == interview)
+		// when in interview (and cardless dialogues are finished), show [back] button
+		else if (state == interview && interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished)
 		{
 			backButton.SetActive(true);
 		}
@@ -162,7 +161,12 @@ public class GameManager : MonoBehaviour
 		{
 			player.GetComponent<PlayerScript>().destroyMe = true;
 		}
-		
+		// set roster pos
+		for (int i = 0; i < roster.Count; i++)
+		{
+			Vector3 pos = new Vector3(rosterSect_startPos.x + (i + 1) * rosterSect_length / (roster.Count + 1), rosterSect_startPos.y, 0);
+			roster[i].transform.position = pos;
+		}
 		// hide options (if any)
 	}
 }

@@ -50,6 +50,7 @@ public class CardUsageScript : MonoBehaviour
 	}
 	public void Inquire()
 	{
+		print("yo");
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.inquire;
 	}
 }

@@ -26,7 +26,7 @@ public class CardlessDialogueManager : MonoBehaviour
 	{
 		for (int i = 0; i < QuestionOptionsManager.me.questionButtons.Count; i++)
 		{
-			if (currentListOf_questionOptions.Count>0 && !currentListOf_questionOptions[i].shown)
+			if (currentListOf_questionOptions.Count > 0 && !currentListOf_questionOptions[i].shown) // questiong option not shown
 			{
 				QuestionOptionsManager.me.questionButtons[i].SetActive(true);
 				QuestionOptionsManager.me.buttonTexts[i].text = currentListOf_questionOptions[i].question;
@@ -34,7 +34,7 @@ public class CardlessDialogueManager : MonoBehaviour
 				temp.shown = true;
 				currentListOf_questionOptions[i] = temp;
 			}
-			else
+			else // if all the cardless dialogues are shown
 			{
 				// instantiate player
 				if (GameManager.me.player == null)
@@ -50,6 +50,7 @@ public class CardlessDialogueManager : MonoBehaviour
 				currentListOf_cardlessDialogue.Clear();
 				currentListOf_correspondingDialogues.Clear();
 				currentListOf_questionOptions.Clear();
+				GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished = true;
 				gameObject.SetActive(false);
 			}
 		}
@@ -60,7 +61,7 @@ public class CardlessDialogueManager : MonoBehaviour
 		currentListOf_correspondingDialogues = currentListOf_questionOptions[questionChosen - 1].dialogues;
 	}
 
-	public void GiveCards_n_changeRelationship()
+	public void CardlessDialogueEnd_Actions()
 	{
 		// based on the question chosen
 		// add the card prefabs to player's hand 
@@ -72,7 +73,7 @@ public class CardlessDialogueManager : MonoBehaviour
 			}
 		}
 		// change interviewee's relationship
-		print("change relationship with amount of " + currentListOf_questionOptions[questionChosen - 1].relationshipChangeAmount);
+		GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += currentListOf_questionOptions[questionChosen - 1].relationshipChangeAmount;
 		// unlock characters
 		if (currentListOf_questionOptions[questionChosen - 1].charasToUnlock.Count > 0)
 		{
@@ -81,6 +82,7 @@ public class CardlessDialogueManager : MonoBehaviour
 				StateManagerScript.me.UnlockChara(chara);
 			}
 		}
+		
 	}
 
 }

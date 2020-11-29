@@ -3,9 +3,12 @@
 // general systems
 	// xshow available interviewees
 	// xselect interviewee
-	// unlock new interviewee
+	// xunlock new interviewee
+		// xunlock new interviewee in cardless dialogue
+		// xunlock new interviewee in card dialogue
+	// advance from day 1 to day 2
 // 受访者
-	// questions before using any cards
+	// xquestions before using any cards
 	// xdefault dialogue
 	// x触发对话
 	// x给予卡牌
@@ -15,9 +18,13 @@
 		// limit
 		// destroy
 	// 关系
-		// 提升关系
-		// 降低关系
-		// display different dialogue based on different relationship
+		// x改变关系
+			// xcardless
+			// xcard
+		// display different dialogues based on different relationship
+			// positive
+			// neutral
+			// negative
 // 玩家
 	// x显示手牌
 	// x使用手牌
@@ -25,3 +32,7 @@
 	// xdrag card
 // fixes
 	// xuse character's defualt dialogue after selecting interviewee, not the one in dialogueStruct
+// bus
+	// xexiting the interview will not hide question options
+	// xexiting the interview and reenter will spawn player even cardless dialogues haven't been finished
+	// xafter unlocking a new chara from a chara, reentering that chara and exit will arrange the characters in a strange way
