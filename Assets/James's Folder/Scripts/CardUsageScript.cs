@@ -58,13 +58,20 @@ public class CardUsageScript : MonoBehaviour
 
 	private void BreakPromise()
 	{
+		print("break promise");
 		if (cardInUsed.GetComponent<CardScript>().limited) // if card is limited
 		{
 			foreach (var chara in cardInUsed.GetComponent<CardScript>().limitedTo)
 			{
-				if (chara == GameManager.me.interviewee) // if card is used on a restricted character
+				if (chara.name == GameManager.me.interviewee.name+"(Clone)") // if card is used on a restricted character
 				{
+					print("effect relationship");
 					cardInUsed.GetComponent<CardScript>().promisedTo.GetComponent<CharacterScript>().relationship--; // decrease relationship with the character that limited the card
+				}
+				else
+				{
+					print("limitedTo.name: "+chara.name);
+					print("interviewee.name: "+GameManager.me.interviewee.name);
 				}
 			}
 		}

@@ -115,6 +115,9 @@ MonoBehaviour:
     threatenedCard_given: 0
     charasToUnlock_threat: 
     relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
     dialogue_trading:
     - i hate
     - programming
@@ -122,6 +125,9 @@ MonoBehaviour:
     tradingCard_given: 0
     charasToUnlock_trade: 
     relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
   - preconditions: 
     triggerIDs: 00000000
     dialogue_inquiring:
@@ -139,6 +145,9 @@ MonoBehaviour:
     threatenedCard_given: 0
     charasToUnlock_threat: 
     relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
     dialogue_trading:
     - okay
     - let's trade
@@ -146,6 +155,9 @@ MonoBehaviour:
     tradingCard_given: 0
     charasToUnlock_trade: 
     relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
   - preconditions: 
     triggerIDs: 01000000
     dialogue_inquiring:
@@ -162,6 +174,9 @@ MonoBehaviour:
     threatenedCard_given: 0
     charasToUnlock_threat: 
     relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
     dialogue_trading:
     - okay
     - let's trade
@@ -169,6 +184,9 @@ MonoBehaviour:
     tradingCard_given: 0
     charasToUnlock_trade: 
     relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
   defaultDialogues:
   - sup d
   - im grandma d
@@ -182,6 +200,9 @@ MonoBehaviour:
       - {fileID: 4270974583676908371, guid: a66ca211305c89f4e8f2d2f6e137dc5b, type: 3}
       relationshipChangeAmount: 0
       charasToUnlock: 04000000
+      cardsItLimits: []
+      cardsLimitedTo: []
+      cardsItDestroys: []
       shown: 0
     - question: test question 1-2
       dialogues:
@@ -191,6 +212,9 @@ MonoBehaviour:
       cardsItGives: []
       relationshipChangeAmount: 0
       charasToUnlock: 
+      cardsItLimits: []
+      cardsLimitedTo: []
+      cardsItDestroys: []
       shown: 0
   - options:
     - question: test question 2-1
@@ -200,6 +224,9 @@ MonoBehaviour:
       cardsItGives: []
       relationshipChangeAmount: 0
       charasToUnlock: 
+      cardsItLimits: []
+      cardsLimitedTo: []
+      cardsItDestroys: []
       shown: 0
     - question: test question 2-2
       dialogues:
@@ -208,11 +235,14 @@ MonoBehaviour:
       cardsItGives: []
       relationshipChangeAmount: 0
       charasToUnlock: 
+      cardsItLimits: []
+      cardsLimitedTo: []
+      cardsItDestroys: []
       shown: 0
   relationship: 0
   ogPos: {x: 0, y: 0, z: 0}
   ogScale: {x: 0, y: 0, z: 0}
-  cardlessDialogueShown: 0
+  cardlessDialogueFinished: 0
   unlocked: 0
 --- !u!61 &-7973237963578344564
 BoxCollider2D:

@@ -22,6 +22,7 @@ public struct DialogueStruct
     public List<StateManagerScript.Charas> charasToUnlock_threat; // characters that this approach unlocks
     public int relationshipChangeAmount_threat; // relationship amount this approach changes
     public List<GameObject> cardsToLimit_threat;
+    public List<GameObject> cardsLimitedTo_threat;
     public List<GameObject> cardsToDestory_threat;
     [Header("TRADE")]
     [TextArea]
@@ -31,5 +32,6 @@ public struct DialogueStruct
     public List<StateManagerScript.Charas> charasToUnlock_trade; // characters that this approach unlocks
     public int relationshipChangeAmount_trading; // relationship amount this approach changes
     public List<GameObject> cardsToLimit_trade;
+    public List<GameObject> cardsLimitedTo_trade;
     public List<GameObject> cardsToDestory_trade;
 }

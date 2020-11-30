@@ -153,6 +153,10 @@ public class DialogueManagerScript : MonoBehaviour
 			foreach (var card in chunk.cardsToLimit_threat)
 			{
 				card.GetComponent<CardScript>().limited = true;
+				foreach (var chara in chunk.cardsLimitedTo_threat)
+				{
+					card.GetComponent<CardScript>().limitedTo.Add(chara);
+				}
 				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
 			}
 		}
@@ -161,6 +165,10 @@ public class DialogueManagerScript : MonoBehaviour
 			foreach (var card in chunk.cardsToLimit_trade)
 			{
 				card.GetComponent<CardScript>().limited = true;
+				foreach (var chara in chunk.cardsLimitedTo_trade)
+				{
+					card.GetComponent<CardScript>().limitedTo.Add(chara);
+				}
 				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
 			}
 		}

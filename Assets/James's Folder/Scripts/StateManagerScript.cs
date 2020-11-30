@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class StateManagerScript : MonoBehaviour
 {
@@ -77,6 +78,7 @@ public class StateManagerScript : MonoBehaviour
 			gMS.characterPrefabs.Add(dayOne_charas[i]);
 		}
 		UnlockChara(Charas.mayor1);
+		ResetCardPrefabs();
 		gMS.state = gMS.choose;
 	}
 
@@ -136,7 +138,14 @@ public class StateManagerScript : MonoBehaviour
 			case Charas.doc2:
 				GameManager.me.characterPrefabs.Add(doc2P);
 				break;
-
+		}
+	}
+	private void ResetCardPrefabs()
+	{
+		List<GameObject> cardPrefabs = Resources.LoadAll("CardPrefabs", typeof(GameObject)).Cast<GameObject>().ToList();
+		foreach (GameObject prefab in cardPrefabs)
+		{
+			prefab.GetComponent<CardScript>().limitedTo.Clear();
 		}
 	}
 }

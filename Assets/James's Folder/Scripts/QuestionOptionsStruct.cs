@@ -13,6 +13,7 @@ public struct QuestionOptionsStruct
     public int relationshipChangeAmount;
     public List<StateManagerScript.Charas> charasToUnlock;
     public List<GameObject> cardsItLimits;
+    public List<GameObject> cardsLimitedTo;
     public List<GameObject> cardsItDestroys;
     public bool shown;
 }

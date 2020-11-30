@@ -102,28 +102,46 @@ MonoBehaviour:
     cards_inquiring: []
     inquiringCard_given: 0
     charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
     dialogue_threatened: []
     cards_threatened: []
     threatenedCard_given: 0
     charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
     dialogue_trading: []
     cards_trading: []
     tradingCard_given: 0
     charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
   - preconditions: 
     triggerIDs: 00000000
     dialogue_inquiring: []
     cards_inquiring: []
     inquiringCard_given: 0
     charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
     dialogue_threatened: []
     cards_threatened: []
     threatenedCard_given: 0
     charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
     dialogue_trading: []
     cards_trading: []
     tradingCard_given: 0
     charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
   defaultDialogues:
   - 1
   - 1
@@ -135,6 +153,11 @@ MonoBehaviour:
       cardsItGives: []
       relationshipChangeAmount: 0
       charasToUnlock: 01000000
+      cardsItLimits:
+      - {fileID: 4759512701615463042, guid: 24e3bc09ec5750a44a4b40e85490f479, type: 3}
+      cardsLimitedTo:
+      - {fileID: 648202926039254858, guid: 69d08561d83019445ae7adecb7430e89, type: 3}
+      cardsItDestroys: []
       shown: 0
     - question: 1
       dialogues:
@@ -142,11 +165,14 @@ MonoBehaviour:
       cardsItGives: []
       relationshipChangeAmount: 0
       charasToUnlock: 
+      cardsItLimits: []
+      cardsLimitedTo: []
+      cardsItDestroys: []
       shown: 0
   relationship: 0
   ogPos: {x: 0, y: 0, z: 0}
   ogScale: {x: 0, y: 0, z: 0}
-  cardlessDialogueShown: 0
+  cardlessDialogueFinished: 0
   unlocked: 1
 --- !u!61 &-7973237963578344564
 BoxCollider2D:
