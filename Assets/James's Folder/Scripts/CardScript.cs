@@ -25,6 +25,8 @@ public class CardScript : MonoBehaviour
 	public List<GameObject> charasIWasUsedTo;
 	public List<DialogueManagerScript.Approaches> howIWasUsed; 
 
+	
+
 	private void Start()
 	{
 		og_pos = transform.position; // set og pos
@@ -34,7 +36,7 @@ public class CardScript : MonoBehaviour
 	{
 		if (!GetComponent<SpriteRenderer>().enabled) // if told by player script to disable sprite renderer
 		{
-			Destroy(gameObject); // destroy self
+			//Destroy(gameObject); // destroy self
 		}
 	}
 

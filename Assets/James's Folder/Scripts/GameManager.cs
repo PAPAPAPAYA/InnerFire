@@ -119,7 +119,17 @@ public class GameManager : MonoBehaviour
 				else
 				{
 					// instantiate player
-					player = Instantiate(playerPrefab);
+					if (player == null)
+					{
+						player = Instantiate(playerPrefab);
+					}
+					else
+					{
+						if (player.GetComponent<PlayerScript>().destroyMe)
+						{
+							ActivatePlayer();
+						}
+					}
 				}
 
 				// if not selected, hide
@@ -167,5 +177,15 @@ public class GameManager : MonoBehaviour
 			Vector3 pos = new Vector3(rosterSect_startPos.x + (i + 1) * rosterSect_length / (roster.Count + 1), rosterSect_startPos.y, 0);
 			roster[i].transform.position = pos;
 		}
+	}
+
+	public void ActivatePlayer()
+	{
+		player.GetComponent<PlayerScript>().destroyMe = false;
+		foreach (var card in player.GetComponent<PlayerScript>().hand)
+		{
+			card.GetComponent<SpriteRenderer>().enabled = true;
+		}
+		player.GetComponent<PlayerScript>().ArrangeCards();
 	}
 }

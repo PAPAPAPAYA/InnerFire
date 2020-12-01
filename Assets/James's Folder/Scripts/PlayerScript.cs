@@ -36,7 +36,16 @@ public class PlayerScript : MonoBehaviour
 				card.GetComponent<SpriteRenderer>().enabled = false;
 			}
 			// destroy self
-			Destroy(gameObject);
+			//Destroy(gameObject);
+		}
+	}
+
+	public void ArrangeCards()
+	{
+		for (int i = 0; i < hand.Count; i++)
+		{
+			Vector3 pos = new Vector3(handSect_startPos.x + (i + 1) * handSect_length / (hand.Count + 1), handSect_startPos.y, 0);
+			hand[i].transform.position = pos;
 		}
 	}
 }

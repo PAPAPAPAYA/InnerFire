@@ -56,9 +56,10 @@ public class DialogueManagerScript : MonoBehaviour
 				if (myApproach != Approaches.na) // if the dialogue being displayed is not default dialogue
 				{
 					CardDialogueEnd_Actions(); // give player the card this approach gives; unlock characters; change relationship
-					if (GameManager.me.player == null) // if there is no player, make one
+					// if player is disabled, activate it
+					if (GameManager.me.player.GetComponent<PlayerScript>().destroyMe)
 					{
-						GameManager.me.player = Instantiate(GameManager.me.playerPrefab);
+						GameManager.me.ActivatePlayer();
 					}
 					myApproach = Approaches.na; // set my approach
 					chunk = default;
@@ -144,8 +145,11 @@ public class DialogueManagerScript : MonoBehaviour
 	{
 		// need to run this only once
 		// hide everything other than the dialogue
-		Destroy(CardUsageScript.me.cardInUsed);
-		CardUsageScript.me.cardInUsed = null;
+		if (CardUsageScript.me.cardInUsed != null)
+		{
+			CardUsageScript.me.cardInUsed.GetComponent<SpriteRenderer>().enabled = false;
+			CardUsageScript.me.cardInUsed = null;
+		}
 		if (GameManager.me.player != null)
 		{
 			GameManager.me.player.GetComponent<PlayerScript>().destroyMe = true;
