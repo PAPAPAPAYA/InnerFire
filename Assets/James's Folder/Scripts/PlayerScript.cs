@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour
 	public List<GameObject> hand;
 	public Vector3 handSect_startPos;
 	public float handSect_length;
-	public bool destroyMe = false;
+	public bool hideMeNHand = false;
 	
 	private void Start()
 	{
@@ -28,7 +28,7 @@ public class PlayerScript : MonoBehaviour
 	private void Update()
 	{
 		// if told to destroy self
-		if (destroyMe)
+		if (hideMeNHand)
 		{
 			foreach (GameObject card in hand)
 			{

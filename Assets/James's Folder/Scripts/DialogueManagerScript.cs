@@ -55,12 +55,17 @@ public class DialogueManagerScript : MonoBehaviour
 				index = 0; // reset index to the start of the dialogue
 				if (myApproach != Approaches.na) // if the dialogue being displayed is not default dialogue
 				{
-					CardDialogueEnd_Actions(); // give player the card this approach gives; unlock characters; change relationship
+					
+					CardDialogueEnd_Actions(); // give player the card this appro().ach gives; unlock characters; change relationship
+					CardUsageScript.me.cardInUsed = null;
+					CardUsageScript.me.showButtons = true;
 					// if player is disabled, activate it
-					if (GameManager.me.player.GetComponent<PlayerScript>().destroyMe)
+					if (GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand)
 					{
+						print("call it");
 						GameManager.me.ActivatePlayer();
 					}
+					
 					myApproach = Approaches.na; // set my approach
 					chunk = default;
 				}
@@ -148,11 +153,11 @@ public class DialogueManagerScript : MonoBehaviour
 		if (CardUsageScript.me.cardInUsed != null)
 		{
 			CardUsageScript.me.cardInUsed.GetComponent<SpriteRenderer>().enabled = false;
-			CardUsageScript.me.cardInUsed = null;
+			//CardUsageScript.me.cardInUsed = null;
 		}
 		if (GameManager.me.player != null)
 		{
-			GameManager.me.player.GetComponent<PlayerScript>().destroyMe = true;
+			GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand = true;
 		}
 	}
 

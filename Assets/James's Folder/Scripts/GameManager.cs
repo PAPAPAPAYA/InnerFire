@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
 					}
 					else
 					{
-						if (player.GetComponent<PlayerScript>().destroyMe)
+						if (player.GetComponent<PlayerScript>().hideMeNHand)
 						{
 							ActivatePlayer();
 						}
@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
 		// tell player to destory itself (if player exists)
 		if (player != null)
 		{
-			player.GetComponent<PlayerScript>().destroyMe = true;
+			player.GetComponent<PlayerScript>().hideMeNHand = true;
 		}
 		// set roster pos
 		for (int i = 0; i < roster.Count; i++)
@@ -181,7 +181,7 @@ public class GameManager : MonoBehaviour
 
 	public void ActivatePlayer()
 	{
-		player.GetComponent<PlayerScript>().destroyMe = false;
+		player.GetComponent<PlayerScript>().hideMeNHand = false;
 		foreach (var card in player.GetComponent<PlayerScript>().hand)
 		{
 			card.GetComponent<SpriteRenderer>().enabled = true;

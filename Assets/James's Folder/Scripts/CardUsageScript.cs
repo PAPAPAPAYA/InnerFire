@@ -14,6 +14,7 @@ public class CardUsageScript : MonoBehaviour
     public GameObject inquire; // inquire button
     public GameObject trade; // trade button
 	public GameObject threaten; // threaten button
+	public bool showButtons = true;
 
 	private void Start()
 	{
@@ -24,8 +25,9 @@ public class CardUsageScript : MonoBehaviour
 	{
 		if (GameManager.me.state == GameManager.me.interview) // when in interview state
 		{
-			if (cardInUsed != null) // if there is a card being used, show buttons
+			if (showButtons && cardInUsed!=null) // if there is a card being used, show buttons
 			{
+				
 				inquire.SetActive(true);
 				trade.SetActive(true);
 				threaten.SetActive(true);
@@ -45,6 +47,7 @@ public class CardUsageScript : MonoBehaviour
 		BreakPromise();
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.threaten;
 		cardInUsed.GetComponent<CardScript>().AddChara_n_approach(GameManager.me.interviewee, DialogueManagerScript.Approaches.threaten);
+		showButtons = false;
 	}
 	public void Trade()
 	{
@@ -52,6 +55,7 @@ public class CardUsageScript : MonoBehaviour
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.trade;
 		cardInUsed.GetComponent<CardScript>().charasIWasUsedTo.Add(GameManager.me.interviewee);
 		cardInUsed.GetComponent<CardScript>().howIWasUsed.Add(DialogueManagerScript.Approaches.trade);
+		showButtons = false;
 	}
 	public void Inquire()
 	{
@@ -59,6 +63,7 @@ public class CardUsageScript : MonoBehaviour
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.inquire;
 		cardInUsed.GetComponent<CardScript>().charasIWasUsedTo.Add(GameManager.me.interviewee);
 		cardInUsed.GetComponent<CardScript>().howIWasUsed.Add(DialogueManagerScript.Approaches.inquire);
+		showButtons = false;
 	}
 
 	private void BreakPromise()
@@ -69,8 +74,18 @@ public class CardUsageScript : MonoBehaviour
 			{
 				if (chara.name + "(Clone)" == GameManager.me.interviewee.name) // if card is used on a restricted character
 				{
-					print("effect relationship");
-					cardInUsed.GetComponent<CardScript>().promisedTo.GetComponent<CharacterScript>().relationship--; // decrease relationship with the character that limited the card
+					int time = 0;
+					foreach (var charaToCheck in cardInUsed.GetComponent<CardScript>().charasIWasUsedTo)
+					{
+						if (charaToCheck.name == GameManager.me.interviewee.name)
+						{
+							time++;
+						}
+					}
+					if (time == 0)
+					{
+						cardInUsed.GetComponent<CardScript>().promisedTo.GetComponent<CharacterScript>().relationship--; // decrease relationship with the character that limited the card
+					}
 				}
 			}
 			cardInUsed.GetComponent<CardScript>().promisedTo = null;

@@ -52,6 +52,11 @@ public class CardlessDialogueManager : MonoBehaviour
 				currentListOf_questionOptions.Clear();
 				GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished = true;
 				gameObject.SetActive(false);
+				// show player
+				if (GameManager.me.player != null && GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand)
+				{
+					GameManager.me.ActivatePlayer();
+				}
 			}
 		}
 	}
@@ -63,6 +68,7 @@ public class CardlessDialogueManager : MonoBehaviour
 
 	public void CardlessDialogueEnd_Actions()
 	{
+		
 		// based on the question chosen
 		// add the card prefabs to player's hand 
 		if (currentListOf_questionOptions[questionChosen - 1].cardsItGives.Count > 0)

@@ -771,6 +771,7 @@ MonoBehaviour:
   inquire: {fileID: 622379022}
   trade: {fileID: 1636067519}
   threaten: {fileID: 1044517431}
+  showButtons: 0
 --- !u!4 &593663349
 Transform:
   m_ObjectHideFlags: 0
@@ -1900,14 +1901,23 @@ MonoBehaviour:
     cards_inquiring: []
     inquiringCard_given: 0
     charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
     dialogue_threatened: []
     cards_threatened: []
     threatenedCard_given: 0
     charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
     dialogue_trading: []
     cards_trading: []
     tradingCard_given: 0
     charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
   currentDialogue: []
   myApproach: 3
 --- !u!1 &1354948618

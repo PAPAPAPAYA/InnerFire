@@ -64,10 +64,25 @@ public class CardScript : MonoBehaviour
 			transform.position.y > interviewee_pos.y - interviewee.localScale.y / 2 &&
 			transform.position.y < interviewee_pos.y + interviewee.localScale.y / 2)
 		{
-			// enlarge card
 			// show options
-			CardUsageScript.me.cardInUsed = gameObject; // set card in used
-			CardUsageScript.me.cardId = id; // set card in used id
+			int time = 0;
+			foreach (var chara in charasIWasUsedTo)
+			{
+				if (chara.name == interviewee.name)
+				{
+					time++;
+				}
+			}
+			if (time == 0)
+			{
+				CardUsageScript.me.cardInUsed = gameObject; // set card in used
+				CardUsageScript.me.cardId = id; // set card in used id
+				CardUsageScript.me.showButtons = true;
+			}
+			else
+			{
+				transform.position = og_pos;
+			}
 		}
 		else // if the card is released while not over the interviwee's picture, move the card back to its original position
 		{
