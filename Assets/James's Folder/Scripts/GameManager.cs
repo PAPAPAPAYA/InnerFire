@@ -167,6 +167,5 @@ public class GameManager : MonoBehaviour
 			Vector3 pos = new Vector3(rosterSect_startPos.x + (i + 1) * rosterSect_length / (roster.Count + 1), rosterSect_startPos.y, 0);
 			roster[i].transform.position = pos;
 		}
-		// hide options (if any)
 	}
 }

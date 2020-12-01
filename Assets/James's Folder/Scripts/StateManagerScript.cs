@@ -146,6 +146,8 @@ public class StateManagerScript : MonoBehaviour
 		foreach (GameObject prefab in cardPrefabs)
 		{
 			prefab.GetComponent<CardScript>().limitedTo.Clear();
+			prefab.GetComponent<CardScript>().limited = false;
+			prefab.GetComponent<CardScript>().promisedTo = null;
 		}
 	}
 }

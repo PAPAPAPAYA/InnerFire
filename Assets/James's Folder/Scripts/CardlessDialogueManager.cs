@@ -90,8 +90,7 @@ public class CardlessDialogueManager : MonoBehaviour
 				cards.GetComponent<CardScript>().limited = true;
 				foreach (var chara in currentListOf_questionOptions[questionChosen - 1].cardsLimitedTo)
 				{
-					//cards.GetComponent<CardScript>().limitedTo.Add(chara);
-					print(chara.name);
+					cards.GetComponent<CardScript>().limitedTo.Add(chara);
 				}
 				cards.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
 			}

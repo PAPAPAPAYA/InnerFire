@@ -21,6 +21,10 @@ public class CardScript : MonoBehaviour
 	public List<GameObject> limitedTo;
 	public GameObject promisedTo;
 
+	// track who and how this card was used on
+	public List<GameObject> charasIWasUsedTo;
+	public List<DialogueManagerScript.Approaches> howIWasUsed; 
+
 	private void Start()
 	{
 		og_pos = transform.position; // set og pos
@@ -66,6 +70,32 @@ public class CardScript : MonoBehaviour
 		else // if the card is released while not over the interviwee's picture, move the card back to its original position
 		{
 			transform.position = og_pos;
+		}
+	}
+
+	public void AddChara_n_approach(GameObject interviewee, DialogueManagerScript.Approaches approach)
+	{
+		int charaTime = 0;
+		// check if this character is already in [charas i was used to]
+		if (charasIWasUsedTo.Count > 0)
+		{
+			foreach (var chara in charasIWasUsedTo)
+			{
+				if (chara.name == interviewee.name)
+				{
+					charaTime++;
+				}
+			}
+			if (charaTime == 0)
+			{
+				charasIWasUsedTo.Add(interviewee);
+				howIWasUsed.Add(approach);
+			}
+		}
+		else
+		{
+			charasIWasUsedTo.Add(interviewee);
+			howIWasUsed.Add(approach);
 		}
 	}
 }

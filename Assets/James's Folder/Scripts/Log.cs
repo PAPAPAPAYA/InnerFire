@@ -16,7 +16,9 @@
 	// xexit to choose state
 	// process card
 		// limit
-			// need to be tested
+			// bugs
+				// xcan't show all dialogues
+				// need to check if the promise is already broken once on this person, if so don't decrease relationship again
 		// destroy
 	// 关系
 		// x改变关系
@@ -33,6 +35,8 @@
 	// xdrag card
 // fixes
 	// xuse character's defualt dialogue after selecting interviewee, not the one in dialogueStruct
+	// don't let player to threaten the same character with the same card more than once
+		// record approach on card and character it was used on 
 // bus
 	// xexiting the interview will not hide question options
 	// xexiting the interview and reenter will spawn player even cardless dialogues haven't been finished

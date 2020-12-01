@@ -44,36 +44,38 @@ public class CardUsageScript : MonoBehaviour
 	{
 		BreakPromise();
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.threaten;
+		cardInUsed.GetComponent<CardScript>().AddChara_n_approach(GameManager.me.interviewee, DialogueManagerScript.Approaches.threaten);
 	}
 	public void Trade()
 	{
 		BreakPromise();
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.trade;
+		cardInUsed.GetComponent<CardScript>().charasIWasUsedTo.Add(GameManager.me.interviewee);
+		cardInUsed.GetComponent<CardScript>().howIWasUsed.Add(DialogueManagerScript.Approaches.trade);
 	}
 	public void Inquire()
 	{
 		BreakPromise();
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.inquire;
+		cardInUsed.GetComponent<CardScript>().charasIWasUsedTo.Add(GameManager.me.interviewee);
+		cardInUsed.GetComponent<CardScript>().howIWasUsed.Add(DialogueManagerScript.Approaches.inquire);
 	}
 
 	private void BreakPromise()
 	{
-		print("break promise");
 		if (cardInUsed.GetComponent<CardScript>().limited) // if card is limited
 		{
 			foreach (var chara in cardInUsed.GetComponent<CardScript>().limitedTo)
 			{
-				if (chara.name == GameManager.me.interviewee.name+"(Clone)") // if card is used on a restricted character
+				if (chara.name + "(Clone)" == GameManager.me.interviewee.name) // if card is used on a restricted character
 				{
 					print("effect relationship");
 					cardInUsed.GetComponent<CardScript>().promisedTo.GetComponent<CharacterScript>().relationship--; // decrease relationship with the character that limited the card
 				}
-				else
-				{
-					print("limitedTo.name: "+chara.name);
-					print("interviewee.name: "+GameManager.me.interviewee.name);
-				}
 			}
+			cardInUsed.GetComponent<CardScript>().promisedTo = null;
+			cardInUsed.GetComponent<CardScript>().limited = false;
+			cardInUsed.GetComponent<CardScript>().limitedTo.Clear();
 		}
 	}
 }

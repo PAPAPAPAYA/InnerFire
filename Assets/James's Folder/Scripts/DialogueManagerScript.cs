@@ -25,6 +25,7 @@ public class DialogueManagerScript : MonoBehaviour
 	{
 		me = this; // singleton
 		timer = interval; // set timer
+		chunk = default;
 	}
 
 	private void Update()
@@ -54,12 +55,13 @@ public class DialogueManagerScript : MonoBehaviour
 				index = 0; // reset index to the start of the dialogue
 				if (myApproach != Approaches.na) // if the dialogue being displayed is not default dialogue
 				{
-					CardDialogueEnd_Actions(); // give player the card this approach gives
+					CardDialogueEnd_Actions(); // give player the card this approach gives; unlock characters; change relationship
 					if (GameManager.me.player == null) // if there is no player, make one
 					{
 						GameManager.me.player = Instantiate(GameManager.me.playerPrefab);
 					}
 					myApproach = Approaches.na; // set my approach
+					chunk = default;
 				}
 				else
 				{
@@ -140,6 +142,7 @@ public class DialogueManagerScript : MonoBehaviour
 
 	public void ProcessCard()
 	{
+		// need to run this only once
 		// hide everything other than the dialogue
 		Destroy(CardUsageScript.me.cardInUsed);
 		CardUsageScript.me.cardInUsed = null;
@@ -147,32 +150,6 @@ public class DialogueManagerScript : MonoBehaviour
 		{
 			GameManager.me.player.GetComponent<PlayerScript>().destroyMe = true;
 		}
-		// limit cards
-		if (myApproach == Approaches.threaten)
-		{
-			foreach (var card in chunk.cardsToLimit_threat)
-			{
-				card.GetComponent<CardScript>().limited = true;
-				foreach (var chara in chunk.cardsLimitedTo_threat)
-				{
-					card.GetComponent<CardScript>().limitedTo.Add(chara);
-				}
-				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
-			}
-		}
-		else if (myApproach == Approaches.trade)
-		{
-			foreach (var card in chunk.cardsToLimit_trade)
-			{
-				card.GetComponent<CardScript>().limited = true;
-				foreach (var chara in chunk.cardsLimitedTo_trade)
-				{
-					card.GetComponent<CardScript>().limitedTo.Add(chara);
-				}
-				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
-			}
-		}
-		// destroy cards
 	}
 
 	public void CardDialogueEnd_Actions()
@@ -201,8 +178,7 @@ public class DialogueManagerScript : MonoBehaviour
 		// threatened approach
 		else if (myApproach == Approaches.threaten)
 		{
-			
-			if (chunk.cards_inquiring.Count > 0 &&
+			if (chunk.cards_threatened.Count > 0 &&
 				!chunk.threatenedCard_given)
 			{
 				GameManager.me.playerPrefab.GetComponent<PlayerScript>().handPrefabs.Add(chunk.cards_threatened[0]);
@@ -218,12 +194,23 @@ public class DialogueManagerScript : MonoBehaviour
 			}
 			// change relationship
 			GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += chunk.relationshipChangeAmount_threat;
+			// limit cards
+			foreach (var card in chunk.cardsToLimit_threat)
+			{
+				card.GetComponent<CardScript>().limited = true;
+				foreach (var chara in chunk.cardsLimitedTo_threat)
+				{
+					card.GetComponent<CardScript>().limitedTo.Add(chara);
+				}
+				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
+			}
+			// destroy cards here?
 		}
 		// trading approach
 		else if (myApproach == Approaches.trade)
 		{
 			// give card
-			if (chunk.cards_inquiring.Count > 0 &&
+			if (chunk.cards_trading.Count > 0 &&
 				!chunk.tradingCard_given)
 			{
 				GameManager.me.playerPrefab.GetComponent<PlayerScript>().handPrefabs.Add(chunk.cards_trading[0]);
@@ -239,6 +226,17 @@ public class DialogueManagerScript : MonoBehaviour
 			}
 			// change relationship
 			GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += chunk.relationshipChangeAmount_trading;
+			// limit cards
+			foreach (var card in chunk.cardsToLimit_trade)
+			{
+				card.GetComponent<CardScript>().limited = true;
+				foreach (var chara in chunk.cardsLimitedTo_trade)
+				{
+					card.GetComponent<CardScript>().limitedTo.Add(chara);
+				}
+				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
+			}
+			// destroy cards here?
 		}
 	}
 
