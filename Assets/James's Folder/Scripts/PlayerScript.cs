@@ -38,8 +38,9 @@ public class PlayerScript : MonoBehaviour
 		{
 			foreach (GameObject card in hand)
 			{
-				// tell cards to destroy self
-				card.GetComponent<SpriteRenderer>().enabled = false;
+				// disable card dragging
+				//card.GetComponent<SpriteRenderer>().enabled = false;
+				card.GetComponent<CardScript>().canBeDragged = false;
 			}
 			// destroy self
 			//Destroy(gameObject);

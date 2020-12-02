@@ -147,13 +147,7 @@ public class DialogueManagerScript : MonoBehaviour
 
 	public void ProcessCard()
 	{
-		// need to run this only once
 		// hide everything other than the dialogue
-		if (CardUsageScript.me.cardInUsed != null)
-		{
-			CardUsageScript.me.cardInUsed.GetComponent<SpriteRenderer>().enabled = false;
-			//CardUsageScript.me.cardInUsed = null;
-		}
 		if (GameManager.me.player != null)
 		{
 			GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand = true;
@@ -274,12 +268,14 @@ public class DialogueManagerScript : MonoBehaviour
 				}
 			}
 		}
+		GameManager.me.player.GetComponent<PlayerScript>().ArrangeCards();
 		// check if advance to day 2
 		if (GameManager.me.interviewee.name == StateManagerScript.me.intervieweeToTriggerDayTwo.name + "(Clone)")
 		{
 			StateManagerScript.me.state = StateManagerScript.States.dayTwo;
 			StateManagerScript.me.EnterDayTwo();
 		}
+		
 	}
 
 	private void SetCardGiven() // set a bool so that character won't give out cards again

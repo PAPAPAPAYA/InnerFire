@@ -8,7 +8,8 @@
 		// xunlock new interviewee in card dialogue
 	// xadvance from day 1 to day 2
 	// add an intro and a transition between day 1 and day 2
-	// let the player look at the card even when they can't use them
+	// xlet the player look at the card even when they can't use them
+	// after player have many cards, how to sort them?
 // 受访者
 	// xquestions before using any cards
 	// xdefault dialogue

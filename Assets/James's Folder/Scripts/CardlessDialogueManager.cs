@@ -77,6 +77,7 @@ public class CardlessDialogueManager : MonoBehaviour
 				GameObject instantiatedCard = Instantiate(card);
 				GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
 			}
+			GameManager.me.player.GetComponent<PlayerScript>().ArrangeCards();
 		}
 		// change interviewee's relationship
 		GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += currentListOf_questionOptions[questionChosen - 1].relationshipChangeAmount;

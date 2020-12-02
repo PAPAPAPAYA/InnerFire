@@ -189,7 +189,8 @@ public class GameManager : MonoBehaviour
 		player.GetComponent<PlayerScript>().hideMeNHand = false;
 		foreach (var card in player.GetComponent<PlayerScript>().hand)
 		{
-			card.GetComponent<SpriteRenderer>().enabled = true;
+			//card.GetComponent<SpriteRenderer>().enabled = true;
+			card.GetComponent<CardScript>().canBeDragged = true;
 		}
 		player.GetComponent<PlayerScript>().ArrangeCards();
 	}
