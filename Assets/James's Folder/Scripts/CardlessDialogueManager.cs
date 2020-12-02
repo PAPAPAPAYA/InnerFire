@@ -68,14 +68,14 @@ public class CardlessDialogueManager : MonoBehaviour
 
 	public void CardlessDialogueEnd_Actions()
 	{
-		
 		// based on the question chosen
 		// add the card prefabs to player's hand 
 		if (currentListOf_questionOptions[questionChosen - 1].cardsItGives.Count > 0)
 		{
 			foreach (var card in currentListOf_questionOptions[questionChosen - 1].cardsItGives)
 			{
-				GameManager.me.playerPrefab.GetComponent<PlayerScript>().handPrefabs.Add(card);
+				GameObject instantiatedCard = Instantiate(card);
+				GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
 			}
 		}
 		// change interviewee's relationship
@@ -91,18 +91,25 @@ public class CardlessDialogueManager : MonoBehaviour
 		// limit cards
 		if (currentListOf_questionOptions[questionChosen - 1].cardsItLimits.Count > 0)
 		{
-			foreach (var cards in currentListOf_questionOptions[questionChosen - 1].cardsItLimits)
+			foreach (var card in currentListOf_questionOptions[questionChosen - 1].cardsItLimits)
 			{
-				cards.GetComponent<CardScript>().limited = true;
+				card.GetComponent<CardScript>().limited = true;
 				foreach (var chara in currentListOf_questionOptions[questionChosen - 1].cardsLimitedTo)
 				{
-					cards.GetComponent<CardScript>().limitedTo.Add(chara);
+					card.GetComponent<CardScript>().limitedTo.Add(chara);
 				}
-				cards.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
+				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
 			}
 		}
 		// destroy cards
-
+		if (currentListOf_questionOptions[questionChosen - 1].cardsItDestroys.Count > 0)
+		{
+			foreach (var card in currentListOf_questionOptions[questionChosen - 1].cardsItDestroys)
+			{
+				//PlayerScript.me.DestroyCard(card.name);
+				GameManager.me.player.GetComponent<PlayerScript>().DestroyCard(card.name);
+			}
+		}
 	}
 
 }

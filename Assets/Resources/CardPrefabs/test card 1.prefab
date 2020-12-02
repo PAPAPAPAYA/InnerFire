@@ -126,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4270974583676908371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5, y: -3.6, z: 0}
   m_LocalScale: {x: 1, y: 1.586, z: 1}
   m_Children:
   - {fileID: 363561523718589080}
@@ -199,6 +199,12 @@ MonoBehaviour:
   namae: the Great Escape was Bad
   description: it was real bad
   infoDisplay: {fileID: 1079076617599350307}
+  limited: 0
+  limitedTo: []
+  promisedTo: {fileID: 0}
+  charasIWasUsedTo: []
+  howIWasUsed: 
+  destroyMe: 0
 --- !u!61 &3977834750213161260
 BoxCollider2D:
   m_ObjectHideFlags: 0

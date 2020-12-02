@@ -55,7 +55,11 @@ public class GameManager : MonoBehaviour
 			// add it to roster
 			roster.Add(character);
 		}
-		//state = pre;
+		if (player == null)
+		{
+			player = Instantiate(playerPrefab);
+			player.GetComponent<PlayerScript>().hideMeNHand = true;
+		}
 	}
 
 	private void Update()

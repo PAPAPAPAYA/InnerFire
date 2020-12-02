@@ -62,7 +62,6 @@ public class DialogueManagerScript : MonoBehaviour
 					// if player is disabled, activate it
 					if (GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand)
 					{
-						print("call it");
 						GameManager.me.ActivatePlayer();
 					}
 					
@@ -170,7 +169,8 @@ public class DialogueManagerScript : MonoBehaviour
 			if (chunk.cards_inquiring.Count > 0 &&
 				!chunk.inquiringCard_given)
 			{
-				GameManager.me.playerPrefab.GetComponent<PlayerScript>().handPrefabs.Add(chunk.cards_inquiring[0]);
+				GameObject instantiatedCard = Instantiate(chunk.cards_inquiring[0]);
+				GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
 				SetCardGiven();
 			}
 			// unlock charas
@@ -183,6 +183,14 @@ public class DialogueManagerScript : MonoBehaviour
 			}
 			// change relationship
 			GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += chunk.relationshipChangeAmount_inquire;
+			// destroy cards
+			if (chunk.cardsToDestory_inquire.Count > 0)
+			{
+				foreach (var card in chunk.cardsToDestory_inquire)
+				{
+					PlayerScript.me.DestroyCard(card.name);
+				}
+			}
 		}
 		// threatened approach
 		else if (myApproach == Approaches.threaten)
@@ -190,7 +198,8 @@ public class DialogueManagerScript : MonoBehaviour
 			if (chunk.cards_threatened.Count > 0 &&
 				!chunk.threatenedCard_given)
 			{
-				GameManager.me.playerPrefab.GetComponent<PlayerScript>().handPrefabs.Add(chunk.cards_threatened[0]);
+				GameObject instantiatedCard = Instantiate(chunk.cards_threatened[0]);
+				GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
 				SetCardGiven();
 			}
 			// unlock charas
@@ -204,16 +213,26 @@ public class DialogueManagerScript : MonoBehaviour
 			// change relationship
 			GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += chunk.relationshipChangeAmount_threat;
 			// limit cards
-			foreach (var card in chunk.cardsToLimit_threat)
+			if (chunk.cardsToLimit_threat.Count > 0)
 			{
-				card.GetComponent<CardScript>().limited = true;
-				foreach (var chara in chunk.cardsLimitedTo_threat)
+				foreach (var card in chunk.cardsToLimit_threat)
 				{
-					card.GetComponent<CardScript>().limitedTo.Add(chara);
+					card.GetComponent<CardScript>().limited = true;
+					foreach (var chara in chunk.cardsLimitedTo_threat)
+					{
+						card.GetComponent<CardScript>().limitedTo.Add(chara);
+					}
+					card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
 				}
-				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
 			}
-			// destroy cards here?
+			// destroy cards
+			if (chunk.cardsToDestory_threat.Count > 0)
+			{
+				foreach (var card in chunk.cardsToDestory_threat)
+				{
+					PlayerScript.me.DestroyCard(card.name);
+				}
+			}
 		}
 		// trading approach
 		else if (myApproach == Approaches.trade)
@@ -222,7 +241,8 @@ public class DialogueManagerScript : MonoBehaviour
 			if (chunk.cards_trading.Count > 0 &&
 				!chunk.tradingCard_given)
 			{
-				GameManager.me.playerPrefab.GetComponent<PlayerScript>().handPrefabs.Add(chunk.cards_trading[0]);
+				GameObject instantiatedCard = Instantiate(chunk.cards_trading[0]);
+				GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
 				SetCardGiven();
 			}
 			// unlock charas
@@ -245,7 +265,14 @@ public class DialogueManagerScript : MonoBehaviour
 				}
 				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
 			}
-			// destroy cards here?
+			// destroy cards
+			if (chunk.cardsToDestory_trade.Count > 0)
+			{
+				foreach (var card in chunk.cardsToDestory_trade)
+				{
+					PlayerScript.me.DestroyCard(card.name);
+				}
+			}
 		}
 	}
 

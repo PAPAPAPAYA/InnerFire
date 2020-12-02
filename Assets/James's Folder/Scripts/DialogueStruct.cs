@@ -14,6 +14,7 @@ public struct DialogueStruct
     public bool inquiringCard_given; // check if the card is already given
     public List<StateManagerScript.Charas> charasToUnlock_inquire; // characters that this approach unlocks
     public int relationshipChangeAmount_inquire; // relationship amount this approach changes
+    public List<GameObject> cardsToDestory_inquire;
     [Header("THREAT")]
     [TextArea]
     public List<string> dialogue_threatened; // threatened thread

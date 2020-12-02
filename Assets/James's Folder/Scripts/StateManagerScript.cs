@@ -57,7 +57,7 @@ public class StateManagerScript : MonoBehaviour
 		}
 		else if (state == States.dayOne)
 		{
-
+			print(grandmaP.name);
 		}
 		else if (state == States.dayTwo)
 		{
@@ -89,6 +89,8 @@ public class StateManagerScript : MonoBehaviour
 		{
 			gMS.characterPrefabs.Add(dayTwo_charas[i]);
 		}
+		UnlockChara(Charas.mayor2);
+		ResetCardPrefabs();
 		gMS.state = gMS.choose;
 	}
 
@@ -105,38 +107,48 @@ public class StateManagerScript : MonoBehaviour
 				gMS.unlockedCharaPrefabs.Add(mayor1P);
 				break;
 			case Charas.mayor2:
-				GameManager.me.characterPrefabs.Add(mayor2P);
+				gMS.characterPrefabs.Remove(mayor2P);
+				gMS.unlockedCharaPrefabs.Add(mayor2P);
 				break;
 			case Charas.farmer1:
 				gMS.characterPrefabs.Remove(farmer1P);
 				gMS.unlockedCharaPrefabs.Add(farmer1P);
 				break;
 			case Charas.farmer2:
-				GameManager.me.characterPrefabs.Add(farmer2P);
+				gMS.characterPrefabs.Remove(farmer2P);
+				gMS.unlockedCharaPrefabs.Add(farmer2P);
 				break;
 			case Charas.worker1:
-				GameManager.me.characterPrefabs.Add(worker1P);
+				gMS.characterPrefabs.Remove(worker1P);
+				gMS.unlockedCharaPrefabs.Add(worker1P);
 				break;
 			case Charas.worker2:
-				GameManager.me.characterPrefabs.Add(worker2P);
+				gMS.characterPrefabs.Remove(worker2P);
+				gMS.unlockedCharaPrefabs.Add(worker2P);
 				break;
 			case Charas.young1:
-				GameManager.me.characterPrefabs.Add(young1P);
+				gMS.characterPrefabs.Remove(young1P);
+				gMS.unlockedCharaPrefabs.Add(young1P);
 				break;
 			case Charas.young2:
-				GameManager.me.characterPrefabs.Add(young2P);
+				gMS.characterPrefabs.Remove(young2P);
+				gMS.unlockedCharaPrefabs.Add(young2P);
 				break;
 			case Charas.factory1:
-				GameManager.me.characterPrefabs.Add(factory1P);
+				gMS.characterPrefabs.Remove(factory1P);
+				gMS.unlockedCharaPrefabs.Add(factory1P);
 				break;
 			case Charas.factory2:
-				GameManager.me.characterPrefabs.Add(factory2P);
+				gMS.characterPrefabs.Remove(factory2P);
+				gMS.unlockedCharaPrefabs.Add(factory2P);
 				break;
 			case Charas.doc1:
-				GameManager.me.characterPrefabs.Add(doc1P);
+				gMS.characterPrefabs.Remove(doc1P);
+				gMS.unlockedCharaPrefabs.Add(doc1P);
 				break;
 			case Charas.doc2:
-				GameManager.me.characterPrefabs.Add(doc2P);
+				gMS.characterPrefabs.Remove(doc2P);
+				gMS.unlockedCharaPrefabs.Add(doc2P);
 				break;
 		}
 	}

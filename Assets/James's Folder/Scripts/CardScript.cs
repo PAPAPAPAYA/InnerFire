@@ -23,9 +23,10 @@ public class CardScript : MonoBehaviour
 
 	// track who and how this card was used on
 	public List<GameObject> charasIWasUsedTo;
-	public List<DialogueManagerScript.Approaches> howIWasUsed; 
+	public List<DialogueManagerScript.Approaches> howIWasUsed;
 
-	
+	// destory
+	public bool destroyMe = false;
 
 	private void Start()
 	{
@@ -34,9 +35,9 @@ public class CardScript : MonoBehaviour
 
 	private void Update()
 	{
-		if (!GetComponent<SpriteRenderer>().enabled) // if told by player script to disable sprite renderer
+		if (destroyMe)
 		{
-			//Destroy(gameObject); // destroy self
+			Destroy(gameObject);
 		}
 	}
 

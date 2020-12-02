@@ -19,7 +19,7 @@
 			// xbugs
 				// xcan't show all dialogues
 				// xneed to check if the promise is already broken once on this person, if so don't decrease relationship again
-		// destroy
+		// xdestroy
 	// 关系
 		// x改变关系
 			// xcardless
