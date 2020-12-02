@@ -1918,19 +1918,6 @@ MonoBehaviour:
   player: {fileID: 0}
   backButton: {fileID: 959521009}
   cardlessDialogueManager: {fileID: 2131420318}
-  grandmaP: {fileID: 648202926039254858, guid: 69d08561d83019445ae7adecb7430e89, type: 3}
-  mayor1P: {fileID: 0}
-  mayor2P: {fileID: 0}
-  farmer1P: {fileID: 648202926039254858, guid: cd853518ff28cbd45b0b7a6b30db6925, type: 3}
-  farmer2P: {fileID: 0}
-  worker1P: {fileID: 0}
-  worker2P: {fileID: 0}
-  factory1P: {fileID: 0}
-  factory2P: {fileID: 0}
-  young1P: {fileID: 0}
-  young2P: {fileID: 0}
-  doc1P: {fileID: 0}
-  doc2P: {fileID: 0}
 --- !u!4 &1354948620
 Transform:
   m_ObjectHideFlags: 0
@@ -2123,7 +2110,8 @@ MonoBehaviour:
   - {fileID: 648202926039254858, guid: 76da09cf3a158ee479f69e6b0fb9f668, type: 3}
   - {fileID: 648202926039254858, guid: 69d08561d83019445ae7adecb7430e89, type: 3}
   - {fileID: 648202926039254858, guid: cd853518ff28cbd45b0b7a6b30db6925, type: 3}
-  dayTwo_charas: []
+  dayTwo_charas:
+  - {fileID: 648202926039254858, guid: a054e1f8603eacb40803b50e978e9171, type: 3}
   grandmaP: {fileID: 648202926039254858, guid: 69d08561d83019445ae7adecb7430e89, type: 3}
   mayor1P: {fileID: 648202926039254858, guid: 76da09cf3a158ee479f69e6b0fb9f668, type: 3}
   mayor2P: {fileID: 648202926039254858, guid: a054e1f8603eacb40803b50e978e9171, type: 3}
@@ -2138,6 +2126,8 @@ MonoBehaviour:
   doc1P: {fileID: 0}
   doc2P: {fileID: 0}
   gM: {fileID: 1354948618}
+  intervieweeToTriggerDayTwo: {fileID: 648202926039254858, guid: 69d08561d83019445ae7adecb7430e89,
+    type: 3}
 --- !u!4 &1553615297
 Transform:
   m_ObjectHideFlags: 0

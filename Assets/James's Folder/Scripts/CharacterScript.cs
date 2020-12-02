@@ -15,6 +15,8 @@ public class CharacterScript : MonoBehaviour
 
 	public bool unlocked = false;
 
+	public bool destoryMe = false;
+
 	private void Start()
 	{
 		// store og pos and og scale
@@ -33,6 +35,14 @@ public class CharacterScript : MonoBehaviour
 		else if (GameManager.me.state == GameManager.me.interview)
 		{
 			DialogueManagerScript.me.AdvanceDialogue();
+		}
+	}
+
+	private void Update()
+	{
+		if (destoryMe)
+		{
+			Destroy(gameObject);
 		}
 	}
 }

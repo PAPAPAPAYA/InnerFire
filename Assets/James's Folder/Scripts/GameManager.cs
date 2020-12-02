@@ -28,19 +28,19 @@ public class GameManager : MonoBehaviour
 	public GameObject cardlessDialogueManager;
 
 	//
-	public GameObject grandmaP;
-	public GameObject mayor1P;
-	public GameObject mayor2P;
-	public GameObject farmer1P;
-	public GameObject farmer2P;
-	public GameObject worker1P;
-	public GameObject worker2P;
-	public GameObject factory1P;
-	public GameObject factory2P;
-	public GameObject young1P;
-	public GameObject young2P;
-	public GameObject doc1P;
-	public GameObject doc2P;
+	//public GameObject grandmaP;
+	//public GameObject mayor1P;
+	//public GameObject mayor2P;
+	//public GameObject farmer1P;
+	//public GameObject farmer2P;
+	//public GameObject worker1P;
+	//public GameObject worker2P;
+	//public GameObject factory1P;
+	//public GameObject factory2P;
+	//public GameObject young1P;
+	//public GameObject young2P;
+	//public GameObject doc1P;
+	//public GameObject doc2P;
 
 	private void Start()
 	{
@@ -131,6 +131,7 @@ public class GameManager : MonoBehaviour
 					{
 						if (player.GetComponent<PlayerScript>().hideMeNHand)
 						{
+							print("activate player");
 							ActivatePlayer();
 						}
 					}
@@ -170,7 +171,7 @@ public class GameManager : MonoBehaviour
 		state = choose;
 		// reset dialogue
 		DialogueManagerScript.me.dDisplayer.text = "";
-		// tell player to destory itself (if player exists)
+		// tell player to hide itself and hand (if player exists)
 		if (player != null)
 		{
 			player.GetComponent<PlayerScript>().hideMeNHand = true;

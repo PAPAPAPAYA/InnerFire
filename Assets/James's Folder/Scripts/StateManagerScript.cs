@@ -37,6 +37,8 @@ public class StateManagerScript : MonoBehaviour
 	public GameObject gM;
 	private GameManager gMS;
 
+	public GameObject intervieweeToTriggerDayTwo;
+
 	private void Awake()
 	{
 		me = this;
@@ -57,7 +59,7 @@ public class StateManagerScript : MonoBehaviour
 		}
 		else if (state == States.dayOne)
 		{
-			print(grandmaP.name);
+
 		}
 		else if (state == States.dayTwo)
 		{
@@ -84,14 +86,25 @@ public class StateManagerScript : MonoBehaviour
 
 	public void EnterDayTwo()
 	{
+		gMS.ExitInterview();
 		gMS.characterPrefabs.Clear();
-		for (int i = 0; i < dayOne_charas.Count; i++)
+		for (int i = 0; i < dayTwo_charas.Count; i++)
 		{
 			gMS.characterPrefabs.Add(dayTwo_charas[i]);
 		}
+		foreach (var chara in gMS.roster)
+		{
+			chara.GetComponent<CharacterScript>().destoryMe = true;
+		}
+		gMS.unlockedCharaPrefabs.Clear();
+		gMS.roster.Clear();
 		UnlockChara(Charas.mayor2);
 		ResetCardPrefabs();
 		gMS.state = gMS.choose;
+		if (gMS.player != null)
+		{
+			gMS.player.GetComponent<PlayerScript>().hideMeNHand = true;
+		}
 	}
 
 	public void UnlockChara(Charas chara)

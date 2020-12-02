@@ -6,7 +6,9 @@
 	// xunlock new interviewee
 		// xunlock new interviewee in cardless dialogue
 		// xunlock new interviewee in card dialogue
-	// advance from day 1 to day 2
+	// xadvance from day 1 to day 2
+	// add an intro and a transition between day 1 and day 2
+	// let the player look at the card even when they can't use them
 // 受访者
 	// xquestions before using any cards
 	// xdefault dialogue

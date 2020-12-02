@@ -62,7 +62,7 @@ public class DialogueManagerScript : MonoBehaviour
 					// if player is disabled, activate it
 					if (GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand)
 					{
-						GameManager.me.ActivatePlayer();
+						//GameManager.me.ActivatePlayer();
 					}
 					
 					myApproach = Approaches.na; // set my approach
@@ -273,6 +273,12 @@ public class DialogueManagerScript : MonoBehaviour
 					PlayerScript.me.DestroyCard(card.name);
 				}
 			}
+		}
+		// check if advance to day 2
+		if (GameManager.me.interviewee.name == StateManagerScript.me.intervieweeToTriggerDayTwo.name + "(Clone)")
+		{
+			StateManagerScript.me.state = StateManagerScript.States.dayTwo;
+			StateManagerScript.me.EnterDayTwo();
 		}
 	}
 
