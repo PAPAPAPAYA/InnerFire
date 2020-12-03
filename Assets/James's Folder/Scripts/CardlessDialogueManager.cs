@@ -72,7 +72,7 @@ public class CardlessDialogueManager : MonoBehaviour
 				gameObject.SetActive(false);
 				
 				// show player
-				if (GameManager.me.player != null && GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand)
+				if (GameManager.me.player != null && GameManager.me.player.GetComponent<PlayerScript>().disableMeNHand)
 				{
 					GameManager.me.ActivatePlayer();
 				}

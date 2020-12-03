@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
 	public List<GameObject> hand;
 	public Vector3 handSect_startPos;
 	public float handSect_length;
-	public bool hideMeNHand = false;
+	public bool disableMeNHand = false;
 
 	private void Awake()
 	{
@@ -34,7 +34,7 @@ public class PlayerScript : MonoBehaviour
 	private void Update()
 	{
 		// if told to destroy self
-		if (hideMeNHand)
+		if (disableMeNHand)
 		{
 			foreach (GameObject card in hand)
 			{

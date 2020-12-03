@@ -104,7 +104,7 @@ public class StateManagerScript : MonoBehaviour
 		gMS.state = gMS.choose;
 		if (gMS.player != null)
 		{
-			gMS.player.GetComponent<PlayerScript>().hideMeNHand = true;
+			gMS.player.GetComponent<PlayerScript>().disableMeNHand = true;
 		}
 	}
 

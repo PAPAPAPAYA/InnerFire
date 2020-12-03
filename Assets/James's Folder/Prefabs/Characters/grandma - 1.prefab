@@ -257,6 +257,7 @@ MonoBehaviour:
   cardlessDialogueFinished: 0
   unlocked: 1
   destoryMe: 0
+  re_interview_ability: 1
 --- !u!61 &-7973237963578344564
 BoxCollider2D:
   m_ObjectHideFlags: 0

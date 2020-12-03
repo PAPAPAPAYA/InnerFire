@@ -160,13 +160,13 @@ public class DialogueManagerScript : MonoBehaviour
 		// hide everything other than the dialogue
 		if (GameManager.me.player != null)
 		{
-			GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand = true;
+			GameManager.me.player.GetComponent<PlayerScript>().disableMeNHand = true;
 		}
 	}
 
 	public void CardDialogueEnd_Actions()
 	{
-		if (GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand)
+		if (GameManager.me.player.GetComponent<PlayerScript>().disableMeNHand)
 		{
 			GameManager.me.ActivatePlayer();
 		}

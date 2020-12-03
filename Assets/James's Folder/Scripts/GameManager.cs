@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 		if (player == null)
 		{
 			player = Instantiate(playerPrefab);
-			player.GetComponent<PlayerScript>().hideMeNHand = true;
+			player.GetComponent<PlayerScript>().disableMeNHand = true;
 		}
 	}
 
@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour
 					}
 					else
 					{
-						if (player.GetComponent<PlayerScript>().hideMeNHand)
+						if (player.GetComponent<PlayerScript>().disableMeNHand)
 						{
 							ActivatePlayer();
 						}
@@ -193,6 +193,11 @@ public class GameManager : MonoBehaviour
 		// set interviewee back to before selected
 		interviewee.transform.position = interviewee.GetComponent<CharacterScript>().ogPos;
 		interviewee.transform.localScale = interviewee.GetComponent<CharacterScript>().ogScale;
+		if (interviewee.GetComponent<CharacterScript>().re_interview_ability == false)
+		{
+			interviewee.GetComponent<CharacterScript>().canBeChosen = false;
+			interviewee.GetComponent<SpriteRenderer>().color = Color.grey;
+		}
 		// reset interviewee
 		interviewee = null;
 		// change state
@@ -202,7 +207,7 @@ public class GameManager : MonoBehaviour
 		// tell player to hide itself and hand (if player exists)
 		if (player != null)
 		{
-			player.GetComponent<PlayerScript>().hideMeNHand = true;
+			player.GetComponent<PlayerScript>().disableMeNHand = true;
 		}
 		// set roster pos
 		for (int i = 0; i < roster.Count; i++)
@@ -214,7 +219,7 @@ public class GameManager : MonoBehaviour
 
 	public void ActivatePlayer()
 	{
-		player.GetComponent<PlayerScript>().hideMeNHand = false;
+		player.GetComponent<PlayerScript>().disableMeNHand = false;
 		foreach (var card in player.GetComponent<PlayerScript>().hand)
 		{
 			card.GetComponent<SpriteRenderer>().enabled = true;

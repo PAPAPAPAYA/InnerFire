@@ -17,6 +17,9 @@ public class CharacterScript : MonoBehaviour
 
 	public bool destoryMe = false;
 
+	public bool re_interview_ability = false;
+	public bool canBeChosen = true;
+
 	private void Start()
 	{
 		// store og pos and og scale
@@ -27,7 +30,7 @@ public class CharacterScript : MonoBehaviour
 	private void OnMouseDown()
 	{
 		// if in choose state, clicking the chara set the chara as the interviewee, change state to interview
-		if (GameManager.me.state == GameManager.me.choose)
+		if (GameManager.me.state == GameManager.me.choose && canBeChosen)
 		{
 			GameManager.me.interviewee = gameObject;
 			// if already exists, don't add again
@@ -55,6 +58,7 @@ public class CharacterScript : MonoBehaviour
 	{
 		if (destoryMe)
 		{
+			GameManager.me.roster.Remove(gameObject);
 			Destroy(gameObject);
 		}
 	}

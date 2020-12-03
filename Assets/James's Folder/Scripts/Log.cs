@@ -14,7 +14,7 @@
 	// *让玩家可以在弹出选项后后退？
 // 受访者
 	// 显示人物名称
-	// 加上可否二次采访的选项
+	// x加上可否二次采访的选项
 	// x加上cardless dialogue的每个选项的触发条件
 		// x没有cardless dialogue拥有能触发的选项的话，不激活cardless dialogue manager
 		// x每个选项上记录是否满足触发条件
