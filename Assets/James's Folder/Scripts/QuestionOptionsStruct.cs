@@ -6,6 +6,7 @@ using UnityEngine;
 public struct QuestionOptionsStruct
 {
     // one question can lead to a list of dialogues, gives card(s) after dialogue, change relationship (if viable)
+    public List<GameObject> preconditionCharas;
     public string question;
     [TextArea]
     public List<string> dialogues;
@@ -16,4 +17,5 @@ public struct QuestionOptionsStruct
     public List<GameObject> cardsLimitedTo;
     public List<GameObject> cardsItDestroys;
     public bool shown;
+    public bool precondition_met;
 }

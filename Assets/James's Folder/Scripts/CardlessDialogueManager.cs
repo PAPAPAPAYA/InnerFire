@@ -24,26 +24,44 @@ public class CardlessDialogueManager : MonoBehaviour
 
 	public void ShowQuestionButtons()
 	{
-		for (int i = 0; i < QuestionOptionsManager.me.questionButtons.Count; i++)
+		for (int i = 0; i < currentListOf_questionOptions.Count; i++)
 		{
-			if (currentListOf_questionOptions.Count > 0 && !currentListOf_questionOptions[i].shown) // questiong option not shown
+			// show buttons
+			if (currentListOf_questionOptions.Count > 0 && !currentListOf_questionOptions[i].shown) 
 			{
-				QuestionOptionsManager.me.questionButtons[i].SetActive(true);
-				QuestionOptionsManager.me.buttonTexts[i].text = currentListOf_questionOptions[i].question;
-				var temp = currentListOf_questionOptions[i];
-				temp.shown = true;
-				currentListOf_questionOptions[i] = temp;
-			}
-			else // if all the cardless dialogues are shown
-			{
-				// instantiate player
-				if (GameManager.me.player == null)
+				if (currentListOf_questionOptions[i].preconditionCharas.Count > 0) // if there is a precondition to meet
 				{
-					GameManager.me.player = Instantiate(GameManager.me.playerPrefab);
+					// check if precondition charas are in interviewed list
+					for (int j = 0; j < GameManager.me.interviewed.Count; j++)
+					{
+						for (int k = 0; k < currentListOf_questionOptions[i].preconditionCharas.Count; k++)
+						{
+							if (GameManager.me.interviewed[j].name == currentListOf_questionOptions[i].preconditionCharas[k].name + "(Clone)")
+							{
+								QuestionOptionsManager.me.questionButtons[i].SetActive(true);
+								QuestionOptionsManager.me.buttonTexts[i].text = currentListOf_questionOptions[i].question;
+								var temp = currentListOf_questionOptions[i];
+								temp.shown = true;
+								currentListOf_questionOptions[i] = temp;
+								GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished = false;
+							}
+						}
+					}
 				}
-				// set dDispalyer to display defualt message and reset and disable self
+				else
+				{
+					QuestionOptionsManager.me.questionButtons[i].SetActive(true);
+					QuestionOptionsManager.me.buttonTexts[i].text = currentListOf_questionOptions[i].question;
+					var temp = currentListOf_questionOptions[i];
+					temp.shown = true;
+					currentListOf_questionOptions[i] = temp;
+					GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished = false;
+				}
+			}
+			else if (questionChosen != 0) // if dialogue is finished
+			{
 				DialogueManagerScript.me.currentDialogue = GameManager.me.interviewee.GetComponent<CharacterScript>().defaultDialogues;
-				DialogueManagerScript.me.dDisplayer.text = DialogueManagerScript.me.currentDialogue[0];
+				DialogueManagerScript.me.dDisplayer.text = DialogueManagerScript.me.currentDialogue[DialogueManagerScript.me.currentDialogue.Count-1];
 				DialogueManagerScript.me.index = 0;
 				questionChosen = 0;
 				index_cardlessDialogues = 0;
@@ -52,6 +70,7 @@ public class CardlessDialogueManager : MonoBehaviour
 				currentListOf_questionOptions.Clear();
 				GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished = true;
 				gameObject.SetActive(false);
+				
 				// show player
 				if (GameManager.me.player != null && GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand)
 				{
@@ -66,7 +85,7 @@ public class CardlessDialogueManager : MonoBehaviour
 		currentListOf_correspondingDialogues = currentListOf_questionOptions[questionChosen - 1].dialogues;
 	}
 
-	public void CardlessDialogueEnd_Actions()
+	public void CardlessDialogue_processCards()
 	{
 		// based on the question chosen
 		// add the card prefabs to player's hand 
@@ -107,7 +126,6 @@ public class CardlessDialogueManager : MonoBehaviour
 		{
 			foreach (var card in currentListOf_questionOptions[questionChosen - 1].cardsItDestroys)
 			{
-				//PlayerScript.me.DestroyCard(card.name);
 				GameManager.me.player.GetComponent<PlayerScript>().DestroyCard(card.name);
 			}
 		}

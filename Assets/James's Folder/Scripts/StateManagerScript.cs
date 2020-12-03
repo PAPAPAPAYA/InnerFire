@@ -80,6 +80,7 @@ public class StateManagerScript : MonoBehaviour
 			gMS.characterPrefabs.Add(dayOne_charas[i]);
 		}
 		UnlockChara(Charas.mayor1);
+		UnlockChara(Charas.grandma);
 		ResetCardPrefabs();
 		gMS.state = gMS.choose;
 	}

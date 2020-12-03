@@ -153,23 +153,15 @@ MonoBehaviour:
   defaultDialogues:
   - 1
   - 2
+  - 
   cardlessDialogues:
   - options:
-    - question: 1
+    - preconditionCharas:
+      - {fileID: 648202926039254858, guid: 69d08561d83019445ae7adecb7430e89, type: 3}
+      question: 1
       dialogues:
-      - 1 - 1
-      - 1 - 2
-      cardsItGives: []
-      relationshipChangeAmount: 0
-      charasToUnlock: 01000000
-      cardsItLimits: []
-      cardsLimitedTo: []
-      cardsItDestroys: []
-      shown: 0
-    - question: 2
-      dialogues:
-      - '2 - 1 '
-      - 2 - 2
+      - 1-1
+      - 1-2
       cardsItGives: []
       relationshipChangeAmount: 0
       charasToUnlock: 
@@ -177,11 +169,57 @@ MonoBehaviour:
       cardsLimitedTo: []
       cardsItDestroys: []
       shown: 0
+      precondition_met: 0
+    - preconditionCharas:
+      - {fileID: 648202926039254858, guid: cd853518ff28cbd45b0b7a6b30db6925, type: 3}
+      question: 2
+      dialogues:
+      - 2-1
+      - 2-2
+      cardsItGives: []
+      relationshipChangeAmount: 0
+      charasToUnlock: 
+      cardsItLimits: []
+      cardsLimitedTo: []
+      cardsItDestroys: []
+      shown: 0
+      precondition_met: 0
+    noneOptionUnlocked: 0
+  - options:
+    - preconditionCharas:
+      - {fileID: 648202926039254858, guid: 69d08561d83019445ae7adecb7430e89, type: 3}
+      question: 1
+      dialogues:
+      - 1-1
+      - 1-2
+      cardsItGives: []
+      relationshipChangeAmount: 0
+      charasToUnlock: 
+      cardsItLimits: []
+      cardsLimitedTo: []
+      cardsItDestroys: []
+      shown: 0
+      precondition_met: 0
+    - preconditionCharas: []
+      question: 2
+      dialogues:
+      - 2-1 no precondition
+      - 2-2 no precondition
+      cardsItGives: []
+      relationshipChangeAmount: 0
+      charasToUnlock: 
+      cardsItLimits: []
+      cardsLimitedTo: []
+      cardsItDestroys: []
+      shown: 0
+      precondition_met: 0
+    noneOptionUnlocked: 0
   relationship: 0
   ogPos: {x: 0, y: 0, z: 0}
   ogScale: {x: 0, y: 0, z: 0}
   cardlessDialogueFinished: 0
   unlocked: 1
+  destoryMe: 0
 --- !u!61 &-7973237963578344564
 BoxCollider2D:
   m_ObjectHideFlags: 0

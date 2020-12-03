@@ -53,6 +53,7 @@ public class PlayerScript : MonoBehaviour
 		{
 			Vector3 pos = new Vector3(handSect_startPos.x + (i + 1) * handSect_length / (hand.Count + 1), handSect_startPos.y, 0);
 			hand[i].transform.position = pos;
+			//hand[i].GetComponent<SpriteRenderer>().enabled = true;
 		}
 	}
 
@@ -63,7 +64,6 @@ public class PlayerScript : MonoBehaviour
 		{
 			if (card.name == cardName + "(Clone)")
 			{
-				print("destroy " + cardName + "(Clone)");
 				cardsToRemove.Add(card);
 				card.GetComponent<CardScript>().destroyMe = true;
 			}

@@ -99,6 +99,7 @@ public class CardScript : MonoBehaviour
 					CardUsageScript.me.cardInUsed = gameObject; // set card in used
 					CardUsageScript.me.cardId = id; // set card in used id
 					CardUsageScript.me.showButtons = true;
+					GetComponent<SpriteRenderer>().enabled = false;
 				}
 				else
 				{

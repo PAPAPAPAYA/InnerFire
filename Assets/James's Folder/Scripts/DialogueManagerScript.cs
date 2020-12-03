@@ -50,22 +50,19 @@ public class DialogueManagerScript : MonoBehaviour
 			{
 				index++; // add one to index
 			}
-			else // if dialogue is finished
+			else // if current dialogue is finished
 			{
-				index = 0; // reset index to the start of the dialogue
+				if (GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogues.Count <= 0)
+				{
+					GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished = true;
+				}
+				index = currentDialogue.Count - 1; // lock the dialogue at the last index
 				if (myApproach != Approaches.na) // if the dialogue being displayed is not default dialogue
 				{
-					
-					CardDialogueEnd_Actions(); // give player the card this appro().ach gives; unlock characters; change relationship
+					CardDialogueEnd_Actions(); // give player the card this approach gives; unlock characters; change relationship
 					CardUsageScript.me.cardInUsed = null;
 					CardUsageScript.me.showButtons = true;
-					// if player is disabled, activate it
-					if (GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand)
-					{
-						//GameManager.me.ActivatePlayer();
-					}
-					
-					myApproach = Approaches.na; // set my approach
+					myApproach = Approaches.na;
 					chunk = default;
 				}
 				else
@@ -74,6 +71,12 @@ public class DialogueManagerScript : MonoBehaviour
 					{
 						// give CDM the list of cardless dialogues
 						CardlessDialogueManager.me.SetCurrentListOf_CD(GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogues);
+						// check if the cardless dialogue has any unlocked options, if none, skip it
+						if (CardlessDialogueManager.me.currentListOf_cardlessDialogue[CardlessDialogueManager.me.index_cardlessDialogues].noneOptionUnlocked)
+						{
+							CardlessDialogueManager.me.index_cardlessDialogues++;
+						}
+						
 						// show question buttons
 						CardlessDialogueManager.me.ShowQuestionButtons();
 						// advance cardless dialogues
@@ -81,6 +84,10 @@ public class DialogueManagerScript : MonoBehaviour
 						{
 							CardlessDialogueManager.me.index_cardlessDialogues++;
 						}
+					}
+					else
+					{
+						GameManager.me.ActivatePlayer();
 					}
 				}
 			}
@@ -93,17 +100,20 @@ public class DialogueManagerScript : MonoBehaviour
 		// show default dialogue
 		if (myApproach == Approaches.na)
 		{
-			if (CardlessDialogueManager.me.questionChosen == 0 || CardlessDialogueManager.me.gameObject.activeSelf == false) // no question chosen or no cardless dialogue manager
+			if (GameManager.me.cardlessDialogueManager.activeSelf == false || 
+				CardlessDialogueManager.me.questionChosen == 0) // no question chosen or no cardless dialogue manager
 			{
-				currentDialogue = interviewee.GetComponent<CharacterScript>().defaultDialogues;
-				dDisplayer.text = currentDialogue[index];
+				if (!GameManager.me.interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished)
+				{
+					currentDialogue = interviewee.GetComponent<CharacterScript>().defaultDialogues;
+					dDisplayer.text = currentDialogue[index];
+				}
 			}
 			else
 			{
 				currentDialogue = CardlessDialogueManager.me.currentListOf_correspondingDialogues;
 				dDisplayer.text = currentDialogue[index];
 			}
-			
 		}
 		// show inquire/trade/threaten dialogue
 		else
@@ -156,6 +166,10 @@ public class DialogueManagerScript : MonoBehaviour
 
 	public void CardDialogueEnd_Actions()
 	{
+		if (GameManager.me.player.GetComponent<PlayerScript>().hideMeNHand)
+		{
+			GameManager.me.ActivatePlayer();
+		}
 		// inquire approach
 		if (myApproach == Approaches.inquire)
 		{

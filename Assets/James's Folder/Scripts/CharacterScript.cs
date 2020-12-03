@@ -30,6 +30,19 @@ public class CharacterScript : MonoBehaviour
 		if (GameManager.me.state == GameManager.me.choose)
 		{
 			GameManager.me.interviewee = gameObject;
+			// if already exists, don't add again
+			int time = 0;
+			foreach (var chara in GameManager.me.interviewed)
+			{
+				if (chara.name == gameObject.name)
+				{
+					time++;
+				}
+			}
+			if (time == 0)
+			{
+				GameManager.me.interviewed.Add(gameObject);
+			}
 		}
 		// if in interview state, clicking the chara advance the dialogue
 		else if (GameManager.me.state == GameManager.me.interview)

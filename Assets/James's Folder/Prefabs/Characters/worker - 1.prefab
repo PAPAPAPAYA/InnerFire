@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 648202926039254859}
   - component: {fileID: -7973237963578344564}
   m_Layer: 0
-  m_Name: grandma - 1
+  m_Name: worker - 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c8160ea0b180ff84e987b05bee94fc58, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.711501, g: 1, b: 0.3726415, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,125 +95,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc78b61d1abea0c489c145ca387b69a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogues:
-  - preconditions: 
-    triggerIDs: 
-    dialogue_inquiring:
-    - yo
-    - hi
-    - you are inquiring
-    cards_inquiring: []
-    inquiringCard_given: 0
-    charasToUnlock_inquire: 
-    relationshipChangeAmount_inquire: 0
-    cardsToDestory_inquire: []
-    dialogue_threatened:
-    - wow
-    - this
-    - is
-    - very troublesome
-    cards_threatened: []
-    threatenedCard_given: 0
-    charasToUnlock_threat: 
-    relationshipChangeAmount_threat: 0
-    cardsToLimit_threat: []
-    cardsLimitedTo_threat: []
-    cardsToDestory_threat: []
-    dialogue_trading:
-    - i hate
-    - programming
-    cards_trading: []
-    tradingCard_given: 0
-    charasToUnlock_trade: 
-    relationshipChangeAmount_trading: 0
-    cardsToLimit_trade: []
-    cardsLimitedTo_trade: []
-    cardsToDestory_trade: []
-  - preconditions: 
-    triggerIDs: 00000000
-    dialogue_inquiring:
-    - oh
-    - so you want to know about this?
-    cards_inquiring:
-    - {fileID: 4270974583676908371, guid: df5dcaad410b70c47b84cdb261f9500b, type: 3}
-    inquiringCard_given: 0
-    charasToUnlock_inquire: 04000000
-    relationshipChangeAmount_inquire: 0
-    cardsToDestory_inquire: []
-    dialogue_threatened:
-    - ah
-    - i feel threatened
-    cards_threatened: []
-    threatenedCard_given: 0
-    charasToUnlock_threat: 
-    relationshipChangeAmount_threat: 0
-    cardsToLimit_threat: []
-    cardsLimitedTo_threat: []
-    cardsToDestory_threat: []
-    dialogue_trading:
-    - okay
-    - let's trade
-    cards_trading: []
-    tradingCard_given: 0
-    charasToUnlock_trade: 
-    relationshipChangeAmount_trading: 0
-    cardsToLimit_trade: []
-    cardsLimitedTo_trade: []
-    cardsToDestory_trade: []
-  - preconditions: 
-    triggerIDs: 01000000
-    dialogue_inquiring:
-    - oh 1
-    - so you want to know about this? 1
-    cards_inquiring: []
-    inquiringCard_given: 0
-    charasToUnlock_inquire: 
-    relationshipChangeAmount_inquire: 0
-    cardsToDestory_inquire: []
-    dialogue_threatened:
-    - ah 1
-    - i feel threatened 1
-    cards_threatened: []
-    threatenedCard_given: 0
-    charasToUnlock_threat: 
-    relationshipChangeAmount_threat: 0
-    cardsToLimit_threat: []
-    cardsLimitedTo_threat: []
-    cardsToDestory_threat: []
-    dialogue_trading:
-    - okay
-    - let's trade
-    cards_trading: []
-    tradingCard_given: 0
-    charasToUnlock_trade: 
-    relationshipChangeAmount_trading: 0
-    cardsToLimit_trade: []
-    cardsLimitedTo_trade: []
-    cardsToDestory_trade: []
+  dialogues: []
   defaultDialogues:
-  - sup d
-  - im grandma d
+  - "\u60A8\u597D\uFF0C\u6253\u6270\u4E00\u4E0B\uFF0C\u6211\u662F\u6765\u81EAxx\u793E\u7684\u8BB0\u8005\uFF0C\u60F3\u4E86\u89E3\u4E00\u4E0B\u54B1\u4EEC\u8FD9\u8FB9\u524D\u4E9B\u65F6\u5019\u53D1\u751F\u5927\u9003\u4EA1\u4E8B\u4EF6\u3002\u8BF7\u95EE\u60A8\u662F\u8BE5\u5316\u5DE5\u5382\u7684\u5DE5\u4EBA\u5417\u3002"
+  - "\u7537\u5B50\uFF1A\u55EF\uFF1F\u6211\u662F\u3002"
+  - "\u8BF7\u95EE\u60A8\u73B0\u5728\u6709\u65F6\u95F4\u5417\uFF0C\u53EF\u5426\u548C\u6211\u804A\u4E00\u804A\u5462\uFF1F"
+  - "\u7537\u5B50\uFF1A\u4E0D\u597D\u610F\u601D\uFF0C\u6211\u8D76\u65F6\u95F4\u3002"
+  - "\uFF08\u7537\u5B50\u62C9\u7740\u4E00\u540D\u5973\u6027\u51C6\u5907\u6253\u8F66\uFF09"
+  - 
   cardlessDialogues:
   - options:
-    - preconditionCharas: []
-      question: test question 1-1
+    - question: 1
       dialogues:
-      - test dialogue 1-1-1
-      - test dialogue 1-1-2
-      cardsItGives: []
+      - 1 - 1
+      - 1 - 2
+      cardsItGives:
+      - {fileID: 0}
       relationshipChangeAmount: 0
-      charasToUnlock: 04000000
+      charasToUnlock: 01000000
       cardsItLimits: []
       cardsLimitedTo: []
       cardsItDestroys: []
       shown: 0
-      precondition_met: 0
-    - preconditionCharas: []
-      question: test question 1-2
+    - question: 2
       dialogues:
-      - test dialogue 1-2-1
-      - test dialogue 1-2-2
-      - test dialogue 1-2-3
+      - '2 - 1 '
+      - 2 - 2
       cardsItGives: []
       relationshipChangeAmount: 0
       charasToUnlock: 
@@ -221,41 +128,11 @@ MonoBehaviour:
       cardsLimitedTo: []
       cardsItDestroys: []
       shown: 0
-      precondition_met: 0
-    noneOptionUnlocked: 0
-  - options:
-    - preconditionCharas: []
-      question: test question 2-1
-      dialogues:
-      - test dialogue 2-1-1
-      - test dialogue 2-1-2
-      cardsItGives: []
-      relationshipChangeAmount: 0
-      charasToUnlock: 
-      cardsItLimits: []
-      cardsLimitedTo: []
-      cardsItDestroys: []
-      shown: 0
-      precondition_met: 0
-    - preconditionCharas: []
-      question: test question 2-2
-      dialogues:
-      - test dialogue 2-2-1
-      - test dialogue 2-2-2
-      cardsItGives: []
-      relationshipChangeAmount: 0
-      charasToUnlock: 
-      cardsItLimits: []
-      cardsLimitedTo: []
-      cardsItDestroys: []
-      shown: 0
-      precondition_met: 0
-    noneOptionUnlocked: 0
   relationship: 0
   ogPos: {x: 0, y: 0, z: 0}
   ogScale: {x: 0, y: 0, z: 0}
   cardlessDialogueFinished: 0
-  unlocked: 1
+  unlocked: 0
   destoryMe: 0
 --- !u!61 &-7973237963578344564
 BoxCollider2D:

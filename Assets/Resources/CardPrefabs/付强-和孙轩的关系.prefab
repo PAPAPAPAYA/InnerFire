@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 5942573919257366548}
   - component: {fileID: 3977834750213161260}
   m_Layer: 0
-  m_Name: test card 3
+  m_Name: "\u4ED8\u5F3A-\u548C\u5B59\u8F69\u7684\u5173\u7CFB"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3afcc3c44cce73d4f9313cd6d75c8a09, type: 3}
-  m_Color: {r: 0.56078434, g: 0.63256365, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8624701, b: 0.56078434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -195,10 +195,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13172fdcf8e05b34cad9fe429042323d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
-  namae: the Great Escape was Bad
-  description: it was real bad
+  id: 2
+  namae: "\u4ED8\u5F3A-\u548C\u5B59\u8F69\u7684\u5173\u7CFB"
+  description: placeholder
   infoDisplay: {fileID: 1079076617599350307}
+  limited: 0
+  limitedTo: []
+  promisedTo: {fileID: 0}
+  charasIWasUsedTo: []
+  howIWasUsed: 
+  destroyMe: 0
+  canBeDragged: 0
 --- !u!61 &3977834750213161260
 BoxCollider2D:
   m_ObjectHideFlags: 0

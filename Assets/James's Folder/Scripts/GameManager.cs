@@ -27,20 +27,8 @@ public class GameManager : MonoBehaviour
 	// cardless dialogue
 	public GameObject cardlessDialogueManager;
 
-	//
-	//public GameObject grandmaP;
-	//public GameObject mayor1P;
-	//public GameObject mayor2P;
-	//public GameObject farmer1P;
-	//public GameObject farmer2P;
-	//public GameObject worker1P;
-	//public GameObject worker2P;
-	//public GameObject factory1P;
-	//public GameObject factory2P;
-	//public GameObject young1P;
-	//public GameObject young2P;
-	//public GameObject doc1P;
-	//public GameObject doc2P;
+	// record who the player has already interviewed
+	public List<GameObject> interviewed;
 
 	private void Start()
 	{
@@ -116,9 +104,50 @@ public class GameManager : MonoBehaviour
 			else if (interviewee != null)
 			{
 				// activate cardless dialogue manager if the cardless dialogue for the selected chara hasn't been shown
-				if (!interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished)
+				if (!interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished) 
 				{
-					cardlessDialogueManager.SetActive(true);
+					if (interviewee.GetComponent<CharacterScript>().cardlessDialogues.Count > 0) // if the interviewee has at least one cardless dialogue
+					{
+						CheckQuestionOptionsPrecondition(); // check each option in each dialogue and mark each option if its precondition is met
+						int preconditionMetTimes = 0;
+						// check each dialogue and mark each dialgoue if none of its option is unlocked
+						for (int i = 0; i < interviewee.GetComponent<CharacterScript>().cardlessDialogues.Count; i++)
+						{
+							for (int j = 0; j < interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options.Count; j++)
+							{
+								if (interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options[j].precondition_met)
+								{
+									preconditionMetTimes++;
+								}
+							}
+							// if none of the option is unlocked, set noneOptionUnlocked to true
+							if (preconditionMetTimes == 0)
+							{
+								CardlessDialogueStruct thisCDstruct = interviewee.GetComponent<CharacterScript>().cardlessDialogues[i];
+								thisCDstruct.noneOptionUnlocked = true;
+								interviewee.GetComponent<CharacterScript>().cardlessDialogues[i] = thisCDstruct;
+							}
+							else // if there is at least one option unlocked, set noneOptionUnlocked to false
+							{
+								CardlessDialogueStruct thisCDstruct = interviewee.GetComponent<CharacterScript>().cardlessDialogues[i];
+								thisCDstruct.noneOptionUnlocked = false;
+								interviewee.GetComponent<CharacterScript>().cardlessDialogues[i] = thisCDstruct;
+							}
+						}
+						// if none of the dialogue has unlocked option, don't activate the cardless Dialogue Manager
+						int noneOptionUnlockedTimes = 0;
+						foreach (var dialogue in interviewee.GetComponent<CharacterScript>().cardlessDialogues)
+						{
+							if (dialogue.noneOptionUnlocked)
+							{
+								noneOptionUnlockedTimes++;
+							}
+						}
+						if (noneOptionUnlockedTimes < interviewee.GetComponent<CharacterScript>().cardlessDialogues.Count)
+						{
+							cardlessDialogueManager.SetActive(true);
+						}
+					}
 				}
 				else
 				{
@@ -131,7 +160,6 @@ public class GameManager : MonoBehaviour
 					{
 						if (player.GetComponent<PlayerScript>().hideMeNHand)
 						{
-							print("activate player");
 							ActivatePlayer();
 						}
 					}
@@ -189,9 +217,47 @@ public class GameManager : MonoBehaviour
 		player.GetComponent<PlayerScript>().hideMeNHand = false;
 		foreach (var card in player.GetComponent<PlayerScript>().hand)
 		{
-			//card.GetComponent<SpriteRenderer>().enabled = true;
+			card.GetComponent<SpriteRenderer>().enabled = true;
 			card.GetComponent<CardScript>().canBeDragged = true;
 		}
 		player.GetComponent<PlayerScript>().ArrangeCards();
+	}
+
+	private void CheckQuestionOptionsPrecondition()
+	{
+		for (int i = 0; i < interviewee.GetComponent<CharacterScript>().cardlessDialogues.Count; i++) // look at all the cardless dialogues of the interviewee
+		{
+			for (int j = 0; j < interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options.Count; j++) // look at all the options of each cardless dialogues
+			{
+				if (interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options[j].preconditionCharas.Count > 0)
+				{
+					int matchTimes = 0;
+					for (int k = 0; k < interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options[j].preconditionCharas.Count; k++) // look at all the precondition of each option
+					{
+						for (int q = 0; q < interviewed.Count; q++) // compare the precondition with interviewed
+						{
+							if (interviewed[q].name == interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options[j].preconditionCharas[k].name + "(Clone)")
+							{
+								matchTimes++; // if there is a match, matchTimes++;
+							}
+						}
+					}
+					if (matchTimes == interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options[j].preconditionCharas.Count) // if matchTimes equals the number of preconditions
+					{
+						// set precondition_met to true;
+						QuestionOptionsStruct thisOption = interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options[j];
+						thisOption.precondition_met = true;
+						interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options[j] = thisOption;
+					}
+				}
+				else
+				{
+					QuestionOptionsStruct thisOption = interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options[j];
+					thisOption.precondition_met = true;
+					interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options[j] = thisOption;
+				}
+			}
+		}
+		
 	}
 }

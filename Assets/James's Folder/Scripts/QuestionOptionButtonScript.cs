@@ -12,6 +12,6 @@ public class QuestionOptionButtonScript : MonoBehaviour
 		CardlessDialogueManager.me.questionChosen = number;
 		DialogueManagerScript.me.index = 0;
 		CardlessDialogueManager.me.SetCurrent_correspondingDialogues();
-		CardlessDialogueManager.me.CardlessDialogueEnd_Actions();
+		CardlessDialogueManager.me.CardlessDialogue_processCards();
 	}
 }
