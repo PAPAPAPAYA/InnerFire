@@ -13,5 +13,6 @@ public class QuestionOptionButtonScript : MonoBehaviour
 		DialogueManagerScript.me.index = 0;
 		CardlessDialogueManager.me.SetCurrent_correspondingDialogues();
 		CardlessDialogueManager.me.Check_relationship_then_endActions();
+		GameManager.me.interviewee.GetComponent<CharacterScript>().canAdvanceDialogue = true;
 	}
 }

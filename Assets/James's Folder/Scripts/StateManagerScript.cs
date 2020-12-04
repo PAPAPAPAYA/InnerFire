@@ -88,7 +88,11 @@ public class StateManagerScript : MonoBehaviour
 
 	public void EnterDayTwo()
 	{
-		gMS.ExitInterview();
+		if (gMS.interviewee != null)
+		{
+			gMS.ExitInterview();
+		}
+		
 		gMS.characterPrefabs.Clear();
 		for (int i = 0; i < dayTwo_charas.Count; i++)
 		{

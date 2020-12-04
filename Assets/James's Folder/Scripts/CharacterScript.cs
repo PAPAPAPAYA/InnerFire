@@ -25,6 +25,9 @@ public class CharacterScript : MonoBehaviour
 	// display info (currently only name)
 	public TextMeshProUGUI info;
 
+	// can be clicked
+	public bool canAdvanceDialogue = true;
+
 	private void Start()
 	{
 		// store og pos and og scale
@@ -42,7 +45,8 @@ public class CharacterScript : MonoBehaviour
 			int time = 0;
 			foreach (var chara in GameManager.me.interviewed)
 			{
-				if (chara.name == gameObject.name)
+				if (chara != null &&
+					chara.name == gameObject.name)
 				{
 					time++;
 				}
@@ -53,7 +57,8 @@ public class CharacterScript : MonoBehaviour
 			}
 		}
 		// if in interview state, clicking the chara advance the dialogue
-		else if (GameManager.me.state == GameManager.me.interview)
+		else if (GameManager.me.state == GameManager.me.interview &&
+				 canAdvanceDialogue)
 		{
 			DialogueManagerScript.me.AdvanceDialogue();
 		}
@@ -63,7 +68,7 @@ public class CharacterScript : MonoBehaviour
 	{
 		if (GameManager.me.state == GameManager.me.choose)
 		{
-			info.text = namae;
+			info.text = namae + " 好感度: " + relationship;
 		}
 		else
 		{

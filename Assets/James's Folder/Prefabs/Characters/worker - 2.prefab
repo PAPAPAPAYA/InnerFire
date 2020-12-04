@@ -1153,6 +1153,7 @@ MonoBehaviour:
       dialogues:
       - "\u4E00\u5E2E\u53EA\u5173\u5FC3\u81EA\u5DF1\u7684\u5927\u9886\u5BFC\u7F62\u4E86,
         \u6D3B\u5168\u662F\u6211\u4EEC\u5E72, \u94B1\u5374\u4E0D\u5F52\u6211\u4EEC"
+      - 
       cardsItGives:
       - {fileID: 4270974583676908371, guid: 671d8104535348c45a2fb88849e9c90a, type: 3}
       relationshipChangeAmount: 0
@@ -1163,6 +1164,7 @@ MonoBehaviour:
       dialogues_p:
       - "\u4E00\u5E2E\u53EA\u5173\u5FC3\u81EA\u5DF1\u7684\u5927\u9886\u5BFC\u7F62\u4E86,
         \u6D3B\u5168\u662F\u6211\u4EEC\u5E72, \u94B1\u5374\u4E0D\u5F52\u6211\u4EEC"
+      - 
       cardsItGives_p:
       - {fileID: 4270974583676908371, guid: 671d8104535348c45a2fb88849e9c90a, type: 3}
       relationshipChangeAmount_p: 0
@@ -1172,6 +1174,7 @@ MonoBehaviour:
       cardsItDestroys_p: []
       dialogues_n:
       - "\u4E0D\u60F3\u8DDF\u4F60\u8BF4\u8BDD..."
+      - 
       cardsItGives_n: []
       relationshipChangeAmount_n: 0
       charasToUnlock_n: 
@@ -1186,6 +1189,7 @@ MonoBehaviour:
       precondition_met: 0
       dialogues:
       - "\u5382\u957F\u6709\u65F6\u5019\u4F1A\u4E3A\u4E86\u7701\u4E8B\u62D6\u597D\u51E0\u5929\u4E0D\u6254\u5316\u5B66\u5E9F\u6599...\u4E0D\u662F\u4EC0\u4E48\u5927\u4E8B"
+      - 
       cardsItGives: []
       relationshipChangeAmount: 0
       charasToUnlock: 
@@ -1194,6 +1198,7 @@ MonoBehaviour:
       cardsItDestroys: []
       dialogues_p:
       - "\u5382\u957F\u6709\u65F6\u5019\u4F1A\u4E3A\u4E86\u7701\u4E8B\u62D6\u597D\u51E0\u5929\u4E0D\u6254\u5316\u5B66\u5E9F\u6599...\u4E0D\u662F\u4EC0\u4E48\u5927\u4E8B"
+      - 
       cardsItGives_p:
       - {fileID: 4270974583676908371, guid: 3f639e058e4b2ed4e9749271cfd7872d, type: 3}
       relationshipChangeAmount_p: 0
@@ -1203,6 +1208,7 @@ MonoBehaviour:
       cardsItDestroys_p: []
       dialogues_n:
       - "\u4E0D\u60F3\u8DDF\u4F60\u8BF4\u8BDD..."
+      - 
       cardsItGives_n: []
       relationshipChangeAmount_n: 0
       charasToUnlock_n: 
@@ -1216,9 +1222,10 @@ MonoBehaviour:
   cardlessDialogueFinished: 0
   unlocked: 0
   destoryMe: 0
-  re_interview_ability: 0
+  re_interview_ability: 1
   canBeChosen: 1
   info: {fileID: 8417719885658614344}
+  canAdvanceDialogue: 1
 --- !u!61 &-7973237963578344564
 BoxCollider2D:
   m_ObjectHideFlags: 0

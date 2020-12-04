@@ -370,7 +370,7 @@ MonoBehaviour:
   cardlessDialogueFinished: 0
   unlocked: 1
   destoryMe: 0
-  re_interview_ability: 0
+  re_interview_ability: 1
   canBeChosen: 1
   info: {fileID: 1656577757}
 --- !u!61 &-7973237963578344564

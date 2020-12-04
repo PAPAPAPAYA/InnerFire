@@ -16,6 +16,9 @@
 	// 没有threaten/trade选项隐藏按钮
 	// 如果relationship已经是-1,无法继续减,如果是1,无法继续加
 	// 用过卡牌后能重复使用吗?
+	// x所有人物对话完才进入第二天
+	// xdebug用: 跳过第一天按钮[S]
+	// x显示人物关系
 // 受访者
 	// x显示人物名称
 	// x加上可否二次采访的选项
@@ -63,4 +66,4 @@
 	// xexiting the interview and reenter will spawn player even cardless dialogues haven't been finished
 	// xafter unlocking a new chara from a chara, reentering that chara and exit will arrange the characters in a strange way
 	// x进入采访后一直点人物会在选项出来之后但是没有选之前就显示返回按键
-	// cardless dialogue时，不进行选择直接点击人物能够直接去到下一个cardless dialogue
+	// xcardless dialogue时，不进行选择直接点击人物能够直接去到下一个cardless dialogue

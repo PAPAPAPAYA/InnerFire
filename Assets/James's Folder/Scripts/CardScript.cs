@@ -86,25 +86,43 @@ public class CardScript : MonoBehaviour
 				transform.position.y < interviewee_pos.y + interviewee.localScale.y / 2 &&
 				GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues.Count > 0)
 			{
-				// show options
-				int time = 0;
-				foreach (var chara in charasIWasUsedTo)
+				// hide dDisplayer
+				DialogueManagerScript.me.dDisplayer.gameObject.SetActive(false);
+				// if not a legal card on this character, send it back
+				foreach (var cardDialogue in GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues)
 				{
-					if (chara.name == interviewee.name)
+					foreach (var legalId in cardDialogue.triggerIDs)
 					{
-						time++;
+						if (legalId != id)
+						{
+							transform.position = og_pos;
+						}
+						else
+						{
+							// show options
+							// used card can't be used on the same character again
+							int time = 0;
+							foreach (var chara in charasIWasUsedTo)
+							{
+								if (chara != null &&
+									chara.name == interviewee.name)
+								{
+									time++;
+								}
+							}
+							if (time == 0)
+							{
+								CardUsageScript.me.cardInUsed = gameObject; // set card in used
+								CardUsageScript.me.cardId = id; // set card in used id
+								CardUsageScript.me.showButtons = true;
+								GetComponent<SpriteRenderer>().enabled = false;
+							}
+							else
+							{
+								transform.position = og_pos;
+							}
+						}
 					}
-				}
-				if (time == 0)
-				{
-					CardUsageScript.me.cardInUsed = gameObject; // set card in used
-					CardUsageScript.me.cardId = id; // set card in used id
-					CardUsageScript.me.showButtons = true;
-					GetComponent<SpriteRenderer>().enabled = false;
-				}
-				else
-				{
-					transform.position = og_pos;
 				}
 			}
 			else // if the card is released while not over the interviwee's picture, move the card back to its original position

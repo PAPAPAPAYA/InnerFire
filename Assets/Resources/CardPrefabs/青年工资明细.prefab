@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13172fdcf8e05b34cad9fe429042323d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
+  id: 20
   namae: "\u9752\u5E74\u5DE5\u8D44\u660E\u7EC6"
   description: "\u9752\u5E74\u5DE5\u8D44\u660E\u7EC6"
   infoDisplay: {fileID: 1079076617599350307}
@@ -299,8 +299,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 57864b3fce913cf4687f981544254246, type: 2}
+  m_sharedMaterial: {fileID: -3525995633598858701, guid: 57864b3fce913cf4687f981544254246,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

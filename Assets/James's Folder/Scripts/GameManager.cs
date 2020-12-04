@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class GameManager : MonoBehaviour
 	// record who the player has already interviewed
 	public List<GameObject> interviewed;
 
+	// relationship displayer
+	public TextMeshProUGUI relationship_D;
+
 	private void Start()
 	{
 		me = this;
@@ -52,8 +56,14 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.S))
+		{
+			StateManagerScript.me.state = StateManagerScript.States.dayTwo;
+			StateManagerScript.me.EnterDayTwo();
+		}
 		if (state == choose)
 		{
+			relationship_D.text = "";
 			// hide [back] button when choosing who to interview
 			backButton.SetActive(false);
 			// show characters
@@ -181,15 +191,21 @@ public class GameManager : MonoBehaviour
 				state = interview;
 			}
 		}
-		// when in interview (and cardless dialogues are finished), show [back] button
-		else if (state == interview && interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished)
+		else if (state == interview)
 		{
-			backButton.SetActive(true);
+			relationship_D.text = "好感度: " + interviewee.GetComponent<CharacterScript>().relationship;
+			// when in interview (and cardless dialogues are finished), show [back] button
+			if (interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished)
+			{
+				backButton.SetActive(true);
+			}
 		}
 	}
 
 	public void ExitInterview()
 	{
+		// reset index
+		DialogueManagerScript.me.index = 0;
 		// set interviewee back to before selected
 		interviewee.transform.position = interviewee.GetComponent<CharacterScript>().ogPos;
 		interviewee.transform.localScale = interviewee.GetComponent<CharacterScript>().ogScale;
@@ -198,8 +214,7 @@ public class GameManager : MonoBehaviour
 			interviewee.GetComponent<CharacterScript>().canBeChosen = false;
 			interviewee.GetComponent<SpriteRenderer>().color = Color.grey;
 		}
-		// reset interviewee
-		interviewee = null;
+		
 		// change state
 		state = choose;
 		// reset dialogue
@@ -215,6 +230,15 @@ public class GameManager : MonoBehaviour
 			Vector3 pos = new Vector3(rosterSect_startPos.x + (i + 1) * rosterSect_length / (roster.Count + 1), rosterSect_startPos.y, 0);
 			roster[i].transform.position = pos;
 		}
+		// check if enter day two
+		if (StateManagerScript.me.state == StateManagerScript.States.dayOne &&
+			interviewed.Count == unlockedCharaPrefabs.Count)
+		{
+			StateManagerScript.me.state = StateManagerScript.States.dayTwo;
+			StateManagerScript.me.EnterDayTwo();
+		}
+		// reset interviewee
+		interviewee = null;
 	}
 
 	public void ActivatePlayer()
@@ -241,7 +265,8 @@ public class GameManager : MonoBehaviour
 					{
 						for (int q = 0; q < interviewed.Count; q++) // compare the precondition with interviewed
 						{
-							if (interviewed[q].name == interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options[j].preconditionCharas[k].name + "(Clone)")
+							if (interviewed[q] != null &&
+								interviewed[q].name == interviewee.GetComponent<CharacterScript>().cardlessDialogues[i].options[j].preconditionCharas[k].name + "(Clone)")
 							{
 								matchTimes++; // if there is a match, matchTimes++;
 							}

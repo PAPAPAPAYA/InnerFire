@@ -62,6 +62,7 @@ public class DialogueManagerScript : MonoBehaviour
 					CardDialogueEnd_Actions(); // give player the card this approach gives; unlock characters; change relationship
 					CardUsageScript.me.cardInUsed = null;
 					CardUsageScript.me.showButtons = true;
+					//dDisplayer.gameObject.SetActive(false);
 					myApproach = Approaches.na;
 					chunk = default;
 				}
@@ -214,11 +215,7 @@ public class DialogueManagerScript : MonoBehaviour
 		
 		GameManager.me.player.GetComponent<PlayerScript>().ArrangeCards();
 		// check if advance to day 2
-		if (GameManager.me.interviewee.name == StateManagerScript.me.intervieweeToTriggerDayTwo.name + "(Clone)")
-		{
-			StateManagerScript.me.state = StateManagerScript.States.dayTwo;
-			StateManagerScript.me.EnterDayTwo();
-		}
+		
 	}
 
 	private void CheckCondition_thenEndAction(Approaches appr, int relationship)
@@ -336,8 +333,14 @@ public class DialogueManagerScript : MonoBehaviour
 		if (cardsToGive.Count > 0 &&
 			!cardGiven)
 		{
-			GameObject instantiatedCard = Instantiate(chunk.cards_trading_n[0]);
-			GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
+			foreach (var card in cardsToGive)
+			{
+				GameObject instantiatedCard = Instantiate(card);
+				instantiatedCard.GetComponent<CardScript>().canBeDragged = true;
+				GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
+				print(instantiatedCard.GetComponent<CardScript>().canBeDragged);
+			}
+			GameManager.me.player.GetComponent<PlayerScript>().ArrangeCards();
 			SetCardGiven();
 		}
 		// unlock charas

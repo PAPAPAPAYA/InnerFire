@@ -363,7 +363,7 @@ MonoBehaviour:
       - 
       cardsItGives: []
       relationshipChangeAmount: 0
-      charasToUnlock: 04000000
+      charasToUnlock: 
       cardsItLimits: []
       cardsLimitedTo: []
       cardsItDestroys: []

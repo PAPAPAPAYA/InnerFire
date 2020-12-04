@@ -548,7 +548,7 @@ MonoBehaviour:
       cardsItGives:
       - {fileID: 4270974583676908371, guid: 026ee6d6740e3004593e9e1a4877cd48, type: 3}
       relationshipChangeAmount: 0
-      charasToUnlock: 01000000
+      charasToUnlock: 
       cardsItLimits: []
       cardsLimitedTo: []
       cardsItDestroys: []
@@ -583,7 +583,7 @@ MonoBehaviour:
   cardlessDialogueFinished: 0
   unlocked: 1
   destoryMe: 0
-  re_interview_ability: 0
+  re_interview_ability: 1
   canBeChosen: 1
   info: {fileID: 9086214373307659450}
 --- !u!61 &-7973237963578344564

@@ -36,9 +36,12 @@ public class CardlessDialogueManager : MonoBehaviour
 					{
 						for (int k = 0; k < currentListOf_questionOptions[i].preconditionCharas.Count; k++)
 						{
-							if (GameManager.me.interviewed[j].name == currentListOf_questionOptions[i].preconditionCharas[k].name + "(Clone)")
+							if (GameManager.me.interviewed[j] != null &&
+								GameManager.me.interviewed[j].name == currentListOf_questionOptions[i].preconditionCharas[k].name + "(Clone)")
 							{
 								QuestionOptionsManager.me.questionButtons[i].SetActive(true);
+								GameManager.me.interviewee.GetComponent<CharacterScript>().canAdvanceDialogue = false;
+								print(GameManager.me.interviewee.name);
 								QuestionOptionsManager.me.buttonTexts[i].text = currentListOf_questionOptions[i].question;
 								var temp = currentListOf_questionOptions[i];
 								temp.shown = true;
@@ -51,6 +54,8 @@ public class CardlessDialogueManager : MonoBehaviour
 				else
 				{
 					QuestionOptionsManager.me.questionButtons[i].SetActive(true);
+					GameManager.me.interviewee.GetComponent<CharacterScript>().canAdvanceDialogue = false;
+					print(GameManager.me.interviewee.name);
 					QuestionOptionsManager.me.buttonTexts[i].text = currentListOf_questionOptions[i].question;
 					var temp = currentListOf_questionOptions[i];
 					temp.shown = true;

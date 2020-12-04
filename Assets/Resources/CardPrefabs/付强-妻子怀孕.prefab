@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 5942573919257366548}
   - component: {fileID: 3977834750213161260}
   m_Layer: 0
-  m_Name: placeholder
+  m_Name: "\u4ED8\u5F3A-\u59BB\u5B50\u6000\u5B55"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,10 +195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13172fdcf8e05b34cad9fe429042323d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
-  namae: placeholder
-  description: placeholder
+  id: 8
+  namae: "\u4ED8\u5F3A-\u59BB\u5B50\u6000\u5B55"
+  description: "\u4ED8\u5F3A-\u59BB\u5B50\u6000\u5B55"
   infoDisplay: {fileID: 1079076617599350307}
+  og_pos: {x: 0, y: 0, z: 0}
   limited: 0
   limitedTo: []
   promisedTo: {fileID: 0}
@@ -298,8 +299,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 57864b3fce913cf4687f981544254246, type: 2}
+  m_sharedMaterial: {fileID: -3525995633598858701, guid: 57864b3fce913cf4687f981544254246,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

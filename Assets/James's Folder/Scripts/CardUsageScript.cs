@@ -48,6 +48,7 @@ public class CardUsageScript : MonoBehaviour
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.threaten;
 		cardInUsed.GetComponent<CardScript>().AddChara_n_approach(GameManager.me.interviewee, DialogueManagerScript.Approaches.threaten);
 		showButtons = false;
+		DialogueManagerScript.me.dDisplayer.gameObject.SetActive(true);
 	}
 	public void Trade()
 	{
@@ -56,6 +57,7 @@ public class CardUsageScript : MonoBehaviour
 		cardInUsed.GetComponent<CardScript>().charasIWasUsedTo.Add(GameManager.me.interviewee);
 		cardInUsed.GetComponent<CardScript>().howIWasUsed.Add(DialogueManagerScript.Approaches.trade);
 		showButtons = false;
+		DialogueManagerScript.me.dDisplayer.gameObject.SetActive(true);
 	}
 	public void Inquire()
 	{
@@ -64,6 +66,7 @@ public class CardUsageScript : MonoBehaviour
 		cardInUsed.GetComponent<CardScript>().charasIWasUsedTo.Add(GameManager.me.interviewee);
 		cardInUsed.GetComponent<CardScript>().howIWasUsed.Add(DialogueManagerScript.Approaches.inquire);
 		showButtons = false;
+		DialogueManagerScript.me.dDisplayer.gameObject.SetActive(true);
 	}
 
 	private void BreakPromise()
