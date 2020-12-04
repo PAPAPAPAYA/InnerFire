@@ -14,7 +14,7 @@ public class CardScript : MonoBehaviour
     public TextMeshProUGUI infoDisplay; // show description of the card
 
 	// drag and drop
-	private Vector3 og_pos; // show where the card was before being dragged around
+	public Vector3 og_pos; // show where the card was before being dragged around
 
 	// limit
 	public bool limited = false;

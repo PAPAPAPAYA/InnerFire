@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefabs:
-  - {fileID: 4270974583676908371, guid: fb3c16d63aaf222418cfa30108c47341, type: 3}
+  - {fileID: 4270974583676908371, guid: 8882c68edd4f22a489c9adfbc7d5f6d6, type: 3}
   hand: []
   handSect_startPos: {x: -10, y: -3.6, z: 0}
   handSect_length: 20
-  hideMeNHand: 0
+  disableMeNHand: 0

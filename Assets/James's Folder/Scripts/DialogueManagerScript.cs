@@ -127,30 +127,69 @@ public class DialogueManagerScript : MonoBehaviour
 					// if the trigger id matches the card in use
 					if (triggerID == CardUsageScript.me.cardId)
 					{
-						// show different text based on different approaches
-						if (myApproach == Approaches.inquire)
-						{
-							chunk = availableChunk;
-							dDisplayer.text = chunk.dialogue_inquiring[index];
-							currentDialogue = chunk.dialogue_inquiring;
-							ProcessCard();
-						}
-						else if (myApproach == Approaches.trade)
-						{
-							chunk = availableChunk;
-							dDisplayer.text = chunk.dialogue_trading[index];
-							currentDialogue = chunk.dialogue_trading;
-							ProcessCard();
-						}
-						else if (myApproach == Approaches.threaten)
-						{
-							chunk = availableChunk;
-							dDisplayer.text = chunk.dialogue_threatened[index];
-							currentDialogue = chunk.dialogue_threatened;
-							ProcessCard();
-						}
+						chunk = availableChunk;
+						SetUpDialogue(myApproach, GameManager.me.interviewee.GetComponent<CharacterScript>().relationship);
+						ProcessCard();
 					}
 				}
+			}
+		}
+	}
+
+	private void SetUpDialogue(Approaches appr, int relationship)
+	{
+		if (appr == Approaches.inquire)
+		{
+			if (relationship == 0)
+			{
+				dDisplayer.text = chunk.dialogue_inquiring[index];
+				currentDialogue = chunk.dialogue_inquiring;
+			}
+			else if (relationship > 0)
+			{
+				dDisplayer.text = chunk.dialogue_inquiring_p[index];
+				currentDialogue = chunk.dialogue_inquiring_p;
+			}
+			else if (relationship < 0)
+			{
+				dDisplayer.text = chunk.dialogue_inquiring_n[index];
+				currentDialogue = chunk.dialogue_inquiring_n;
+			}
+		}
+		else if (appr == Approaches.trade)
+		{
+			if (relationship == 0)
+			{
+				dDisplayer.text = chunk.dialogue_trading[index];
+				currentDialogue = chunk.dialogue_trading;
+			}
+			else if (relationship > 0)
+			{
+				dDisplayer.text = chunk.dialogue_trading_p[index];
+				currentDialogue = chunk.dialogue_trading_p;
+			}
+			else if (relationship < 0)
+			{
+				dDisplayer.text = chunk.dialogue_trading_n[index];
+				currentDialogue = chunk.dialogue_trading_n;
+			}
+		}
+		else if (appr == Approaches.threaten)
+		{
+			if (relationship == 0)
+			{
+				dDisplayer.text = chunk.dialogue_threatened[index];
+				currentDialogue = chunk.dialogue_threatened;
+			}
+			else if (relationship > 0)
+			{
+				dDisplayer.text = chunk.dialogue_threatened_p[index];
+				currentDialogue = chunk.dialogue_threatened_p;
+			}
+			else if (relationship < 0)
+			{
+				dDisplayer.text = chunk.dialogue_threatened_n[index];
+				currentDialogue = chunk.dialogue_threatened_n;
 			}
 		}
 	}
@@ -170,118 +209,9 @@ public class DialogueManagerScript : MonoBehaviour
 		{
 			GameManager.me.ActivatePlayer();
 		}
-		// inquire approach
-		if (myApproach == Approaches.inquire)
-		{
-			// give cards
-			if (chunk.cards_inquiring.Count > 0 &&
-				!chunk.inquiringCard_given)
-			{
-				GameObject instantiatedCard = Instantiate(chunk.cards_inquiring[0]);
-				GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
-				SetCardGiven();
-			}
-			// unlock charas
-			if (chunk.charasToUnlock_inquire.Count > 0)
-			{
-				foreach (var chara in chunk.charasToUnlock_inquire)
-				{
-					StateManagerScript.me.UnlockChara(chara);
-				}
-			}
-			// change relationship
-			GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += chunk.relationshipChangeAmount_inquire;
-			// destroy cards
-			if (chunk.cardsToDestory_inquire.Count > 0)
-			{
-				foreach (var card in chunk.cardsToDestory_inquire)
-				{
-					PlayerScript.me.DestroyCard(card.name);
-				}
-			}
-		}
-		// threatened approach
-		else if (myApproach == Approaches.threaten)
-		{
-			if (chunk.cards_threatened.Count > 0 &&
-				!chunk.threatenedCard_given)
-			{
-				GameObject instantiatedCard = Instantiate(chunk.cards_threatened[0]);
-				GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
-				SetCardGiven();
-			}
-			// unlock charas
-			if (chunk.charasToUnlock_threat.Count > 0)
-			{
-				foreach (var chara in chunk.charasToUnlock_threat)
-				{
-					StateManagerScript.me.UnlockChara(chara);
-				}
-			}
-			// change relationship
-			GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += chunk.relationshipChangeAmount_threat;
-			// limit cards
-			if (chunk.cardsToLimit_threat.Count > 0)
-			{
-				foreach (var card in chunk.cardsToLimit_threat)
-				{
-					card.GetComponent<CardScript>().limited = true;
-					foreach (var chara in chunk.cardsLimitedTo_threat)
-					{
-						card.GetComponent<CardScript>().limitedTo.Add(chara);
-					}
-					card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
-				}
-			}
-			// destroy cards
-			if (chunk.cardsToDestory_threat.Count > 0)
-			{
-				foreach (var card in chunk.cardsToDestory_threat)
-				{
-					PlayerScript.me.DestroyCard(card.name);
-				}
-			}
-		}
-		// trading approach
-		else if (myApproach == Approaches.trade)
-		{
-			// give card
-			if (chunk.cards_trading.Count > 0 &&
-				!chunk.tradingCard_given)
-			{
-				GameObject instantiatedCard = Instantiate(chunk.cards_trading[0]);
-				GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
-				SetCardGiven();
-			}
-			// unlock charas
-			if (chunk.charasToUnlock_trade.Count > 0)
-			{
-				foreach (var chara in chunk.charasToUnlock_trade)
-				{
-					StateManagerScript.me.UnlockChara(chara);
-				}
-			}
-			// change relationship
-			GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += chunk.relationshipChangeAmount_trading;
-			// limit cards
-			foreach (var card in chunk.cardsToLimit_trade)
-			{
-				card.GetComponent<CardScript>().limited = true;
-				foreach (var chara in chunk.cardsLimitedTo_trade)
-				{
-					card.GetComponent<CardScript>().limitedTo.Add(chara);
-				}
-				card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
-			}
-			// destroy cards
-			if (chunk.cardsToDestory_trade.Count > 0)
-			{
-				foreach (var card in chunk.cardsToDestory_trade)
-				{
-					PlayerScript.me.DestroyCard(card.name);
-				}
-			}
-		}
+
+		CheckCondition_thenEndAction(myApproach, GameManager.me.interviewee.GetComponent<CharacterScript>().relationship);
+		
 		GameManager.me.player.GetComponent<PlayerScript>().ArrangeCards();
 		// check if advance to day 2
 		if (GameManager.me.interviewee.name == StateManagerScript.me.intervieweeToTriggerDayTwo.name + "(Clone)")
@@ -289,7 +219,145 @@ public class DialogueManagerScript : MonoBehaviour
 			StateManagerScript.me.state = StateManagerScript.States.dayTwo;
 			StateManagerScript.me.EnterDayTwo();
 		}
-		
+	}
+
+	private void CheckCondition_thenEndAction(Approaches appr, int relationship)
+	{
+		if (appr == Approaches.inquire)
+		{
+			if (relationship == 0)
+			{
+				EndAction_with(chunk.cards_inquiring,
+							   chunk.inquiringCard_given,
+							   chunk.charasToUnlock_inquire,
+							   chunk.relationshipChangeAmount_inquire,
+							   chunk.cardsToLimit_inquire,
+							   chunk.cardsToDestory_inquire);
+			}
+			else if (relationship > 0)
+			{
+				EndAction_with(chunk.cards_inquiring_p,
+							   chunk.inquiringCard_given_p,
+							   chunk.charasToUnlock_inquire_p,
+							   chunk.relationshipChangeAmount_inquire_p,
+							   chunk.cardsToLimit_inquire_p,
+							   chunk.cardsToDestory_inquire_p);
+			}
+			else if (relationship < 0)
+			{
+				EndAction_with(chunk.cards_inquiring_n,
+							   chunk.inquiringCard_given_n,
+							   chunk.charasToUnlock_inquire_n,
+							   chunk.relationshipChangeAmount_inquire_n,
+							   chunk.cardsToLimit_inquire_n,
+							   chunk.cardsToDestory_inquire_n);
+			}
+		}
+		else if (appr == Approaches.trade)
+		{
+			if (relationship == 0)
+			{
+				EndAction_with(chunk.cards_trading,
+							   chunk.tradingCard_given,
+							   chunk.charasToUnlock_trade,
+							   chunk.relationshipChangeAmount_trading,
+							   chunk.cardsToLimit_trade,
+							   chunk.cardsToDestory_trade);
+			}
+			else if (relationship > 0)
+			{
+				EndAction_with(chunk.cards_trading_p,
+							   chunk.tradingCard_given_p,
+							   chunk.charasToUnlock_trade_p,
+							   chunk.relationshipChangeAmount_trading_p,
+							   chunk.cardsToLimit_trade_p,
+							   chunk.cardsToDestory_trade_p);
+			}
+			else if (relationship < 0)
+			{
+				EndAction_with(chunk.cards_trading_n,
+							   chunk.tradingCard_given_n,
+							   chunk.charasToUnlock_trade_n,
+							   chunk.relationshipChangeAmount_trading_n,
+							   chunk.cardsToLimit_trade_n,
+							   chunk.cardsToDestory_trade_n);
+			}
+		}
+		else if (appr == Approaches.threaten)
+		{
+			if (relationship == 0)
+			{
+				EndAction_with(chunk.cards_threatened,
+							   chunk.threatenedCard_given,
+							   chunk.charasToUnlock_threat,
+							   chunk.relationshipChangeAmount_threat,
+							   chunk.cardsToLimit_threat,
+							   chunk.cardsToDestory_threat);
+			}
+			else if (relationship > 0)
+			{
+				EndAction_with(chunk.cards_threatened_p,
+							   chunk.threatenedCard_given_p,
+							   chunk.charasToUnlock_threat_p,
+							   chunk.relationshipChangeAmount_threat_p,
+							   chunk.cardsToLimit_threat_p,
+							   chunk.cardsToDestory_threat_p);
+			}
+			else if (relationship < 0)
+			{
+				EndAction_with(chunk.cards_threatened_n,
+							   chunk.threatenedCard_given_n,
+							   chunk.charasToUnlock_threat_n,
+							   chunk.relationshipChangeAmount_threat_n,
+							   chunk.cardsToLimit_threat_n,
+							   chunk.cardsToDestory_threat_n);
+			}
+		}
+	}
+
+	private void EndAction_with(List<GameObject> cardsToGive, 
+								bool cardGiven, 
+								List<StateManagerScript.Charas> charasToUnlock, 
+								int relationship_changeAmount,
+								List<GameObject> cardsToLimit,
+								List<GameObject> cardsToDestroy)
+	{
+		// give card
+		if (cardsToGive.Count > 0 &&
+			!cardGiven)
+		{
+			GameObject instantiatedCard = Instantiate(chunk.cards_trading_n[0]);
+			GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
+			SetCardGiven();
+		}
+		// unlock charas
+		if (charasToUnlock.Count > 0)
+		{
+			foreach (var chara in charasToUnlock)
+			{
+				StateManagerScript.me.UnlockChara(chara);
+			}
+		}
+		// change relationship
+		GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += relationship_changeAmount;
+		// limit cards
+		foreach (var card in cardsToLimit)
+		{
+			card.GetComponent<CardScript>().limited = true;
+			foreach (var chara in cardsToLimit)
+			{
+				card.GetComponent<CardScript>().limitedTo.Add(chara);
+			}
+			card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
+		}
+		// destroy cards
+		if (cardsToDestroy.Count > 0)
+		{
+			foreach (var card in cardsToDestroy)
+			{
+				PlayerScript.me.DestroyCard(card.name);
+			}
+		}
 	}
 
 	private void SetCardGiven() // set a bool so that character won't give out cards again

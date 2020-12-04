@@ -36,10 +36,12 @@
 		// x改变关系
 			// xcardless
 			// xcard
-		// display different dialogues based on different relationship
-			// positive
-			// neutral
-			// negative
+		// 根据关系
+			// 触发不同的对话
+				// cardless
+				// card
+			// 提供不同的卡牌
+			// negative关系不触发cardless, 但可以用card
 // 玩家
 	// x显示手牌
 	// x使用手牌
@@ -49,6 +51,7 @@
 	// xuse character's defualt dialogue after selecting interviewee, not the one in dialogueStruct
 	// xdon't let player to threaten the same character with the same card more than once
 		// xrecord approach on card and character it was used on 
+	// 目前的字体库字体太少
 // bus
 	// xexiting the interview will not hide question options
 	// xexiting the interview and reenter will spawn player even cardless dialogues haven't been finished

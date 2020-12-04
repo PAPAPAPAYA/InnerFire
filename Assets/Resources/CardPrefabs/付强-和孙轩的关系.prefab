@@ -197,8 +197,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   namae: "\u4ED8\u5F3A-\u548C\u5B59\u8F69\u7684\u5173\u7CFB"
-  description: placeholder
+  description: "\u4ED8\u5F3A-\u548C\u5B59\u8F69\u7684\u5173\u7CFB"
   infoDisplay: {fileID: 1079076617599350307}
+  og_pos: {x: 0, y: 0, z: 0}
   limited: 0
   limitedTo: []
   promisedTo: {fileID: 0}

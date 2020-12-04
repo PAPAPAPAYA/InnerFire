@@ -53,7 +53,7 @@ public class PlayerScript : MonoBehaviour
 		{
 			Vector3 pos = new Vector3(handSect_startPos.x + (i + 1) * handSect_length / (hand.Count + 1), handSect_startPos.y, 0);
 			hand[i].transform.position = pos;
-			//hand[i].GetComponent<SpriteRenderer>().enabled = true;
+			hand[i].GetComponent<CardScript>().og_pos = hand[i].transform.position;
 		}
 	}
 

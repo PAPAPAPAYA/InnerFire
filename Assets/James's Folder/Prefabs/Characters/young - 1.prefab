@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 648202926039254859}
   - component: {fileID: -7973237963578344564}
   m_Layer: 0
-  m_Name: worker - 1
+  m_Name: young - 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,13 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc78b61d1abea0c489c145ca387b69a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  namae: "\u5DE5\u4EBA"
+  namae: "\u9752\u5E74"
   dialogues: []
   defaultDialogues:
-  - "\u60A8\u597D, \u6253\u6270\u4E00\u4E0B, \u6211\u662F\u6765\u81EAxx\u793E\u7684\u8BB0\u8005,
-    \u60F3\u4E86\u89E3\u4E00\u4E0B\u54B1\u4EEC\u8FD9\u8FB9\u524D\u4E9B\u65F6\u5019\u53D1\u751F\u5927\u9003\u4EA1\u4E8B\u4EF6,
-    \u8BF7\u95EE\u60A8\u662F\u8BE5\u5316\u5DE5\u5382\u7684\u5DE5\u4EBA\u5417?"
-  - "\u7537\u5B50: \u6069? \u6211\u662F"
+  - "\u60A8\u597D, \u6211\u662F\u5E02\u91CC\u7684\u8BB0\u8005"
+  - "\u542C\u8BF4\u60A8\u4E5F\u5728\u5382\u91CC\u4E0A\u73ED, "
   - "\u8BF7\u95EE\u60A8\u73B0\u5728\u6709\u65F6\u95F4\u5417, \u53EF\u5426\u548C\u6211\u804A\u4E00\u804A\u5462?"
   - "\u7537\u5B50: \u4E0D\u597D\u610F\u601D, \u6211\u8D76\u65F6\u95F4"
   - "(\u7537\u5B50\u62C9\u7740\u4E00\u540D\u5973\u6027\u51C6\u5907\u6253\u8F66)"
@@ -127,8 +125,7 @@ MonoBehaviour:
       cardsItDestroys: []
       shown: 0
       precondition_met: 0
-    - preconditionCharas:
-      - {fileID: 648202926039254858, guid: 2b27bb303d794244eb921f9db45f955a, type: 3}
+    - preconditionCharas: []
       question: "\u8BF7\u95EE\u4F60\u77E5\u9053\u5B59\u8F69\u5417"
       dialogues:
       - "\u7537\u5B50: \u5C0F\u8F69\u662F\u4E2A\u597D\u5B69\u5B50, \u5B5D\u987A,

@@ -65,6 +65,10 @@ public class CharacterScript : MonoBehaviour
 		{
 			info.text = namae;
 		}
+		else
+		{
+			info.text = "";
+		}
 	}
 
 	private void OnMouseExit()
