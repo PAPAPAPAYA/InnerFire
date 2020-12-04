@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CharacterScript : MonoBehaviour
 {
+	public string namae;
 	public List<DialogueStruct> dialogues; // stores all the dialogues for all the approaches
 	[TextArea]
 	public List<string> defaultDialogues;
@@ -19,6 +21,9 @@ public class CharacterScript : MonoBehaviour
 
 	public bool re_interview_ability = false;
 	public bool canBeChosen = true;
+
+	// display info (currently only name)
+	public TextMeshProUGUI info;
 
 	private void Start()
 	{
@@ -52,6 +57,19 @@ public class CharacterScript : MonoBehaviour
 		{
 			DialogueManagerScript.me.AdvanceDialogue();
 		}
+	}
+
+	private void OnMouseOver()
+	{
+		if (GameManager.me.state == GameManager.me.choose)
+		{
+			info.text = namae;
+		}
+	}
+
+	private void OnMouseExit()
+	{
+		info.text = "";
 	}
 
 	private void Update()

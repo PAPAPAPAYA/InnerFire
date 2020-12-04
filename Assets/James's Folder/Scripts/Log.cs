@@ -10,10 +10,10 @@
 	// *add an intro and a transition between day 1 and day 2
 	// xlet the player look at the card even when they can't use them
 	// *after player gain many cards, how to sort them?
-	// 显示中文
+	// x显示中文
 	// *让玩家可以在弹出选项后后退？
 // 受访者
-	// 显示人物名称
+	// x显示人物名称
 	// x加上可否二次采访的选项
 	// x加上cardless dialogue的每个选项的触发条件
 		// x没有cardless dialogue拥有能触发的选项的话，不激活cardless dialogue manager
