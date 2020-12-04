@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13172fdcf8e05b34cad9fe429042323d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
+  id: 4
   namae: "\u4ED8\u5F3A-\u548C\u5B59\u8F69\u7684\u5173\u7CFB"
   description: "\u4ED8\u5F3A-\u548C\u5B59\u8F69\u7684\u5173\u7CFB"
   infoDisplay: {fileID: 1079076617599350307}

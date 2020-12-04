@@ -195,11 +195,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13172fdcf8e05b34cad9fe429042323d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 1
   namae: "\u4ED8\u5F3A-\u4ECA\u65E5\u672A\u53BB\u5DE5\u5382\u4E0A\u73ED"
   description: "\u649E\u89C1\u4ED8\u5F3A\u7684\u65F6\u5019\u4ED6\u5306\u5306\u5FD9\u5FD9\u5730\u8981\u53BB\u533B\u9662,
     \u6240\u4EE5\u5E76\u6CA1\u6709\u53BB\u5DE5\u5382\u4E0A\u73ED"
   infoDisplay: {fileID: 1079076617599350307}
+  og_pos: {x: 0, y: 0, z: 0}
   limited: 0
   limitedTo: []
   promisedTo: {fileID: 0}

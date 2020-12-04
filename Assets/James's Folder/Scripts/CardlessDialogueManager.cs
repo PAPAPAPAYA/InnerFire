@@ -82,16 +82,64 @@ public class CardlessDialogueManager : MonoBehaviour
 
 	public void SetCurrent_correspondingDialogues()
 	{
-		currentListOf_correspondingDialogues = currentListOf_questionOptions[questionChosen - 1].dialogues;
+		if (GameManager.me.interviewee.GetComponent<CharacterScript>().relationship == 0)
+		{
+			currentListOf_correspondingDialogues = currentListOf_questionOptions[questionChosen - 1].dialogues;
+		}
+		else if (GameManager.me.interviewee.GetComponent<CharacterScript>().relationship == 1)
+		{
+			currentListOf_correspondingDialogues = currentListOf_questionOptions[questionChosen - 1].dialogues_p;
+		}
+		else if (GameManager.me.interviewee.GetComponent<CharacterScript>().relationship == -1)
+		{
+			currentListOf_correspondingDialogues = currentListOf_questionOptions[questionChosen - 1].dialogues_n;
+		}
 	}
 
-	public void CardlessDialogue_processCards()
+	public void Check_relationship_then_endActions()
+	{
+		int relationship = GameManager.me.interviewee.GetComponent<CharacterScript>().relationship;
+		if (relationship == 0)
+		{
+			CardlessDialogue_processCards(currentListOf_questionOptions[questionChosen - 1].cardsItGives,
+										  currentListOf_questionOptions[questionChosen - 1].relationshipChangeAmount,
+										  currentListOf_questionOptions[questionChosen - 1].charasToUnlock,
+										  currentListOf_questionOptions[questionChosen - 1].cardsItLimits,
+										  currentListOf_questionOptions[questionChosen - 1].cardsLimitedTo,
+										  currentListOf_questionOptions[questionChosen - 1].cardsItDestroys);
+		}
+		else if (relationship > 0)
+		{
+			CardlessDialogue_processCards(currentListOf_questionOptions[questionChosen - 1].cardsItGives_p,
+										  currentListOf_questionOptions[questionChosen - 1].relationshipChangeAmount_p,
+										  currentListOf_questionOptions[questionChosen - 1].charasToUnlock_p,
+										  currentListOf_questionOptions[questionChosen - 1].cardsItLimits_p,
+										  currentListOf_questionOptions[questionChosen - 1].cardsLimitedTo_p,
+										  currentListOf_questionOptions[questionChosen - 1].cardsItDestroys_p);
+		}
+		else if (relationship < 0)
+		{
+			CardlessDialogue_processCards(currentListOf_questionOptions[questionChosen - 1].cardsItGives_n,
+										  currentListOf_questionOptions[questionChosen - 1].relationshipChangeAmount_n,
+										  currentListOf_questionOptions[questionChosen - 1].charasToUnlock_n,
+										  currentListOf_questionOptions[questionChosen - 1].cardsItLimits_n,
+										  currentListOf_questionOptions[questionChosen - 1].cardsLimitedTo_n,
+										  currentListOf_questionOptions[questionChosen - 1].cardsItDestroys_n);
+		}
+	}
+
+	public void CardlessDialogue_processCards(List<GameObject> cardsToGive, 
+											  int relationship_changeAmount, 
+											  List<StateManagerScript.Charas> charasToUnlock,
+											  List<GameObject> cardsToLimit,
+											  List<GameObject> cardsLimitedTo,
+											  List<GameObject> cardsToDestroy)
 	{
 		// based on the question chosen
 		// add the card prefabs to player's hand 
-		if (currentListOf_questionOptions[questionChosen - 1].cardsItGives.Count > 0)
+		if (cardsToGive.Count > 0)
 		{
-			foreach (var card in currentListOf_questionOptions[questionChosen - 1].cardsItGives)
+			foreach (var card in cardsToGive)
 			{
 				GameObject instantiatedCard = Instantiate(card);
 				GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
@@ -99,22 +147,22 @@ public class CardlessDialogueManager : MonoBehaviour
 			GameManager.me.player.GetComponent<PlayerScript>().ArrangeCards();
 		}
 		// change interviewee's relationship
-		GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += currentListOf_questionOptions[questionChosen - 1].relationshipChangeAmount;
+		GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += relationship_changeAmount;
 		// unlock characters
-		if (currentListOf_questionOptions[questionChosen - 1].charasToUnlock.Count > 0)
+		if (charasToUnlock.Count > 0)
 		{
-			foreach (var chara in currentListOf_questionOptions[questionChosen - 1].charasToUnlock)
+			foreach (var chara in charasToUnlock)
 			{
 				StateManagerScript.me.UnlockChara(chara);
 			}
 		}
 		// limit cards
-		if (currentListOf_questionOptions[questionChosen - 1].cardsItLimits.Count > 0)
+		if (cardsToLimit.Count > 0)
 		{
-			foreach (var card in currentListOf_questionOptions[questionChosen - 1].cardsItLimits)
+			foreach (var card in cardsToLimit)
 			{
 				card.GetComponent<CardScript>().limited = true;
-				foreach (var chara in currentListOf_questionOptions[questionChosen - 1].cardsLimitedTo)
+				foreach (var chara in cardsLimitedTo)
 				{
 					card.GetComponent<CardScript>().limitedTo.Add(chara);
 				}
@@ -122,9 +170,9 @@ public class CardlessDialogueManager : MonoBehaviour
 			}
 		}
 		// destroy cards
-		if (currentListOf_questionOptions[questionChosen - 1].cardsItDestroys.Count > 0)
+		if (cardsToDestroy.Count > 0)
 		{
-			foreach (var card in currentListOf_questionOptions[questionChosen - 1].cardsItDestroys)
+			foreach (var card in cardsToDestroy)
 			{
 				GameManager.me.player.GetComponent<PlayerScript>().DestroyCard(card.name);
 			}

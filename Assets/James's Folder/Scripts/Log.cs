@@ -12,6 +12,10 @@
 	// *after player gain many cards, how to sort them?
 	// x显示中文
 	// *让玩家可以在弹出选项后后退？
+	// x没有card dialogue的时候不要触发显示按键
+	// 没有threaten/trade选项隐藏按钮
+	// 如果relationship已经是-1,无法继续减,如果是1,无法继续加
+	// 用过卡牌后能重复使用吗?
 // 受访者
 	// x显示人物名称
 	// x加上可否二次采访的选项
@@ -37,11 +41,13 @@
 			// xcardless
 			// xcard
 		// 根据关系
-			// 触发不同的对话
-				// cardless
-				// card
-			// 提供不同的卡牌
-			// negative关系不触发cardless, 但可以用card
+			// x触发不同的对话
+				// xcardless
+				// xcard
+			// x提供不同的卡牌
+			// x限制不同的卡牌
+			// x影响不同关系
+			// x销毁不同的卡牌
 // 玩家
 	// x显示手牌
 	// x使用手牌

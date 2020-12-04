@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 648202926039254859}
   - component: {fileID: -7973237963578344564}
   m_Layer: 0
-  m_Name: young - 1
+  m_Name: factory - 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,56 +96,192 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc78b61d1abea0c489c145ca387b69a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  namae: "\u9752\u5E74"
-  dialogues: []
+  namae: "\u5382\u957F-2"
+  dialogues:
+  - preconditions: 
+    triggerIDs: 0d000000
+    dialogue_inquiring:
+    - "\u65E0\u53EF\u5949\u544A"
+    - 
+    cards_inquiring: []
+    inquiringCard_given: 0
+    charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
+    cardsToLimit_inquire: []
+    cardsLimitedTo_inquire: []
+    cardsToDestory_inquire: []
+    dialogue_inquiring_p:
+    - "\u65E0\u53EF\u5949\u544A"
+    - 
+    cards_inquiring_p: []
+    inquiringCard_given_p: 0
+    charasToUnlock_inquire_p: 
+    relationshipChangeAmount_inquire_p: 0
+    cardsToLimit_inquire_p: []
+    cardsLimitedTo_inquire_p: []
+    cardsToDestory_inquire_p: []
+    dialogue_inquiring_n:
+    - "\u65E0\u53EF\u5949\u544A"
+    - 
+    cards_inquiring_n: []
+    inquiringCard_given_n: 0
+    charasToUnlock_inquire_n: 
+    relationshipChangeAmount_inquire_n: 0
+    cardsToLimit_inquire_n: []
+    cardsLimitedTo_inquire_n: []
+    cardsToDestory_inquire_n: []
+    dialogue_threatened:
+    - "\u73A9\u5BB6: \u9648\u5929\u6797\u548C\u60A8\u8D77\u51B2\u7A81\u7684\u65F6\u5019\u60A8\u90A3\u53E5\u201C\u8FDE\u653F\u5E9C\u90FD\u4E0D\u7BA1\u201D\u2026\u2026\u60A8\u597D\u50CF\u548C\u526F\u533A\u957F\u5173\u7CFB\u4E0D\u4E00\u822C\u5450\uFF1F"
+    - "\u5382\u957F: \u8FD9\u2026\u2026\u6211\u7684\u5DE5\u5382\u662F\u533A\u91CC\u4E3B\u8981\u7ECF\u6D4E\u6765\u6E90"
+    - "\u5382\u957F: \u4E3A\u4E86\u9547\u4E0A\u7684\u7ECF\u6D4E\u53D1\u5C55\uFF0C\u6211\u7ECF\u5E38\u8BF7\u526F\u533A\u957F\u5403\u5403\u996D\u559D\u559D\u9152\uFF0C\u8FD9\u9152\u559D\u5230\u4F4D\u4E86\u2026\u8BE5\u8BF4\u7684\u4E0D\u8BE5\u8BF4\u4E86\u2026\u90A3\u4E0D\u90FD\u8BF4\u4E86\u561B!"
+    - 
+    cards_threatened: []
+    threatenedCard_given: 0
+    charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
+    dialogue_threatened_p:
+    - "\u73A9\u5BB6: \u9648\u5929\u6797\u548C\u60A8\u8D77\u51B2\u7A81\u7684\u65F6\u5019\u60A8\u90A3\u53E5\u201C\u8FDE\u653F\u5E9C\u90FD\u4E0D\u7BA1\u201D\u2026\u2026\u60A8\u597D\u50CF\u548C\u526F\u533A\u957F\u5173\u7CFB\u4E0D\u4E00\u822C\u5450\uFF1F"
+    - "\u5382\u957F: \u8FD9\u2026\u2026\u6211\u7684\u5DE5\u5382\u662F\u533A\u91CC\u4E3B\u8981\u7ECF\u6D4E\u6765\u6E90"
+    - "\u5382\u957F: \u4E3A\u4E86\u9547\u4E0A\u7684\u7ECF\u6D4E\u53D1\u5C55\uFF0C\u6211\u7ECF\u5E38\u8BF7\u526F\u533A\u957F\u5403\u5403\u996D\u559D\u559D\u9152\uFF0C\u8FD9\u9152\u559D\u5230\u4F4D\u4E86\u2026\u8BE5\u8BF4\u7684\u4E0D\u8BE5\u8BF4\u4E86\u2026\u90A3\u4E0D\u90FD\u8BF4\u4E86\u561B!"
+    - 
+    cards_threatened_p: []
+    threatenedCard_given_p: 0
+    charasToUnlock_threat_p: 
+    relationshipChangeAmount_threat_p: 0
+    cardsToLimit_threat_p: []
+    cardsLimitedTo_threat_p: []
+    cardsToDestory_threat_p: []
+    dialogue_threatened_n:
+    - "\u73A9\u5BB6: \u9648\u5929\u6797\u548C\u60A8\u8D77\u51B2\u7A81\u7684\u65F6\u5019\u60A8\u90A3\u53E5\u201C\u8FDE\u653F\u5E9C\u90FD\u4E0D\u7BA1\u201D\u2026\u2026\u60A8\u597D\u50CF\u548C\u526F\u533A\u957F\u5173\u7CFB\u4E0D\u4E00\u822C\u5450\uFF1F"
+    - "\u5382\u957F: \u8FD9\u2026\u2026\u6211\u7684\u5DE5\u5382\u662F\u533A\u91CC\u4E3B\u8981\u7ECF\u6D4E\u6765\u6E90"
+    - "\u5382\u957F: \u4E3A\u4E86\u9547\u4E0A\u7684\u7ECF\u6D4E\u53D1\u5C55\uFF0C\u6211\u7ECF\u5E38\u8BF7\u526F\u533A\u957F\u5403\u5403\u996D\u559D\u559D\u9152\uFF0C\u8FD9\u9152\u559D\u5230\u4F4D\u4E86\u2026\u8BE5\u8BF4\u7684\u4E0D\u8BE5\u8BF4\u4E86\u2026\u90A3\u4E0D\u90FD\u8BF4\u4E86\u561B!"
+    - 
+    cards_threatened_n: []
+    threatenedCard_given_n: 0
+    charasToUnlock_threat_n: 
+    relationshipChangeAmount_threat_n: 0
+    cardsToLimit_threat_n: []
+    cardsLimitedTo_threat_n: []
+    cardsToDestory_threat_n: []
+    dialogue_trading:
+    - "\u65E0\u53EF\u5949\u544A"
+    - 
+    cards_trading: []
+    tradingCard_given: 0
+    charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
+    dialogue_trading_p:
+    - "\u65E0\u53EF\u5949\u544A"
+    - 
+    cards_trading_p: []
+    tradingCard_given_p: 0
+    charasToUnlock_trade_p: 
+    relationshipChangeAmount_trading_p: 0
+    cardsToLimit_trade_p: []
+    cardsLimitedTo_trade_p: []
+    cardsToDestory_trade_p: []
+    dialogue_trading_n:
+    - "\u65E0\u53EF\u5949\u544A"
+    - 
+    cards_trading_n: []
+    tradingCard_given_n: 0
+    charasToUnlock_trade_n: 
+    relationshipChangeAmount_trading_n: 0
+    cardsToLimit_trade_n: []
+    cardsLimitedTo_trade_n: []
+    cardsToDestory_trade_n: []
   defaultDialogues:
-  - "\u60A8\u597D, \u6211\u662F\u5E02\u91CC\u7684\u8BB0\u8005"
-  - "\u542C\u8BF4\u60A8\u4E5F\u5728\u5382\u91CC\u4E0A\u73ED, "
-  - "\u8BF7\u95EE\u60A8\u73B0\u5728\u6709\u65F6\u95F4\u5417, \u53EF\u5426\u548C\u6211\u804A\u4E00\u804A\u5462?"
-  - "\u7537\u5B50: \u4E0D\u597D\u610F\u601D, \u6211\u8D76\u65F6\u95F4"
-  - "(\u7537\u5B50\u62C9\u7740\u4E00\u540D\u5973\u6027\u51C6\u5907\u6253\u8F66)"
+  - "\u73A9\u5BB6\uFF1A\u5382\u957F\u597D\uFF0C\u6211\u662FXX\u65E5\u62A5\u7684XX\uFF0C\u8FD9\u6B21\u4E5F\u662F\u534F\u540C\u8B66\u65B9\u4E00\u8D77\u8C03\u67E5\u706B\u707E\u7684\u771F\u76F8\uFF0C\u5E0C\u671B\u60A8\u80FD\u914D\u5408\u4E00\u4E0B\u3002"
+  - "\u5382\u957F\uFF1A\u67E5\uFF01\u6211\u5012\u8981\u770B\u770B\u662F\u54EA\u4E2A\u4E0D\u957F\u773C\u775B\u7684\u628A\u8001\u5B50\u7684\u5382\u70E7\u4E86\uFF01tnnd\u2026\u2026"
   - 
   cardlessDialogues:
   - options:
     - preconditionCharas: []
-      question: place
+      question: "\u5382\u91CC\u6709\u76D1\u63A7\u5417?"
+      shown: 0
+      precondition_met: 0
       dialogues:
-      - "(\u7537\u5B50\u8F6C\u8EAB\u9762\u5BF9\u5230\u6765\u7684\u53F8\u673A)"
-      - "\u53BB\u9547\u533B\u9662"
-      - "(\u4ED6\u56DE\u5934\u62C9\u4E0A\u9694\u58C1\u7684\u5973\u5B50)"
-      - "\u8001\u5A46,\u4E0A\u8F66"
+      - "\u5382\u957F\uFF1A\u6709\uFF0C\u54B1\u4EEC\u5382\u4E25\u683C\u9075\u5B88\u653F\u5E9C\u7684\u89C4\u8303\u5316\u7BA1\u7406\u3002"
+      - "\u5382\u957F\uFF1A\u8FD9\u662F\u5DE5\u5382\u91CC\u7684\u5B89\u5168\u624B\u518C\uFF0C\u4F60\u770B\u770B\uFF0C\u54B1\u4EEC\u6709\u76D1\u63A7\u65E0\u6B7B\u89D2\u4E0D\u95F4\u65AD\u62CD\u6444"
+      - "\u5382\u957F\uFF1A\u4E0D\u4F1A\u7ED9\u5458\u5DE5\u5B89\u6392\u957F\u65F6\u95F4\u4F5C\u4E1A\uFF0C\u6750\u6599\u7684\u50A8\u5B58\u4E5F\u5408\u6CD5\u5408\u89C4\uFF0C\u5B9A\u671F\u653F\u5E9C\u68C0\u67E5\u65E5\u671F\u6211\u4EEC\u66F4\u662F\u5341\u5206\u91CD\u89C6"
       - 
       cardsItGives:
-      - {fileID: 4270974583676908371, guid: fb3c16d63aaf222418cfa30108c47341, type: 3}
-      - {fileID: 4270974583676908371, guid: fcc06a8b7c79a79498c4ad42e4c218b8, type: 3}
+      - {fileID: 4270974583676908371, guid: 71d602707362ad44b80db8b171f4c127, type: 3}
       relationshipChangeAmount: 0
       charasToUnlock: 
       cardsItLimits: []
       cardsLimitedTo: []
       cardsItDestroys: []
-      shown: 0
-      precondition_met: 0
+      dialogues_p:
+      - "\u5382\u957F\uFF1A\u6709\uFF0C\u54B1\u4EEC\u5382\u4E25\u683C\u9075\u5B88\u653F\u5E9C\u7684\u89C4\u8303\u5316\u7BA1\u7406\u3002"
+      - "\u5382\u957F\uFF1A\u8FD9\u662F\u5DE5\u5382\u91CC\u7684\u5B89\u5168\u624B\u518C\uFF0C\u4F60\u770B\u770B\uFF0C\u54B1\u4EEC\u6709\u76D1\u63A7\u65E0\u6B7B\u89D2\u4E0D\u95F4\u65AD\u62CD\u6444"
+      - "\u5382\u957F\uFF1A\u4E0D\u4F1A\u7ED9\u5458\u5DE5\u5B89\u6392\u957F\u65F6\u95F4\u4F5C\u4E1A\uFF0C\u6750\u6599\u7684\u50A8\u5B58\u4E5F\u5408\u6CD5\u5408\u89C4\uFF0C\u5B9A\u671F\u653F\u5E9C\u68C0\u67E5\u65E5\u671F\u6211\u4EEC\u66F4\u662F\u5341\u5206\u91CD\u89C6"
+      - 
+      cardsItGives_p:
+      - {fileID: 4270974583676908371, guid: 71d602707362ad44b80db8b171f4c127, type: 3}
+      relationshipChangeAmount_p: 0
+      charasToUnlock_p: 
+      cardsItLimits_p: []
+      cardsLimitedTo_p: []
+      cardsItDestroys_p: []
+      dialogues_n:
+      - "\u65E0\u53EF\u5949\u544A"
+      - 
+      cardsItGives_n: []
+      relationshipChangeAmount_n: 0
+      charasToUnlock_n: 
+      cardsItLimits_n: []
+      cardsLimitedTo_n: []
+      cardsItDestroys_n: []
+    noneOptionUnlocked: 0
+  - options:
     - preconditionCharas: []
-      question: "\u8BF7\u95EE\u4F60\u77E5\u9053\u5B59\u8F69\u5417"
+      question: "\u60A8\u5BF9\u4ED8\u5F3A\uFF0C\u5B59\u8F69\u548C\u9648\u5929\u6797\u8FD9\u51E0\u4E2A\u4EBA\u6709\u4E86\u89E3\u5417?"
+      shown: 0
+      precondition_met: 0
       dialogues:
-      - "\u7537\u5B50: \u5C0F\u8F69\u662F\u4E2A\u597D\u5B69\u5B50, \u5B5D\u987A,
-        \u5DE5\u4F5C\u4E5F\u5C3D\u5FC3...\u6211\u8F66\u6765\u4E86"
-      - "(\u7537\u5B50\u8F6C\u8EAB\u9762\u5BF9\u53F8\u673A)"
-      - "\u53BB\u9547\u533B\u9662"
-      - "(\u7537\u5B50\u56DE\u5934\u62C9\u4E0A\u5973\u5B50)"
-      - "\u8001\u5A46, \u4E0A\u8F66"
+      - "\u5382\u957F\uFF1A\u9648\u5929\u6797\u8FD9\u5C0F\u5B50\u6700\u70E6\u4EBA\uFF0C\u4E09\u5929\u4E24\u5934\u5C31\u6765\u95F9\u4E8B\uFF0C\u770B\u770B\uFF0C\u5382\u91CC\u7684\u503C\u73ED\u8868\u548C\u8BB0\u5F55\u8BB0\u5F97\u660E\u660E\u767D\u767D\u7684"
+      - "\u5382\u957F\uFF1A\u4F60\u53EF\u5F97\u7ED9\u6211\u66DD\u5149\u4E00\u4E0B\uFF0C\u4E0D\u7136\u6211\u8FD9\u5382\u8FD8\u529E\u4E0D\u529E\u4E86!"
+      - "\u5382\u957F\uFF1A\u4ED8\u5F3A\u8FD9\u4EBA\u5E73\u65F6\u5DE5\u4F5C\u633A\u8BA4\u771F\uFF0C\u4E0D\u8FC7\u8D77\u706B\u90A3\u5929\u4ED6\u8BF7\u5047\u966A\u4ED6\u8001\u5A46\u53BB\u533B\u9662\u505A\u68C0\u67E5\u53BB\u4E86\uFF0C\u5382\u91CC\u6750\u6599\u6570\u91CF\u6709\u70B9\u5947\u602A\u2026\u2026\u4E0D\u77E5\u9053\u548C\u4ED6\u6709\u5173\u7CFB\u6CA1\u6709"
+      - "\u5382\u957F\uFF1A\u5B59\u8F69\u662F\u674E\u963F\u5A46\u7684\u513F\u5B50\u554A\uFF0C\u8BF4\u8D77\u6765\u4ED6\u8FD9\u5DE5\u4F5C\u6211\u8FD8\u662F\u5356\u4E86\u526F\u533A\u957F\u4E00\u4E2A\u4EBA\u60C5\u624D\u7ED9\u4ED6\u5B89\u6392\u7684"
+      - "\u5382\u957F\uFF1A\u4ED6\u5C0F\u5B50\u4E00\u5411\u4E0D\u7F3A\u5E2D\uFF0C\u8D77\u706B\u90A3\u5929\u4E5F\u6765\u4E0A\u73ED\u4E86"
       - 
       cardsItGives:
-      - {fileID: 4270974583676908371, guid: fb3c16d63aaf222418cfa30108c47341, type: 3}
-      - {fileID: 4270974583676908371, guid: fcc06a8b7c79a79498c4ad42e4c218b8, type: 3}
-      - {fileID: 4270974583676908371, guid: 622ffa9449167d94dba65b9b450f1760, type: 3}
+      - {fileID: 4270974583676908371, guid: 156ace7c225e1054fa9a267dd79bdf41, type: 3}
       relationshipChangeAmount: 0
       charasToUnlock: 
       cardsItLimits: []
       cardsLimitedTo: []
       cardsItDestroys: []
-      shown: 0
-      precondition_met: 0
+      dialogues_p:
+      - "\u5382\u957F\uFF1A\u9648\u5929\u6797\u8FD9\u5C0F\u5B50\u6700\u70E6\u4EBA\uFF0C\u4E09\u5929\u4E24\u5934\u5C31\u6765\u95F9\u4E8B\uFF0C\u770B\u770B\uFF0C\u5382\u91CC\u7684\u503C\u73ED\u8868\u548C\u8BB0\u5F55\u8BB0\u5F97\u660E\u660E\u767D\u767D\u7684"
+      - "\u5382\u957F\uFF1A\u4F60\u53EF\u5F97\u7ED9\u6211\u66DD\u5149\u4E00\u4E0B\uFF0C\u4E0D\u7136\u6211\u8FD9\u5382\u8FD8\u529E\u4E0D\u529E\u4E86!"
+      - "\u5382\u957F\uFF1A\u4ED8\u5F3A\u8FD9\u4EBA\u5E73\u65F6\u5DE5\u4F5C\u633A\u8BA4\u771F\uFF0C\u4E0D\u8FC7\u8D77\u706B\u90A3\u5929\u4ED6\u8BF7\u5047\u966A\u4ED6\u8001\u5A46\u53BB\u533B\u9662\u505A\u68C0\u67E5\u53BB\u4E86\uFF0C\u5382\u91CC\u6750\u6599\u6570\u91CF\u6709\u70B9\u5947\u602A\u2026\u2026\u4E0D\u77E5\u9053\u548C\u4ED6\u6709\u5173\u7CFB\u6CA1\u6709"
+      - "\u5382\u957F\uFF1A\u5B59\u8F69\u662F\u674E\u963F\u5A46\u7684\u513F\u5B50\u554A\uFF0C\u8BF4\u8D77\u6765\u4ED6\u8FD9\u5DE5\u4F5C\u6211\u8FD8\u662F\u5356\u4E86\u526F\u533A\u957F\u4E00\u4E2A\u4EBA\u60C5\u624D\u7ED9\u4ED6\u5B89\u6392\u7684"
+      - "\u5382\u957F\uFF1A\u4ED6\u5C0F\u5B50\u4E00\u5411\u4E0D\u7F3A\u5E2D\uFF0C\u8D77\u706B\u90A3\u5929\u4E5F\u6765\u4E0A\u73ED\u4E86"
+      - 
+      cardsItGives_p:
+      - {fileID: 4270974583676908371, guid: 156ace7c225e1054fa9a267dd79bdf41, type: 3}
+      relationshipChangeAmount_p: 0
+      charasToUnlock_p: 
+      cardsItLimits_p: []
+      cardsLimitedTo_p: []
+      cardsItDestroys_p: []
+      dialogues_n:
+      - "\u65E0\u53EF\u5949\u544A"
+      - 
+      cardsItGives_n: []
+      relationshipChangeAmount_n: 0
+      charasToUnlock_n: 
+      cardsItLimits_n: []
+      cardsLimitedTo_n: []
+      cardsItDestroys_n: []
     noneOptionUnlocked: 0
   relationship: 0
   ogPos: {x: 0, y: 0, z: 0}

@@ -232,6 +232,7 @@ public class DialogueManagerScript : MonoBehaviour
 							   chunk.charasToUnlock_inquire,
 							   chunk.relationshipChangeAmount_inquire,
 							   chunk.cardsToLimit_inquire,
+							   chunk.cardsLimitedTo_inquire,
 							   chunk.cardsToDestory_inquire);
 			}
 			else if (relationship > 0)
@@ -241,6 +242,7 @@ public class DialogueManagerScript : MonoBehaviour
 							   chunk.charasToUnlock_inquire_p,
 							   chunk.relationshipChangeAmount_inquire_p,
 							   chunk.cardsToLimit_inquire_p,
+							   chunk.cardsLimitedTo_inquire_p,
 							   chunk.cardsToDestory_inquire_p);
 			}
 			else if (relationship < 0)
@@ -250,6 +252,7 @@ public class DialogueManagerScript : MonoBehaviour
 							   chunk.charasToUnlock_inquire_n,
 							   chunk.relationshipChangeAmount_inquire_n,
 							   chunk.cardsToLimit_inquire_n,
+							   chunk.cardsLimitedTo_inquire_n,
 							   chunk.cardsToDestory_inquire_n);
 			}
 		}
@@ -262,6 +265,7 @@ public class DialogueManagerScript : MonoBehaviour
 							   chunk.charasToUnlock_trade,
 							   chunk.relationshipChangeAmount_trading,
 							   chunk.cardsToLimit_trade,
+							   chunk.cardsLimitedTo_trade,
 							   chunk.cardsToDestory_trade);
 			}
 			else if (relationship > 0)
@@ -271,6 +275,7 @@ public class DialogueManagerScript : MonoBehaviour
 							   chunk.charasToUnlock_trade_p,
 							   chunk.relationshipChangeAmount_trading_p,
 							   chunk.cardsToLimit_trade_p,
+							   chunk.cardsLimitedTo_trade_p,
 							   chunk.cardsToDestory_trade_p);
 			}
 			else if (relationship < 0)
@@ -280,6 +285,7 @@ public class DialogueManagerScript : MonoBehaviour
 							   chunk.charasToUnlock_trade_n,
 							   chunk.relationshipChangeAmount_trading_n,
 							   chunk.cardsToLimit_trade_n,
+							   chunk.cardsLimitedTo_trade_n,
 							   chunk.cardsToDestory_trade_n);
 			}
 		}
@@ -292,6 +298,7 @@ public class DialogueManagerScript : MonoBehaviour
 							   chunk.charasToUnlock_threat,
 							   chunk.relationshipChangeAmount_threat,
 							   chunk.cardsToLimit_threat,
+							   chunk.cardsLimitedTo_threat,
 							   chunk.cardsToDestory_threat);
 			}
 			else if (relationship > 0)
@@ -301,6 +308,7 @@ public class DialogueManagerScript : MonoBehaviour
 							   chunk.charasToUnlock_threat_p,
 							   chunk.relationshipChangeAmount_threat_p,
 							   chunk.cardsToLimit_threat_p,
+							   chunk.cardsLimitedTo_threat_p,
 							   chunk.cardsToDestory_threat_p);
 			}
 			else if (relationship < 0)
@@ -310,6 +318,7 @@ public class DialogueManagerScript : MonoBehaviour
 							   chunk.charasToUnlock_threat_n,
 							   chunk.relationshipChangeAmount_threat_n,
 							   chunk.cardsToLimit_threat_n,
+							   chunk.cardsLimitedTo_threat_n,
 							   chunk.cardsToDestory_threat_n);
 			}
 		}
@@ -320,6 +329,7 @@ public class DialogueManagerScript : MonoBehaviour
 								List<StateManagerScript.Charas> charasToUnlock, 
 								int relationship_changeAmount,
 								List<GameObject> cardsToLimit,
+								List<GameObject> cardsLimitedTo,
 								List<GameObject> cardsToDestroy)
 	{
 		// give card
@@ -344,7 +354,7 @@ public class DialogueManagerScript : MonoBehaviour
 		foreach (var card in cardsToLimit)
 		{
 			card.GetComponent<CardScript>().limited = true;
-			foreach (var chara in cardsToLimit)
+			foreach (var chara in cardsLimitedTo)
 			{
 				card.GetComponent<CardScript>().limitedTo.Add(chara);
 			}
@@ -368,26 +378,62 @@ public class DialogueManagerScript : MonoBehaviour
 			{
 				if (triggerID == CardUsageScript.me.cardId)
 				{
-					if (myApproach == Approaches.inquire)
-					{
-						DialogueStruct d = GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues[i];
-						d.inquiringCard_given = true;
-						GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues[i] = d;
-					}
-					else if (myApproach == Approaches.threaten)
-					{
-						DialogueStruct d = GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues[i];
-						d.threatenedCard_given = true;
-						GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues[i] = d;
-					}
-					else if (myApproach == Approaches.trade)
-					{
-						DialogueStruct d = GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues[i];
-						d.tradingCard_given = true;
-						GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues[i] = d;
-					}
+					DialogueStruct d = GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues[i];
+					Check_apprNrelationship_then_setCardGiven(d);
+					GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues[i] = d;
 				}
 			}
 		}
 	}
+
+	private void Check_apprNrelationship_then_setCardGiven(DialogueStruct tempDS)
+	{
+		int relationship = GameManager.me.interviewee.GetComponent<CharacterScript>().relationship;
+		if (myApproach == Approaches.inquire)
+		{
+			if (relationship == 0)
+			{
+				tempDS.inquiringCard_given = true;
+			}
+			else if (relationship < 0)
+			{
+				tempDS.inquiringCard_given_p = true;
+			}
+			else if (relationship > 0)
+			{
+				tempDS.inquiringCard_given_n = true;
+			}
+		}
+		else if (myApproach == Approaches.trade)
+		{
+			if (relationship == 0)
+			{
+				tempDS.tradingCard_given = true;
+			}
+			else if (relationship < 0)
+			{
+				tempDS.tradingCard_given_p = true;
+			}
+			else if (relationship > 0)
+			{
+				tempDS.tradingCard_given_n = true;
+			}
+		}
+		else if (myApproach == Approaches.threaten)
+		{
+			if (relationship == 0)
+			{
+				tempDS.threatenedCard_given = true;
+			}
+			else if (relationship < 0)
+			{
+				tempDS.threatenedCard_given_p = true;
+			}
+			else if (relationship > 0)
+			{
+				tempDS.threatenedCard_given_n = true;
+			}
+		}
+	}
+
 }

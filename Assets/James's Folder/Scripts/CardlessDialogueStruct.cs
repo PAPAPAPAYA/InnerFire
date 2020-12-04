@@ -7,5 +7,4 @@ public struct CardlessDialogueStruct
 {
     public List<QuestionOptionsStruct> options;
     public bool noneOptionUnlocked;
-
 }

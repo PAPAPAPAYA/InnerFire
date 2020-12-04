@@ -83,7 +83,8 @@ public class CardScript : MonoBehaviour
 			if (transform.position.x > interviewee_pos.x - interviewee.localScale.x / 2 &&
 				transform.position.x < interviewee_pos.x + interviewee.localScale.x / 2 &&
 				transform.position.y > interviewee_pos.y - interviewee.localScale.y / 2 &&
-				transform.position.y < interviewee_pos.y + interviewee.localScale.y / 2)
+				transform.position.y < interviewee_pos.y + interviewee.localScale.y / 2 &&
+				GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues.Count > 0)
 			{
 				// show options
 				int time = 0;

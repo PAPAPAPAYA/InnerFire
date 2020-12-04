@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc78b61d1abea0c489c145ca387b69a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  namae: "\u5DE5\u4EBA"
+  namae: "\u5DE5\u4EBA-1"
   dialogues: []
   defaultDialogues:
   - "\u60A8\u597D, \u6253\u6270\u4E00\u4E0B, \u6211\u662F\u6765\u81EAxx\u793E\u7684\u8BB0\u8005,
@@ -110,7 +110,9 @@ MonoBehaviour:
   cardlessDialogues:
   - options:
     - preconditionCharas: []
-      question: place
+      question: "\u8FD9\u4E2A\u9009\u9879\u6587\u672C\u91CC\u6CA1\u6709, \u60F3\u60F3\u548B\u52A0"
+      shown: 0
+      precondition_met: 0
       dialogues:
       - "(\u7537\u5B50\u8F6C\u8EAB\u9762\u5BF9\u5230\u6765\u7684\u53F8\u673A)"
       - "\u53BB\u9547\u533B\u9662"
@@ -125,11 +127,25 @@ MonoBehaviour:
       cardsItLimits: []
       cardsLimitedTo: []
       cardsItDestroys: []
-      shown: 0
-      precondition_met: 0
+      dialogues_p: []
+      cardsItGives_p: []
+      relationshipChangeAmount_p: 0
+      charasToUnlock_p: 
+      cardsItLimits_p: []
+      cardsLimitedTo_p: []
+      cardsItDestroys_p: []
+      dialogues_n: []
+      cardsItGives_n: []
+      relationshipChangeAmount_n: 0
+      charasToUnlock_n: 
+      cardsItLimits_n: []
+      cardsLimitedTo_n: []
+      cardsItDestroys_n: []
     - preconditionCharas:
       - {fileID: 648202926039254858, guid: 2b27bb303d794244eb921f9db45f955a, type: 3}
       question: "\u8BF7\u95EE\u4F60\u77E5\u9053\u5B59\u8F69\u5417"
+      shown: 0
+      precondition_met: 0
       dialogues:
       - "\u7537\u5B50: \u5C0F\u8F69\u662F\u4E2A\u597D\u5B69\u5B50, \u5B5D\u987A,
         \u5DE5\u4F5C\u4E5F\u5C3D\u5FC3...\u6211\u8F66\u6765\u4E86"
@@ -147,8 +163,20 @@ MonoBehaviour:
       cardsItLimits: []
       cardsLimitedTo: []
       cardsItDestroys: []
-      shown: 0
-      precondition_met: 0
+      dialogues_p: []
+      cardsItGives_p: []
+      relationshipChangeAmount_p: 0
+      charasToUnlock_p: 
+      cardsItLimits_p: []
+      cardsLimitedTo_p: []
+      cardsItDestroys_p: []
+      dialogues_n: []
+      cardsItGives_n: []
+      relationshipChangeAmount_n: 0
+      charasToUnlock_n: 
+      cardsItLimits_n: []
+      cardsLimitedTo_n: []
+      cardsItDestroys_n: []
     noneOptionUnlocked: 0
   relationship: 0
   ogPos: {x: 0, y: 0, z: 0}
