@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 5960222044985985261}
   - component: {fileID: 5942573919257366548}
   - component: {fileID: 3977834750213161260}
+  - component: {fileID: 4370183092615589212}
   m_Layer: 0
   m_Name: "\u526F\u533A\u957F\u6BCD\u4EB2\u7684\u75C5\u5386"
   m_TagString: Untagged
@@ -127,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 4270974583676908371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.586, z: 1}
+  m_LocalScale: {x: 1.3308152, y: 2.1106732, z: 1.3308152}
   m_Children:
   - {fileID: 363561523718589080}
   m_Father: {fileID: 0}
@@ -173,7 +174,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3afcc3c44cce73d4f9313cd6d75c8a09, type: 3}
-  m_Color: {r: 1, g: 0.8624701, b: 0.56078434, a: 1}
+  m_Color: {r: 1, g: 0.87058824, b: 0.34509805, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 27
   namae: "\u526F\u533A\u957F\u6BCD\u4EB2\u7684\u75C5\u5386"
-  description: "\u526F\u533A\u957F\u6BCD\u4EB2\u7684\u75C5\u5386"
+  description: 
   infoDisplay: {fileID: 1079076617599350307}
   og_pos: {x: 0, y: 0, z: 0}
   limited: 0
@@ -233,6 +234,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4370183092615589212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4270974583676908371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee00d571903d0f543ae573490a6235ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addMeToClueBoard: 1
+  imAMotiveCard: 1
+  imAFireCard: 0
+  motiveText: "\u526F\u533A\u957F\u7684\u6BCD\u4EB2\u60A3\u4E86\u764C\u75C7"
+  fireText: 
+  whoToConnect: 3
 --- !u!1 &8479644531324671223
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,8 +318,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 57864b3fce913cf4687f981544254246, type: 2}
-  m_sharedMaterial: {fileID: -3525995633598858701, guid: 57864b3fce913cf4687f981544254246,
+  m_fontAsset: {fileID: 11400000, guid: ac00cc7d84ec3924383ee7d416c57692, type: 2}
+  m_sharedMaterial: {fileID: -544626459598026762, guid: ac00cc7d84ec3924383ee7d416c57692,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -325,15 +344,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 0.2
+  m_fontSize: 0.3
+  m_fontSizeBase: 0.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

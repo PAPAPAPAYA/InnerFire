@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &648202926039254858
+--- !u!1 &291834669
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,317 +8,98 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 648202926039254869}
-  - component: {fileID: 648202926039254868}
-  - component: {fileID: 648202926039254859}
-  - component: {fileID: -7973237963578344564}
-  m_Layer: 0
-  m_Name: factory - 2
+  - component: {fileID: 291834670}
+  - component: {fileID: 291834673}
+  - component: {fileID: 291834672}
+  - component: {fileID: 291834671}
+  m_Layer: 5
+  m_Name: Canvas (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &648202926039254869
-Transform:
+--- !u!224 &291834670
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648202926039254858}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_GameObject: {fileID: 291834669}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2319304754846952262}
-  m_Father: {fileID: 0}
+  - {fileID: 2019400453}
+  m_Father: {fileID: 648202926039254869}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &648202926039254868
-SpriteRenderer:
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1194.05, y: 524.23}
+  m_SizeDelta: {x: 2400, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &291834673
+Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648202926039254858}
+  m_GameObject: {fileID: 291834669}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c8160ea0b180ff84e987b05bee94fc58, type: 3}
-  m_Color: {r: 0.711501, g: 1, b: 0.3726415, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.24, y: 2.24}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!114 &648202926039254859
+  m_TargetDisplay: 0
+--- !u!114 &291834672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648202926039254858}
+  m_GameObject: {fileID: 291834669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc78b61d1abea0c489c145ca387b69a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  namae: "\u5382\u957F-2"
-  dialogues:
-  - preconditions: 
-    triggerIDs: 0d000000
-    dialogue_inquiring:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_inquiring: []
-    inquiringCard_given: 0
-    charasToUnlock_inquire: 
-    relationshipChangeAmount_inquire: 0
-    cardsToLimit_inquire: []
-    cardsLimitedTo_inquire: []
-    cardsToDestory_inquire: []
-    dialogue_inquiring_p:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_inquiring_p: []
-    inquiringCard_given_p: 0
-    charasToUnlock_inquire_p: 
-    relationshipChangeAmount_inquire_p: 0
-    cardsToLimit_inquire_p: []
-    cardsLimitedTo_inquire_p: []
-    cardsToDestory_inquire_p: []
-    dialogue_inquiring_n:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_inquiring_n: []
-    inquiringCard_given_n: 0
-    charasToUnlock_inquire_n: 
-    relationshipChangeAmount_inquire_n: 0
-    cardsToLimit_inquire_n: []
-    cardsLimitedTo_inquire_n: []
-    cardsToDestory_inquire_n: []
-    dialogue_threatened:
-    - "\u73A9\u5BB6: \u9648\u5929\u6797\u548C\u60A8\u8D77\u51B2\u7A81\u7684\u65F6\u5019\u60A8\u90A3\u53E5\u201C\u8FDE\u653F\u5E9C\u90FD\u4E0D\u7BA1\u201D\u2026\u2026\u60A8\u597D\u50CF\u548C\u526F\u533A\u957F\u5173\u7CFB\u4E0D\u4E00\u822C\u5450\uFF1F"
-    - "\u5382\u957F: \u8FD9\u2026\u2026\u6211\u7684\u5DE5\u5382\u662F\u533A\u91CC\u4E3B\u8981\u7ECF\u6D4E\u6765\u6E90"
-    - "\u5382\u957F: \u4E3A\u4E86\u9547\u4E0A\u7684\u7ECF\u6D4E\u53D1\u5C55\uFF0C\u6211\u7ECF\u5E38\u8BF7\u526F\u533A\u957F\u5403\u5403\u996D\u559D\u559D\u9152\uFF0C\u8FD9\u9152\u559D\u5230\u4F4D\u4E86\u2026\u8BE5\u8BF4\u7684\u4E0D\u8BE5\u8BF4\u4E86\u2026\u90A3\u4E0D\u90FD\u8BF4\u4E86\u561B!"
-    - 
-    cards_threatened: []
-    threatenedCard_given: 0
-    charasToUnlock_threat: 
-    relationshipChangeAmount_threat: 0
-    cardsToLimit_threat: []
-    cardsLimitedTo_threat: []
-    cardsToDestory_threat: []
-    dialogue_threatened_p:
-    - "\u73A9\u5BB6: \u9648\u5929\u6797\u548C\u60A8\u8D77\u51B2\u7A81\u7684\u65F6\u5019\u60A8\u90A3\u53E5\u201C\u8FDE\u653F\u5E9C\u90FD\u4E0D\u7BA1\u201D\u2026\u2026\u60A8\u597D\u50CF\u548C\u526F\u533A\u957F\u5173\u7CFB\u4E0D\u4E00\u822C\u5450\uFF1F"
-    - "\u5382\u957F: \u8FD9\u2026\u2026\u6211\u7684\u5DE5\u5382\u662F\u533A\u91CC\u4E3B\u8981\u7ECF\u6D4E\u6765\u6E90"
-    - "\u5382\u957F: \u4E3A\u4E86\u9547\u4E0A\u7684\u7ECF\u6D4E\u53D1\u5C55\uFF0C\u6211\u7ECF\u5E38\u8BF7\u526F\u533A\u957F\u5403\u5403\u996D\u559D\u559D\u9152\uFF0C\u8FD9\u9152\u559D\u5230\u4F4D\u4E86\u2026\u8BE5\u8BF4\u7684\u4E0D\u8BE5\u8BF4\u4E86\u2026\u90A3\u4E0D\u90FD\u8BF4\u4E86\u561B!"
-    - 
-    cards_threatened_p: []
-    threatenedCard_given_p: 0
-    charasToUnlock_threat_p: 
-    relationshipChangeAmount_threat_p: 0
-    cardsToLimit_threat_p: []
-    cardsLimitedTo_threat_p: []
-    cardsToDestory_threat_p: []
-    dialogue_threatened_n:
-    - "\u73A9\u5BB6: \u9648\u5929\u6797\u548C\u60A8\u8D77\u51B2\u7A81\u7684\u65F6\u5019\u60A8\u90A3\u53E5\u201C\u8FDE\u653F\u5E9C\u90FD\u4E0D\u7BA1\u201D\u2026\u2026\u60A8\u597D\u50CF\u548C\u526F\u533A\u957F\u5173\u7CFB\u4E0D\u4E00\u822C\u5450\uFF1F"
-    - "\u5382\u957F: \u8FD9\u2026\u2026\u6211\u7684\u5DE5\u5382\u662F\u533A\u91CC\u4E3B\u8981\u7ECF\u6D4E\u6765\u6E90"
-    - "\u5382\u957F: \u4E3A\u4E86\u9547\u4E0A\u7684\u7ECF\u6D4E\u53D1\u5C55\uFF0C\u6211\u7ECF\u5E38\u8BF7\u526F\u533A\u957F\u5403\u5403\u996D\u559D\u559D\u9152\uFF0C\u8FD9\u9152\u559D\u5230\u4F4D\u4E86\u2026\u8BE5\u8BF4\u7684\u4E0D\u8BE5\u8BF4\u4E86\u2026\u90A3\u4E0D\u90FD\u8BF4\u4E86\u561B!"
-    - 
-    cards_threatened_n: []
-    threatenedCard_given_n: 0
-    charasToUnlock_threat_n: 
-    relationshipChangeAmount_threat_n: 0
-    cardsToLimit_threat_n: []
-    cardsLimitedTo_threat_n: []
-    cardsToDestory_threat_n: []
-    dialogue_trading:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_trading: []
-    tradingCard_given: 0
-    charasToUnlock_trade: 
-    relationshipChangeAmount_trading: 0
-    cardsToLimit_trade: []
-    cardsLimitedTo_trade: []
-    cardsToDestory_trade: []
-    dialogue_trading_p:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_trading_p: []
-    tradingCard_given_p: 0
-    charasToUnlock_trade_p: 
-    relationshipChangeAmount_trading_p: 0
-    cardsToLimit_trade_p: []
-    cardsLimitedTo_trade_p: []
-    cardsToDestory_trade_p: []
-    dialogue_trading_n:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_trading_n: []
-    tradingCard_given_n: 0
-    charasToUnlock_trade_n: 
-    relationshipChangeAmount_trading_n: 0
-    cardsToLimit_trade_n: []
-    cardsLimitedTo_trade_n: []
-    cardsToDestory_trade_n: []
-  defaultDialogues:
-  - "\u73A9\u5BB6\uFF1A\u5382\u957F\u597D\uFF0C\u6211\u662FXX\u65E5\u62A5\u7684XX\uFF0C\u8FD9\u6B21\u4E5F\u662F\u534F\u540C\u8B66\u65B9\u4E00\u8D77\u8C03\u67E5\u706B\u707E\u7684\u771F\u76F8\uFF0C\u5E0C\u671B\u60A8\u80FD\u914D\u5408\u4E00\u4E0B\u3002"
-  - "\u5382\u957F\uFF1A\u67E5\uFF01\u6211\u5012\u8981\u770B\u770B\u662F\u54EA\u4E2A\u4E0D\u957F\u773C\u775B\u7684\u628A\u8001\u5B50\u7684\u5382\u70E7\u4E86\uFF01tnnd\u2026\u2026"
-  - 
-  cardlessDialogues:
-  - options:
-    - preconditionCharas: []
-      question: "\u5382\u91CC\u6709\u76D1\u63A7\u5417?"
-      shown: 0
-      precondition_met: 0
-      dialogues:
-      - "\u5382\u957F\uFF1A\u6709\uFF0C\u54B1\u4EEC\u5382\u4E25\u683C\u9075\u5B88\u653F\u5E9C\u7684\u89C4\u8303\u5316\u7BA1\u7406\u3002"
-      - "\u5382\u957F\uFF1A\u8FD9\u662F\u5DE5\u5382\u91CC\u7684\u5B89\u5168\u624B\u518C\uFF0C\u4F60\u770B\u770B\uFF0C\u54B1\u4EEC\u6709\u76D1\u63A7\u65E0\u6B7B\u89D2\u4E0D\u95F4\u65AD\u62CD\u6444"
-      - "\u5382\u957F\uFF1A\u4E0D\u4F1A\u7ED9\u5458\u5DE5\u5B89\u6392\u957F\u65F6\u95F4\u4F5C\u4E1A\uFF0C\u6750\u6599\u7684\u50A8\u5B58\u4E5F\u5408\u6CD5\u5408\u89C4\uFF0C\u5B9A\u671F\u653F\u5E9C\u68C0\u67E5\u65E5\u671F\u6211\u4EEC\u66F4\u662F\u5341\u5206\u91CD\u89C6"
-      - 
-      cardsItGives:
-      - {fileID: 4270974583676908371, guid: 71d602707362ad44b80db8b171f4c127, type: 3}
-      relationshipChangeAmount: 0
-      charasToUnlock: 
-      cardsItLimits: []
-      cardsLimitedTo: []
-      cardsItDestroys: []
-      dialogues_p:
-      - "\u5382\u957F\uFF1A\u6709\uFF0C\u54B1\u4EEC\u5382\u4E25\u683C\u9075\u5B88\u653F\u5E9C\u7684\u89C4\u8303\u5316\u7BA1\u7406\u3002"
-      - "\u5382\u957F\uFF1A\u8FD9\u662F\u5DE5\u5382\u91CC\u7684\u5B89\u5168\u624B\u518C\uFF0C\u4F60\u770B\u770B\uFF0C\u54B1\u4EEC\u6709\u76D1\u63A7\u65E0\u6B7B\u89D2\u4E0D\u95F4\u65AD\u62CD\u6444"
-      - "\u5382\u957F\uFF1A\u4E0D\u4F1A\u7ED9\u5458\u5DE5\u5B89\u6392\u957F\u65F6\u95F4\u4F5C\u4E1A\uFF0C\u6750\u6599\u7684\u50A8\u5B58\u4E5F\u5408\u6CD5\u5408\u89C4\uFF0C\u5B9A\u671F\u653F\u5E9C\u68C0\u67E5\u65E5\u671F\u6211\u4EEC\u66F4\u662F\u5341\u5206\u91CD\u89C6"
-      - 
-      cardsItGives_p:
-      - {fileID: 4270974583676908371, guid: 71d602707362ad44b80db8b171f4c127, type: 3}
-      relationshipChangeAmount_p: 0
-      charasToUnlock_p: 
-      cardsItLimits_p: []
-      cardsLimitedTo_p: []
-      cardsItDestroys_p: []
-      dialogues_n:
-      - "\u65E0\u53EF\u5949\u544A"
-      - 
-      cardsItGives_n: []
-      relationshipChangeAmount_n: 0
-      charasToUnlock_n: 
-      cardsItLimits_n: []
-      cardsLimitedTo_n: []
-      cardsItDestroys_n: []
-    noneOptionUnlocked: 0
-  - options:
-    - preconditionCharas: []
-      question: "\u60A8\u5BF9\u4ED8\u5F3A\uFF0C\u5B59\u8F69\u548C\u9648\u5929\u6797\u8FD9\u51E0\u4E2A\u4EBA\u6709\u4E86\u89E3\u5417?"
-      shown: 0
-      precondition_met: 0
-      dialogues:
-      - "\u5382\u957F\uFF1A\u9648\u5929\u6797\u8FD9\u5C0F\u5B50\u6700\u70E6\u4EBA\uFF0C\u4E09\u5929\u4E24\u5934\u5C31\u6765\u95F9\u4E8B\uFF0C\u770B\u770B\uFF0C\u5382\u91CC\u7684\u503C\u73ED\u8868\u548C\u8BB0\u5F55\u8BB0\u5F97\u660E\u660E\u767D\u767D\u7684"
-      - "\u5382\u957F\uFF1A\u4F60\u53EF\u5F97\u7ED9\u6211\u66DD\u5149\u4E00\u4E0B\uFF0C\u4E0D\u7136\u6211\u8FD9\u5382\u8FD8\u529E\u4E0D\u529E\u4E86!"
-      - "\u5382\u957F\uFF1A\u4ED8\u5F3A\u8FD9\u4EBA\u5E73\u65F6\u5DE5\u4F5C\u633A\u8BA4\u771F\uFF0C\u4E0D\u8FC7\u8D77\u706B\u90A3\u5929\u4ED6\u8BF7\u5047\u966A\u4ED6\u8001\u5A46\u53BB\u533B\u9662\u505A\u68C0\u67E5\u53BB\u4E86\uFF0C\u5382\u91CC\u6750\u6599\u6570\u91CF\u6709\u70B9\u5947\u602A\u2026\u2026\u4E0D\u77E5\u9053\u548C\u4ED6\u6709\u5173\u7CFB\u6CA1\u6709"
-      - "\u5382\u957F\uFF1A\u5B59\u8F69\u662F\u674E\u963F\u5A46\u7684\u513F\u5B50\u554A\uFF0C\u8BF4\u8D77\u6765\u4ED6\u8FD9\u5DE5\u4F5C\u6211\u8FD8\u662F\u5356\u4E86\u526F\u533A\u957F\u4E00\u4E2A\u4EBA\u60C5\u624D\u7ED9\u4ED6\u5B89\u6392\u7684"
-      - "\u5382\u957F\uFF1A\u4ED6\u5C0F\u5B50\u4E00\u5411\u4E0D\u7F3A\u5E2D\uFF0C\u8D77\u706B\u90A3\u5929\u4E5F\u6765\u4E0A\u73ED\u4E86"
-      - 
-      cardsItGives:
-      - {fileID: 4270974583676908371, guid: 156ace7c225e1054fa9a267dd79bdf41, type: 3}
-      relationshipChangeAmount: 0
-      charasToUnlock: 
-      cardsItLimits: []
-      cardsLimitedTo: []
-      cardsItDestroys: []
-      dialogues_p:
-      - "\u5382\u957F\uFF1A\u9648\u5929\u6797\u8FD9\u5C0F\u5B50\u6700\u70E6\u4EBA\uFF0C\u4E09\u5929\u4E24\u5934\u5C31\u6765\u95F9\u4E8B\uFF0C\u770B\u770B\uFF0C\u5382\u91CC\u7684\u503C\u73ED\u8868\u548C\u8BB0\u5F55\u8BB0\u5F97\u660E\u660E\u767D\u767D\u7684"
-      - "\u5382\u957F\uFF1A\u4F60\u53EF\u5F97\u7ED9\u6211\u66DD\u5149\u4E00\u4E0B\uFF0C\u4E0D\u7136\u6211\u8FD9\u5382\u8FD8\u529E\u4E0D\u529E\u4E86!"
-      - "\u5382\u957F\uFF1A\u4ED8\u5F3A\u8FD9\u4EBA\u5E73\u65F6\u5DE5\u4F5C\u633A\u8BA4\u771F\uFF0C\u4E0D\u8FC7\u8D77\u706B\u90A3\u5929\u4ED6\u8BF7\u5047\u966A\u4ED6\u8001\u5A46\u53BB\u533B\u9662\u505A\u68C0\u67E5\u53BB\u4E86\uFF0C\u5382\u91CC\u6750\u6599\u6570\u91CF\u6709\u70B9\u5947\u602A\u2026\u2026\u4E0D\u77E5\u9053\u548C\u4ED6\u6709\u5173\u7CFB\u6CA1\u6709"
-      - "\u5382\u957F\uFF1A\u5B59\u8F69\u662F\u674E\u963F\u5A46\u7684\u513F\u5B50\u554A\uFF0C\u8BF4\u8D77\u6765\u4ED6\u8FD9\u5DE5\u4F5C\u6211\u8FD8\u662F\u5356\u4E86\u526F\u533A\u957F\u4E00\u4E2A\u4EBA\u60C5\u624D\u7ED9\u4ED6\u5B89\u6392\u7684"
-      - "\u5382\u957F\uFF1A\u4ED6\u5C0F\u5B50\u4E00\u5411\u4E0D\u7F3A\u5E2D\uFF0C\u8D77\u706B\u90A3\u5929\u4E5F\u6765\u4E0A\u73ED\u4E86"
-      - 
-      cardsItGives_p:
-      - {fileID: 4270974583676908371, guid: 156ace7c225e1054fa9a267dd79bdf41, type: 3}
-      relationshipChangeAmount_p: 0
-      charasToUnlock_p: 
-      cardsItLimits_p: []
-      cardsLimitedTo_p: []
-      cardsItDestroys_p: []
-      dialogues_n:
-      - "\u65E0\u53EF\u5949\u544A"
-      - 
-      cardsItGives_n: []
-      relationshipChangeAmount_n: 0
-      charasToUnlock_n: 
-      cardsItLimits_n: []
-      cardsLimitedTo_n: []
-      cardsItDestroys_n: []
-    noneOptionUnlocked: 0
-  relationship: 0
-  ogPos: {x: 0, y: 0, z: 0}
-  ogScale: {x: 0, y: 0, z: 0}
-  cardlessDialogueFinished: 0
-  unlocked: 0
-  destoryMe: 0
-  re_interview_ability: 1
-  canBeChosen: 1
-  info: {fileID: 8417719885658614344}
---- !u!61 &-7973237963578344564
-BoxCollider2D:
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 2400, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!114 &291834671
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648202926039254858}
+  m_GameObject: {fileID: 291834669}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.24, y: 2.24}
-    newSize: {x: 2.24, y: 2.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.24, y: 2.24}
-  m_EdgeRadius: 0
---- !u!1 &1586186986595985868
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!1 &2019400452
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -326,9 +107,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 803002710412591472}
-  - component: {fileID: 7456754472277859141}
-  - component: {fileID: 8417719885658614344}
+  - component: {fileID: 2019400453}
+  - component: {fileID: 2019400455}
+  - component: {fileID: 2019400454}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -336,40 +117,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &803002710412591472
+--- !u!224 &2019400453
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586186986595985868}
+  m_GameObject: {fileID: 2019400452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2319304754846952262}
+  m_Father: {fileID: 291834670}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -489.38, y: -266.12}
-  m_SizeDelta: {x: 2.0543213, y: 0.96102905}
+  m_AnchoredPosition: {x: -1194.0796, y: -526.7802}
+  m_SizeDelta: {x: 3.1237793, y: 0.6866911}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7456754472277859141
+--- !u!222 &2019400455
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586186986595985868}
+  m_GameObject: {fileID: 2019400452}
   m_CullTransparentMesh: 0
---- !u!114 &8417719885658614344
+--- !u!114 &2019400454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586186986595985868}
+  m_GameObject: {fileID: 2019400452}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -382,10 +163,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\u526F\u533A\u957F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 57864b3fce913cf4687f981544254246, type: 2}
-  m_sharedMaterial: {fileID: -3525995633598858701, guid: 57864b3fce913cf4687f981544254246,
+  m_fontAsset: {fileID: 11400000, guid: ac00cc7d84ec3924383ee7d416c57692, type: 2}
+  m_sharedMaterial: {fileID: -544626459598026762, guid: ac00cc7d84ec3924383ee7d416c57692,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -452,7 +233,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &1740801830792175335
+--- !u!1 &648202926039254858
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -460,94 +241,323 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2319304754846952262}
-  - component: {fileID: 4207080439906729043}
-  - component: {fileID: 7226057173166790562}
-  - component: {fileID: 2009577581175264226}
-  m_Layer: 5
-  m_Name: Canvas (1)
+  - component: {fileID: 648202926039254869}
+  - component: {fileID: 648202926039254868}
+  - component: {fileID: 648202926039254859}
+  - component: {fileID: -1522419480156087328}
+  m_Layer: 0
+  m_Name: factory - 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2319304754846952262
-RectTransform:
+--- !u!4 &648202926039254869
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740801830792175335}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 648202926039254858}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
-  - {fileID: 803002710412591472}
-  m_Father: {fileID: 648202926039254869}
+  - {fileID: 291834670}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 489.375, y: 267.5}
-  m_SizeDelta: {x: 978.75, y: 551}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!223 &4207080439906729043
-Canvas:
+--- !u!212 &648202926039254868
+SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740801830792175335}
+  m_GameObject: {fileID: 648202926039254858}
   m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!114 &7226057173166790562
+  m_Sprite: {fileID: 21300000, guid: 02e8df291b66e3a4eb744239318be1ef, type: 3}
+  m_Color: {r: 1, g: 0.9843138, b: 0.9490197, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 4.31, y: 4.285}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &648202926039254859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740801830792175335}
+  m_GameObject: {fileID: 648202926039254858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Script: {fileID: 11500000, guid: dc78b61d1abea0c489c145ca387b69a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!114 &2009577581175264226
-MonoBehaviour:
+  namae: "\u5382\u957F"
+  dialogues:
+  - preconditions: 
+    triggerIDs: 0d000000
+    dialogue_inquiring: []
+    cards_inquiring: []
+    inquiringCard_given: 0
+    charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
+    cardsToLimit_inquire: []
+    cardsLimitedTo_inquire: []
+    cardsToDestory_inquire: []
+    dialogue_inquiring_p: []
+    cards_inquiring_p: []
+    inquiringCard_given_p: 0
+    charasToUnlock_inquire_p: 
+    relationshipChangeAmount_inquire_p: 0
+    cardsToLimit_inquire_p: []
+    cardsLimitedTo_inquire_p: []
+    cardsToDestory_inquire_p: []
+    dialogue_inquiring_n: []
+    cards_inquiring_n: []
+    inquiringCard_given_n: 0
+    charasToUnlock_inquire_n: 
+    relationshipChangeAmount_inquire_n: 0
+    cardsToLimit_inquire_n: []
+    cardsLimitedTo_inquire_n: []
+    cardsToDestory_inquire_n: []
+    dialogue_threatened:
+    - "\u9648\u5929\u6797\u548C\u60A8\u8D77\u51B2\u7A81\u7684\u65F6\u5019\u60A8\u90A3\u53E5\u201C\u8FDE\u653F\u5E9C\u90FD\u4E0D\u7BA1\u201D\u2026\u2026"
+    - "\u60A8\u548C\u526F\u533A\u957F\u5173\u7CFB\u4E0D\u4E00\u822C\u8FD9\u4E8B\u513F\u88AB\u6345\u51FA\u53BB\u4E86\u53EF\u4E0D\u597D\u5427\uFF1F\u5B98\u5546\u52FE\u7ED3\u7684\u7ED3\u679C\u6279\u4E0B\u6765\u4F60\u7684\u5382\u6015\u662F\u4FDD\u4E0D\u4F4F\u7684"
+    - "\u5382\u957F\uFF1A\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\uFF01"
+    - "\u5382\u957F\uFF1A\u6211\u7684\u5DE5\u5382\u53EF\u662F\u533A\u91CC\u4E3B\u8981\u7ECF\u6D4E\u6765\u6E90\uFF0C\u4E3A\u4E86\u54B1\u4EEC\u9547\uFF0C\u6211\u7ECF\u5E38\u8BF7\u526F\u533A\u957F\u5403\u5403\u996D\u559D\u559D\u9152\u8BA8\u8BBA\u600E\u4E48\u53D1\u5C55\u7ECF\u6D4E"
+    - "\u5382\u957F\uFF1A\u8FD9\u9152\u559D\u5230\u4F4D\u4E86\u2026\u8BE5\u8BF4\u7684\u4E0D\u8BE5\u8BF4\u4E86\u2026\u90A3\u4E0D\u90FD\u8BF4\u4E86\u561B\uFF01"
+    - 
+    cards_threatened: []
+    threatenedCard_given: 0
+    charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
+    dialogue_threatened_p: []
+    cards_threatened_p: []
+    threatenedCard_given_p: 0
+    charasToUnlock_threat_p: 
+    relationshipChangeAmount_threat_p: 0
+    cardsToLimit_threat_p: []
+    cardsLimitedTo_threat_p: []
+    cardsToDestory_threat_p: []
+    dialogue_threatened_n: []
+    cards_threatened_n: []
+    threatenedCard_given_n: 0
+    charasToUnlock_threat_n: 
+    relationshipChangeAmount_threat_n: 0
+    cardsToLimit_threat_n: []
+    cardsLimitedTo_threat_n: []
+    cardsToDestory_threat_n: []
+    dialogue_trading:
+    - "\u9648\u5929\u6797\u548C\u60A8\u8D77\u51B2\u7A81\u7684\u65F6\u5019\u60A8\u90A3\u53E5\u201C\u8FDE\u653F\u5E9C\u90FD\u4E0D\u7BA1\u201D\u2026\u2026"
+    - "\u60A8\u597D\u50CF\u548C\u526F\u533A\u957F\u5173\u7CFB\u4E0D\u4E00\u822C\u5450\uFF1F\u5B98\u5546\u52FE\u7ED3\u7684\u7ED3\u679C\u6279\u4E0B\u6765\u4F60\u7684\u5382\u6015\u662F\u96BE\u4FDD\u3002\u8FD9\u4EFD\u5F55\u97F3\u5462\uFF0C\u516C\u4E0D\u516C\u5E03\u9009\u62E9\u6743\u5728\u6211\uFF0C\u6211\u53EF\u4EE5\u5E2E\u60A8\u9690\u7792\u2026\u2026"
+    - "\u4F46\u60A8\u5F97\u544A\u8BC9\u6211\u60A8\u548C\u526F\u533A\u957F\u4EA4\u6613\u7684\u5927\u81F4\u5185\u5BB9\uFF0C\u4E0D\u7136\u6211\u8FD9\u62A5\u9053\u600E\u4E48\u5199\u5C31\u4E0D\u4E00\u5B9A\u4E86"
+    - "\u5382\u957F\uFF1A\u8BF4\u5B9E\u8BDD\u6211\u548C\u526F\u533A\u771F\u6CA1\u5565\uFF0C\u9876\u591A\u2026\u2026\u9876\u591A\u6211\u627F\u8BFA\u4E86\u591A\u652F\u6301\u652F\u6301\u7ED9\u653F\u5E9C\u5DE5\u7A0B"
+    - "\u5382\u957F\uFF1A\u5176\u5B9E\u6211\u62DC\u6258\u526F\u533A\u957F\u5E2E\u6211\u63A7\u5236\u63A7\u5236\u5382\u5B50\u9644\u8FD1\u7684\u4EBA\u6D41\u91CF\u4E5F\u662F\u5BF9\u5C45\u6C11\u6709\u597D\u5904\u7684"
+    - "\u5382\u957F\uFF1A\u6C61\u67D3\u561B\u2026\u2026\u4F60\u770B\u90FD\u662F\u4E00\u7247\u597D\u5FC3\u5450\uFF0C\u4F60\u5199\u62A5\u9053\u7684\u65F6\u5019\u53EF\u5343\u4E07\u522B\u9519\u8BEF\u89E3\u8BFB\u6211\u4EEC\uFF0C\u5BFC\u81F4\u4EC0\u4E48\u8BEF\u4F1A\u5C31\u4E0D\u597D\u4E86"
+    - 
+    cards_trading: []
+    tradingCard_given: 0
+    charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
+    dialogue_trading_p: []
+    cards_trading_p: []
+    tradingCard_given_p: 0
+    charasToUnlock_trade_p: 
+    relationshipChangeAmount_trading_p: 0
+    cardsToLimit_trade_p: []
+    cardsLimitedTo_trade_p: []
+    cardsToDestory_trade_p: []
+    dialogue_trading_n: []
+    cards_trading_n: []
+    tradingCard_given_n: 0
+    charasToUnlock_trade_n: 
+    relationshipChangeAmount_trading_n: 0
+    cardsToLimit_trade_n: []
+    cardsLimitedTo_trade_n: []
+    cardsToDestory_trade_n: []
+  defaultDialogues:
+  - "\u5382\u957F\u597D\uFF0C\u6211\u662FTC\u62A5\u793E\u7684\u8BB0\u8005\u5C0F\u53F6\uFF0C\u8FD9\u6B21\u4E5F\u662F\u534F\u540C\u8B66\u65B9\u4E00\u8D77\u8C03\u67E5\u706B\u707E\u7684\u771F\u76F8\uFF0C\u5E0C\u671B\u60A8\u80FD\u914D\u5408\u4E00\u4E0B"
+  - "\u5382\u957F\uFF1A\u67E5\uFF01\u6211\u5012\u8981\u770B\u770B\u662F\u54EA\u4E2A\u4E0D\u957F\u773C\u775B\u7684\u628A\u8001\u5B50\u7684\u5382\u70E7\u4E86\uFF01tnnd\u2026\u2026"
+  - "\u8BF7\u95EE\u706B\u707E\u5F53\u5929\u4E0B\u5348\u60A8\u5728\u54EA\u91CC\u5462\uFF1F"
+  - "\u5382\u957F\uFF1A\u54E6\uFF0C\u90A3\u5929\u4E0B\u5348\u554A\uFF0C\u6211\u4E0D\u5728\u5382\u91CC\uFF0C\u5916\u5934\u5E94\u916C\u53BB\u4E86"
+  - 
+  cardlessDialogues:
+  - options:
+    - preconditionCharas: []
+      question: "\u8BF7\u95EE\u60A8\u7684\u5382\u91CC\u5B89\u88C5\u4E86\u76D1\u63A7\u5417\uFF1F"
+      shown: 0
+      precondition_met: 0
+      dialogues:
+      - "\u5382\u957F\uFF1A\u90A3\u5FC5\u987B\u6709\u554A\uFF01\u54B1\u4EEC\u5382\u4E25\u683C\u9075\u5B88\u653F\u5E9C\u7684\u89C4\u8303\u5316\u7BA1\u7406\u3002\u8FD9\u662F\u5DE5\u5382\u91CC\u7684\u5B89\u5168\u624B\u518C\uFF0C\u4F60\u770B\u770B"
+      - "\u5382\u957F\uFF1A\u54B1\u4EEC\u76D1\u63A7\u65E0\u6B7B\u89D2\u4E0D\u95F4\u65AD\u62CD\u6444\uFF0C\u4E0D\u4F1A\u7ED9\u5458\u5DE5\u5B89\u6392\u957F\u65F6\u95F4\u4F5C\u4E1A\uFF0C"
+      - "\u5382\u957F\uFF1A\u6750\u6599\u7684\u50A8\u5B58\u4E5F\u5408\u6CD5\u5408\u89C4\uFF0C\u5B9A\u671F\u653F\u5E9C\u68C0\u67E5\u65E5\u671F\u6211\u4EEC\u4ECE\u6765\u4E0D\u4F1A\u5FFD\u89C6"
+      - "\u4F46\u662F\u636E\u6211\u4E86\u89E3\uFF0C\u8FD9\u6B21\u76D1\u63A7\u5B8C\u5168\u6CA1\u6709\u8BB0\u5F55\u4E0B\u706B\u60C5\u7684\u4EFB\u4F55\u4FE1\u606F\uFF0C\u80FD\u8BF7\u95EE\u60A8\u8FD9\u662F\u4E3A\u4EC0\u4E48\u5417\uFF1F"
+      - "\u2026\u2026\u5173\u4E8E\u8FD9\u70B9\uFF0C\u6211\u4EEC\u5382\u5185\u4E5F\u6B63\u5728\u6392\u67E5\u4E2D\uFF0C\u5230\u65F6\u5019\u4E00\u5B9A\u4F1A\u7ED9\u5A92\u4F53\u4E00\u4E2A\u5408\u7406\u7684\u89E3\u91CA"
+      - 
+      cardsItGives:
+      - {fileID: 4270974583676908371, guid: 71d602707362ad44b80db8b171f4c127, type: 3}
+      relationshipChangeAmount: 0
+      charasToUnlock: 
+      cardsItLimits: []
+      cardsLimitedTo: []
+      cardsItDestroys: []
+      dialogues_p: []
+      cardsItGives_p: []
+      relationshipChangeAmount_p: 0
+      charasToUnlock_p: 
+      cardsItLimits_p: []
+      cardsLimitedTo_p: []
+      cardsItDestroys_p: []
+      dialogues_n: []
+      cardsItGives_n: []
+      relationshipChangeAmount_n: 0
+      charasToUnlock_n: 
+      cardsItLimits_n: []
+      cardsLimitedTo_n: []
+      cardsItDestroys_n: []
+    noneOptionUnlocked: 0
+  - options:
+    - preconditionCharas: []
+      question: "\u90A3\u5192\u6627\u8BF7\u95EE\u60A8\uFF0C\u60A8\u548C\u9648\u5929\u6797\u662F\u4E0D\u662F\u6709\u8FC7\u77DB\u76FE\uFF0C\u4ECB\u610F\u7ED9\u6211\u8BF4\u8BF4\u5417\uFF1F"
+      shown: 0
+      precondition_met: 0
+      dialogues:
+      - "\u5382\u957F\uFF1A\u5509\uFF01\u9648\u5929\u6797\u8FD9\u5C0F\u5B50\u6700\u70E6\u4EBA\uFF0C\u4E09\u5929\u4E24\u5934\u5C31\u6765\u95F9\u4E8B"
+      - "\u5382\u957F\uFF1A\u770B\u770B\uFF0C\u5382\u91CC\u7684\u503C\u73ED\u8868\u548C\u8BB0\u5F55\u8BB0\u5F97\u660E\u660E\u767D\u767D\u7684\uFF0C\u4F60\u53EF\u5F97\u7ED9\u6211\u66DD\u5149\u4E00\u4E0B\uFF0C\u4E0D\u7136\u6211\u8FD9\u5382\u8FD8\u529E\u4E0D\u529E\u4E86\uFF01"
+      - "\u90A3\u60A8\u4E00\u822C\u600E\u4E48\u5904\u7406\uFF1F"
+      - "\u5382\u957F\uFF1A\u6211\u4E00\u822C\u4E0D\u5230\u5382\u5B50\u90A3\u8FB9\uFF0C\u61D2\u5F97\u8DDF\u4ED6\u78E8\u5634\u76AE\u5B50"
+      - 
+      cardsItGives: []
+      relationshipChangeAmount: 0
+      charasToUnlock: 
+      cardsItLimits: []
+      cardsLimitedTo: []
+      cardsItDestroys: []
+      dialogues_p: []
+      cardsItGives_p: []
+      relationshipChangeAmount_p: 0
+      charasToUnlock_p: 
+      cardsItLimits_p: []
+      cardsLimitedTo_p: []
+      cardsItDestroys_p: []
+      dialogues_n: []
+      cardsItGives_n: []
+      relationshipChangeAmount_n: 0
+      charasToUnlock_n: 
+      cardsItLimits_n: []
+      cardsLimitedTo_n: []
+      cardsItDestroys_n: []
+    noneOptionUnlocked: 0
+  - options:
+    - preconditionCharas: []
+      question: "\u90A3\u6211\u8FD8\u60F3\u8DDF\u60A8\u8C03\u67E5\u4E00\u4E0B\u5382\u91CC\u7684\u5458\u5DE5\uFF0C\u5BF9\u8FD9\u6B21\u6D89\u4E8B\u7684\u53EF\u80FD\u5BF9\u8C61\uFF0C\u4E00\u4E2A\u53EB\u4ED8\u5F3A\uFF0C\u4E00\u4E2A\u53EB\u5B59\u8F69\uFF0C\u60A8\u90FD\u6709\u5370\u8C61\u5417\uFF1F"
+      shown: 0
+      precondition_met: 0
+      dialogues:
+      - "\u5382\u957F\uFF1A\u4ED8\u5F3A\u8FD9\u4EBA\u5E73\u65F6\u5DE5\u4F5C\u633A\u8BA4\u771F\uFF0C\u4E0D\u8FC7\u8D77\u706B\u90A3\u5929\u4ED6\u8BF7\u5047\u966A\u4ED6\u8001\u5A46\u53BB\u533B\u9662\u505A\u68C0\u67E5\u53BB\u4E86\uFF0C\u5382\u91CC\u6750\u6599\u6570\u91CF\u6709\u70B9\u5947\u602A\u2026\u2026"
+      - "\u5382\u957F\uFF1A\u4E0D\u77E5\u9053\u548C\u4ED6\u6709\u5173\u7CFB\u6CA1\u6709\u3002\u5B59\u8F69\u662F\u674E\u963F\u5A46\u7684\u513F\u5B50\u554A\uFF0C\u8BF4\u8D77\u6765\u4ED6\u8FD9\u5DE5\u4F5C\u6211\u8FD8\u662F\u5356\u4E86\u526F\u533A\u957F\u4E00\u4E2A\u4EBA\u60C5\u624D\u7ED9\u4ED6\u5B89\u6392\u7684"
+      - "\u5382\u957F\uFF1A\u4ED6\u5C0F\u5B50\u4E00\u5411\u4E0D\u7F3A\u5E2D\uFF0C\u8D77\u706B\u90A3\u5929\u4E5F\u6765\u4E0A\u73ED\u4E86"
+      - "\uFF08\u8FD9\u4F4D\u91C7\u8BBF\u8005\u521A\u624D\u7684\u8BDD\u4E2D\u4F3C\u4E4E\u5BF9\u4E8E\u5DE5\u4EBA\u4ED8\u5F3A\u4E0E\u6750\u6599\u6570\u91CF\u7684\u5173\u7CFB\u9887\u6709\u7591\u95EE\uFF0C\u4E0D\u5982\u63A5\u4E0B\u6765\u5C31\u53BB\u91C7\u8BBF\u4E00\u4E0B\u4ED8\u5F3A\u5427\uFF09"
+      - 
+      cardsItGives:
+      - {fileID: 4270974583676908371, guid: 156ace7c225e1054fa9a267dd79bdf41, type: 3}
+      relationshipChangeAmount: 0
+      charasToUnlock: 07000000
+      cardsItLimits: []
+      cardsLimitedTo: []
+      cardsItDestroys: []
+      dialogues_p: []
+      cardsItGives_p: []
+      relationshipChangeAmount_p: 0
+      charasToUnlock_p: 
+      cardsItLimits_p: []
+      cardsLimitedTo_p: []
+      cardsItDestroys_p: []
+      dialogues_n: []
+      cardsItGives_n: []
+      relationshipChangeAmount_n: 0
+      charasToUnlock_n: 
+      cardsItLimits_n: []
+      cardsLimitedTo_n: []
+      cardsItDestroys_n: []
+    noneOptionUnlocked: 0
+  relationship: 0
+  ogPos: {x: 0, y: 0, z: 0}
+  ogScale: {x: 0, y: 0, z: 0}
+  cardlessDialogueFinished: 0
+  unlocked: 0
+  destoryMe: 0
+  re_interview_ability: 1
+  canBeChosen: 1
+  info: {fileID: 2019400454}
+  canAdvanceDialogue: 1
+  usableIDs: 
+--- !u!61 &-1522419480156087328
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740801830792175335}
+  m_GameObject: {fileID: 648202926039254858}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.31, y: 4.285}
+    newSize: {x: 4.31, y: 4.285}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.31, y: 4.285}
+  m_EdgeRadius: 0

@@ -48,7 +48,7 @@ public class CardScript : MonoBehaviour
 	{
 		if (canBeDragged)
 		{
-			infoDisplay.text = description; // show description
+			infoDisplay.text = namae; // show description
 			Vector3 mousePos_screen = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10); // get mouse screen pos
 			Vector3 mousePos_world = Camera.main.ScreenToWorldPoint(mousePos_screen); // convert mouse screen pos to world pos
 		
@@ -65,7 +65,7 @@ public class CardScript : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
-			infoDisplay.text = description; // show description
+			infoDisplay.text = namae; // show description
 		}
 	}
 
@@ -80,10 +80,16 @@ public class CardScript : MonoBehaviour
 			Transform interviewee = GameManager.me.interviewee.transform;
 			Vector3 interviewee_pos = GameManager.me.interviewee_pos;
 			// check if card is inside interviewee's picture
-			if (transform.position.x > interviewee_pos.x - interviewee.localScale.x / 2 &&
-				transform.position.x < interviewee_pos.x + interviewee.localScale.x / 2 &&
-				transform.position.y > interviewee_pos.y - interviewee.localScale.y / 2 &&
-				transform.position.y < interviewee_pos.y + interviewee.localScale.y / 2 &&
+			//print("x: "+transform.position.x);
+			//print("y: "+transform.position.y);
+			//print("left: " + (interviewee_pos.x - interviewee.localScale.x / 2));
+			//print("right: " + (interviewee_pos.x + interviewee.localScale.x / 2));
+			//print("bottom: " + (interviewee_pos.y - interviewee.localScale.x / 2));
+			//print("top: " + (interviewee_pos.y + interviewee.localScale.x / 2));
+			if (transform.position.x > interviewee_pos.x - interviewee.localScale.x * 2 &&
+				transform.position.x < interviewee_pos.x + interviewee.localScale.x * 2 &&
+				transform.position.y > interviewee_pos.y - interviewee.localScale.y * 2 &&
+				transform.position.y < interviewee_pos.y + interviewee.localScale.y * 2 &&
 				GameManager.me.interviewee.GetComponent<CharacterScript>().dialogues.Count > 0)
 			{
 				// hide dDisplayer
@@ -95,6 +101,7 @@ public class CardScript : MonoBehaviour
 					{
 						if (legalId != id)
 						{
+							DialogueManagerScript.me.dDisplayer.gameObject.SetActive(true);
 							transform.position = og_pos;
 						}
 						else

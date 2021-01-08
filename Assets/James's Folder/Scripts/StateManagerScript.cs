@@ -37,8 +37,6 @@ public class StateManagerScript : MonoBehaviour
 	public GameObject gM;
 	private GameManager gMS;
 
-	public GameObject intervieweeToTriggerDayTwo;
-
 	private void Awake()
 	{
 		me = this;
@@ -47,28 +45,9 @@ public class StateManagerScript : MonoBehaviour
 	private void Start()
 	{
 		state = States.dayOne;
+		worker2P.GetComponent<CharacterScript>().relationship = 0;
 		gMS = gM.GetComponent<GameManager>();
 		EnterDayOne();
-	}
-
-	private void Update()
-	{
-		if (state == States.pregame)
-		{
-
-		}
-		else if (state == States.dayOne)
-		{
-
-		}
-		else if (state == States.dayTwo)
-		{
-
-		}
-		else if (state == States.ending)
-		{
-
-		}
 	}
 
 	public void EnterDayOne()
@@ -80,8 +59,8 @@ public class StateManagerScript : MonoBehaviour
 			gMS.characterPrefabs.Add(dayOne_charas[i]);
 		}
 		UnlockChara(Charas.mayor1);
-		UnlockChara(Charas.grandma);
-		UnlockChara(Charas.worker1);
+		//UnlockChara(Charas.grandma);
+		//UnlockChara(Charas.worker1);
 		ResetCardPrefabs();
 		gMS.state = gMS.choose;
 	}
@@ -104,17 +83,21 @@ public class StateManagerScript : MonoBehaviour
 		}
 		gMS.unlockedCharaPrefabs.Clear();
 		gMS.roster.Clear();
-		UnlockChara(Charas.mayor2);
+		//UnlockChara(Charas.mayor2);//
 		UnlockChara(Charas.doc2);
 		UnlockChara(Charas.farmer2);
-		UnlockChara(Charas.factory2);
-		UnlockChara(Charas.worker2);
+		//UnlockChara(Charas.factory2);//
+		//UnlockChara(Charas.worker2);//
+		UnlockChara(Charas.young2);
 		ResetCardPrefabs();
 		gMS.state = gMS.choose;
 		if (gMS.player != null)
 		{
 			gMS.player.GetComponent<PlayerScript>().disableMeNHand = true;
 		}
+		gMS.cam.transform.position = new Vector3(0, 0, -10);
+		ClueBoard.me.UnlockYoung();
+		ClueBoard.me.UnlockFarmer();
 	}
 
 	public void UnlockChara(Charas chara)

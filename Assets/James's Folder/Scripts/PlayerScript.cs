@@ -12,6 +12,10 @@ public class PlayerScript : MonoBehaviour
 	public float handSect_length;
 	public bool disableMeNHand = false;
 
+	public Vector3 usableCards_startPos;
+	public float usableCards_length;
+
+
 	private void Awake()
 	{
 		me = this;
@@ -57,12 +61,37 @@ public class PlayerScript : MonoBehaviour
 		}
 	}
 
+	public void ShowUsableCards_Player()
+	{
+		CharacterScript iS = GameManager.me.interviewee.GetComponent<CharacterScript>();
+		List<GameObject> usableCards = new List<GameObject>();
+		for (int i = 0; i < hand.Count; i++)
+		{
+			CardScript cs = hand[i].GetComponent<CardScript>();
+			if (iS.usableIDs.Contains(cs.id))
+			{
+				usableCards.Add(hand[i]);
+				hand[i].GetComponent<SpriteRenderer>().enabled = true;
+			}
+			else
+			{
+				hand[i].GetComponent<SpriteRenderer>().enabled = false;
+			}
+		}
+		for (int i = 0; i < usableCards.Count; i++)
+		{
+			Vector3 pos = new Vector3(usableCards_startPos.x + (i + 1) * usableCards_length / (usableCards.Count + 1), usableCards_startPos.y, 0);
+			usableCards[i].transform.position = pos;
+			usableCards[i].GetComponent<CardScript>().og_pos = usableCards[i].transform.position;
+		}
+	}
+
 	public void DestroyCard(string cardName)
 	{
 		List<GameObject> cardsToRemove = new List<GameObject>();
 		foreach (var card in hand)
 		{
-			if (card.name == cardName + "(Clone)")
+			if (card.name == cardName) // names have "(Clone)" in it
 			{
 				cardsToRemove.Add(card);
 				card.GetComponent<CardScript>().destroyMe = true;

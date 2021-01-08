@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 648202926039254869}
   - component: {fileID: 648202926039254868}
   - component: {fileID: 648202926039254859}
-  - component: {fileID: -7973237963578344564}
+  - component: {fileID: 6077264212469041718}
   m_Layer: 0
   m_Name: farmer - 2
   m_TagString: Untagged
@@ -28,9 +28,9 @@ Transform:
   m_GameObject: {fileID: 648202926039254858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
-  - {fileID: 1690309632937392724}
+  - {fileID: 2245249840575842164}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c8160ea0b180ff84e987b05bee94fc58, type: 3}
-  m_Color: {r: 0.3843648, g: 0.3726415, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0955344507b7fa043beb89def0f3e3d0, type: 3}
+  m_Color: {r: 1, g: 0.9843138, b: 0.9490197, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.24, y: 2.24}
+  m_Size: {x: 4.285, y: 4.31}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -96,51 +96,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc78b61d1abea0c489c145ca387b69a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  namae: "\u519C\u6C11-2"
+  namae: "\u519C\u6C11\u8001\u9648"
   dialogues:
   - preconditions: 
     triggerIDs: 17000000
     dialogue_inquiring:
-    - "\u6211\uFF1A\u8FD9\u4E9B\u4FE1\uFF0C\u662F\u674E\u963F\u5A46\u548C\u526F\u533A\u957F\u7684\u5427\uFF0C\u4F60\u77E5\u9053\u4ED6\u4EEC\u4E24\u4E2A\u4E4B\u95F4\u662F\u600E\u4E48\u56DE\u4E8B\u5417\uFF1F"
-    - "\u519C\u6C11\uFF1A\u5475\uFF0C\u8FD9\u526F\u533A\u957F\u554A\uFF0C\u4E0D\u662F\u5565\u597D\u4EBA\uFF0C\u8BF4\u8BDD\u548C\u653E\u5C41\u4E00\u6837\uFF0C\u90A3\u5929\u5C31\u5E94\u8BE5\u8FDE\u4ED6\u4E00\u8D77\u6253\u4E00\u987F\u3002"
-    - "\u6211\uFF1A\u90A3\u5929\u2026\u2026\u5C31\u662F\u7740\u706B\u524D\u4F60\u53BB\u5DE5\u5382\u7684\u65F6\u5019\u5417\uFF0C\u4F60\u4EEC\u6253\u67B6\u4E86\u5417\uFF1F"
-    - "\u519C\u6C11\uFF1A\u662F\u554A\uFF0C\u54E5\u51E0\u4E2A\u6284\u7740\u5BB6\u4F19\u5C31\u8FC7\u53BB\u4E86\uFF0C\u5382\u957F\u8FD9\u9F9F\u5B59\uFF0C\u6B7B\u732A\u4E0D\u6015\u5F00\u6C34\u70EB\uFF0C\u4F60\u8DDF\u4ED6\u8BF4\u6CA1\u7528\u7684\uFF0C\u5C31\u5F97\u73A9\u771F\u7684\uFF0C\u8FD9\u79CD\u4EBA\u624D\u4F1A\u597D\u597D\u542C\u4F60\u8BF4\u8BDD\u3002"
-    - "\u6211\uFF1A\u6240\u4EE5, \u4F60\u6253\u4E86\u4ED6\u4E00\u987F\uFF0C\u4ED6\u6700\u540E\u59A5\u534F\u4E86\u5417?"
-    - "\u519C\u6C11\uFF1A\u8BF4\u6765\u6211\u5C31\u6C14\uFF0C\u4E00\u542C\u5230\u6211\u8981\u6765\uFF0C\u4ED6\u5C31\u6253\u7535\u8BDD\u62A5\u4E86\u8B66\uFF0C\u8BF4\u8981\u8B66\u5BDF\u4FDD\u62A4\u4ED6\uFF0C\u8FD9\u6B21\u53EA\u80FD\u5148\u8FD9\u6837\u4E86\u3002"
-    - "\u6211\uFF1A\u54CE\uFF0C\u4E0B\u6B21\u4E5F\u522B\u8FD9\u6837\u4E86\uFF0C\u6253\u4F24\u4E86\u4EBA\u4E5F\u4E0D\u597D\uFF0C\u591A\u4E00\u4E8B\u4E0D\u5982\u5C11\u4E00\u4E8B\uFF0C\u4F60\u8BF4\u662F\u5427\u3002\r\n"
-    - "\u519C\u6C11\uFF1A\u4F60\u4EE5\u4E3A\u662F\u6211\u60F3\u591A\u8FD9\u4E00\u4E8B\u5417\uFF1F\r"
-    - "\u6211\uFF1A\u660E\u767D\u4E86\u2026\u2026"
+    - "\u8FD9\u4E9B\u4FE1\uFF0C\u5E94\u8BE5\u662F\u674E\u963F\u5A46\u548C\u526F\u533A\u957F\u7684\uFF0C\u4F60\u77E5\u9053\u4ED6\u4EEC\u4E24\u4E2A\u4E4B\u95F4\u662F\u548B\u56DE\u4E8B\uFF1F"
+    - "\u519C\u6C11\uFF1A\u5475\uFF0C\u8FD9\u526F\u533A\u957F\u554A\uFF0C\u4E0D\u662F\u5565\u597D\u4EBA\uFF0C\u8BF4\u8BDD\u548C\u653E\u5C41\u4E00\u6837"
+    - "\u519C\u6C11\uFF1A\u6211\u8DDF\u963F\u5A46\u4E0A\u8BBF\u4E86\u90A3\u4E48\u591A\u6B21\u8981\u6C42\u6574\u6CBB\uFF0C\u4ED6\u5F53\u65F6\u660E\u660E\u5C31\u7B54\u5E94\u4E86\u6211\u4EEC\u8BF4\u8981\u597D\u597D\u6539\uFF01\u7ED3\u679C\u5462\uFF1F\u90A3\u5929\u5C31\u5E94\u8BE5\u8FDE\u4ED6\u4E00\u8D77\u6253\u4E00\u987F\uFF01"
+    - "\u90A3\u5929\u2026\u2026\u5C31\u662F\u7740\u706B\u524D\u4F60\u53BB\u5DE5\u5382\u7684\u65F6\u5019\u5417\uFF0C\u4F60\u4EEC\u6253\u67B6\u4E86\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u90A3\u5012\u6CA1\u6709\u2026\u2026\u5382\u957F\u8FD9\u9F9F\u5B59\uFF0C\u4E3A\u4E86\u8EB2\u6211\uFF0C\u90FD\u4E0D\u6562\u6765\u5DE5\u5382\u4E86\uFF01"
+    - "\u660E\u767D\u4E86\u2026\u2026"
     - 
     cards_inquiring:
-    - {fileID: 4270974583676908371, guid: ce05a5e66fedf17459638b5b8d7894af, type: 3}
+    - {fileID: 4270974583676908371, guid: a1b7edb5952829d4cb8a5887c398c656, type: 3}
+    - {fileID: 4270974583676908371, guid: 490d15b619628574da2701a869caebf1, type: 3}
     inquiringCard_given: 0
     charasToUnlock_inquire: 
-    relationshipChangeAmount_inquire: -1
+    relationshipChangeAmount_inquire: 0
     cardsToLimit_inquire: []
     cardsLimitedTo_inquire: []
     cardsToDestory_inquire: []
-    dialogue_inquiring_p:
-    - "\u6211\uFF1A\u8FD9\u4E9B\u4FE1\uFF0C\u662F\u674E\u963F\u5A46\u548C\u526F\u533A\u957F\u7684\u5427\uFF0C\u4F60\u77E5\u9053\u4ED6\u4EEC\u4E24\u4E2A\u4E4B\u95F4\u662F\u600E\u4E48\u56DE\u4E8B\u5417\uFF1F"
-    - "\u519C\u6C11\uFF1A\u5475\uFF0C\u8FD9\u526F\u533A\u957F\u554A\uFF0C\u4E0D\u662F\u5565\u597D\u4EBA\uFF0C\u8BF4\u8BDD\u548C\u653E\u5C41\u4E00\u6837\uFF0C\u90A3\u5929\u5C31\u5E94\u8BE5\u8FDE\u4ED6\u4E00\u8D77\u6253\u4E00\u987F\u3002"
-    - "\u6211\uFF1A\u90A3\u5929\u2026\u2026\u5C31\u662F\u7740\u706B\u524D\u4F60\u53BB\u5DE5\u5382\u7684\u65F6\u5019\u5417\uFF0C\u4F60\u4EEC\u6253\u67B6\u4E86\u5417\uFF1F"
-    - "\u519C\u6C11\uFF1A\u662F\u554A\uFF0C\u54E5\u51E0\u4E2A\u6284\u7740\u5BB6\u4F19\u5C31\u8FC7\u53BB\u4E86\uFF0C\u5382\u957F\u8FD9\u9F9F\u5B59\uFF0C\u6B7B\u732A\u4E0D\u6015\u5F00\u6C34\u70EB\uFF0C\u4F60\u8DDF\u4ED6\u8BF4\u6CA1\u7528\u7684\uFF0C\u5C31\u5F97\u73A9\u771F\u7684\uFF0C\u8FD9\u79CD\u4EBA\u624D\u4F1A\u597D\u597D\u542C\u4F60\u8BF4\u8BDD\u3002"
-    - "\u6211\uFF1A\u6240\u4EE5, \u4F60\u6253\u4E86\u4ED6\u4E00\u987F\uFF0C\u4ED6\u6700\u540E\u59A5\u534F\u4E86\u5417?"
-    - "\u519C\u6C11\uFF1A\u8BF4\u6765\u6211\u5C31\u6C14\uFF0C\u4E00\u542C\u5230\u6211\u8981\u6765\uFF0C\u4ED6\u5C31\u6253\u7535\u8BDD\u62A5\u4E86\u8B66\uFF0C\u8BF4\u8981\u8B66\u5BDF\u4FDD\u62A4\u4ED6\uFF0C\u8FD9\u6B21\u53EA\u80FD\u5148\u8FD9\u6837\u4E86\u3002"
-    - "\u6211\uFF1A\u54CE\uFF0C\u4E0B\u6B21\u4E5F\u522B\u8FD9\u6837\u4E86\uFF0C\u6253\u4F24\u4E86\u4EBA\u4E5F\u4E0D\u597D\uFF0C\u591A\u4E00\u4E8B\u4E0D\u5982\u5C11\u4E00\u4E8B\uFF0C\u4F60\u8BF4\u662F\u5427\u3002\r\n"
-    - "\u519C\u6C11\uFF1A\u4F60\u4EE5\u4E3A\u662F\u6211\u60F3\u591A\u8FD9\u4E00\u4E8B\u5417\uFF1F\r"
-    - "\u6211\uFF1A\u660E\u767D\u4E86\u2026\u2026"
-    - 
-    cards_inquiring_p:
-    - {fileID: 4270974583676908371, guid: ce05a5e66fedf17459638b5b8d7894af, type: 3}
+    dialogue_inquiring_p: []
+    cards_inquiring_p: []
     inquiringCard_given_p: 0
     charasToUnlock_inquire_p: 
-    relationshipChangeAmount_inquire_p: -1
+    relationshipChangeAmount_inquire_p: 0
     cardsToLimit_inquire_p: []
     cardsLimitedTo_inquire_p: []
     cardsToDestory_inquire_p: []
-    dialogue_inquiring_n:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
+    dialogue_inquiring_n: []
     cards_inquiring_n: []
     inquiringCard_given_n: 0
     charasToUnlock_inquire_n: 
@@ -149,7 +134,212 @@ MonoBehaviour:
     cardsLimitedTo_inquire_n: []
     cardsToDestory_inquire_n: []
     dialogue_threatened:
-    - "\u65E0\u53EF\u5949\u544A"
+    - "\u8FD9\u4E2A\u5382\u957F\u7684\u786E\u4E0D\u662F\u4EC0\u4E48\u597D\u4EBA\u2026\u2026\u6211\u4E86\u89E3\u5230\u526F\u533A\u957F\u6709\u548C\u963F\u5A46\u6709\u4E92\u76F8\u6765\u5F80\u7684\u4FE1\u4EF6"
+    - "\u4F60\u770B\u8FD9\u5C01\u4FE1\u3002\u770B\u4E0A\u53BB\u963F\u5A46\u786E\u5B9E\u633A\u4FE1\u4EFB\u8FD9\u4E2A\u533A\u957F\u7684\uFF0C\u6CA1\u60F3\u5230\u4ED6\u5C45\u7136\u6CA1\u6709\u5C65\u884C\u627F\u8BFA\u2026\u2026"
+    - "\uFF08\u519C\u6C11\u770B\u4F3C\u5F88\u6FC0\u52A8\uFF09"
+    - "\u519C\u6C11\uFF1A\u4ED6\u4E0D\u914D\u5F53\u8FD9\u4E2A\u5B98\uFF01\u8DDF\u963F\u5A46\u4E0A\u8BBF\u4E86\u90A3\u4E48\u591A\u6B21\u8981\u6C42\u6574\u6CBB\uFF0C\u4ED6\u5F53\u65F6\u660E\u660E\u5C31\u7B54\u5E94\u4E86\u6211\u4EEC\u8BF4\u8981\u597D\u597D\u6539\uFF01"
+    - "\u519C\u6C11\uFF1A\u7ED3\u679C\u5462\uFF1F\u4E3A\u4E86\u8FD9\u9876\u4E4C\u7EB1\u5E3D\uFF0C\u4ED6\u8FD8\u8BA9\u533B\u9662\u5E2E\u4ED6\u9690\u7792\u963F\u5A46\u53BB\u4E16\u7684\u539F\u56E0\u2026\u2026\u8FD9\u9F9F\u5B59\u5C31\u4E0D\u662F\u4E2A\u4EBA\uFF01"
+    - "\u4F60\u8BF4\u4ED6\u8BA9\u533B\u9662\u9690\u7792\u2026\u2026\u4F60\u4ECE\u54EA\u91CC\u542C\u5230\u7684\u8FD9\u4E2A\u6D88\u606F\u5462\uFF1F"
+    - "\u519C\u6C11\uFF1A\u963F\u5A46\u8D70\u4E4B\u524D\uFF0C\u5C31\u5728\u533B\u9662\u91CC\u542C\u5230\u7684\uFF0C\u548C\u90A3\u4E2A\u5F20\u533B\u751F\u8BF4\u7684\u3002\u8FD9\u4E2A\u653F\u5E9C\u548C\u533B\u9662\uFF0C\u90FD\u662F\u4E00\u809A\u5B50\u574F\u6C34"
+    - "\u519C\u6C11\uFF1A\u6211\u4E4B\u524D\u548C\u963F\u5A46\u4E00\u8D77\u53BB\u653F\u5E9C\u8BF4\u8FC7\uFF0C\u4F60\u770B\u2026\u2026\uFF0C\u627F\u8BFA\u8FC7\u7684\u4E8B\u60C5\uFF0C\u90FD\u662F\u653E\u5C41\uFF01"
+    - "\u519C\u6C11\uFF1A\u54CE\uFF0C\u674E\u963F\u5A46\u8FD9\u513F\u5B50\u4E5F\u662F\uFF0C\u5C31\u77E5\u9053\u62A4\u7740\u4ED6\u8001\u677F\u8FD9\u5382\u5B50\uFF0C\u6210\u5929\u76EF\u7740\u5927\u4F19\uFF0C\u8FD9\u79CD\u4EBA\u5C31\u662F\u8D44\u672C\u5BB6\u7684\u8D70\u72D7\u3002"
+    - "\u674E\u963F\u5A46\u6709\u4E2A\u513F\u5B50\u662F\u5427\uFF1F\u6210\uFF0C\u4EE5\u540E\u6211\u4F1A\u518D\u53BB\u91C7\u8BBF\u5979\u7684\u513F\u5B50\uFF0C\u770B\u770B\u4ED6\u77E5\u4E0D\u77E5\u9053\u4E9B\u4EC0\u4E48"
+    - 
+    cards_threatened:
+    - {fileID: 4270974583676908371, guid: 18ee15cf8b85141468e0d7eabc0acc09, type: 3}
+    - {fileID: 4270974583676908371, guid: 490d15b619628574da2701a869caebf1, type: 3}
+    threatenedCard_given: 0
+    charasToUnlock_threat: 
+    relationshipChangeAmount_threat: -5
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
+    dialogue_threatened_p: []
+    cards_threatened_p: []
+    threatenedCard_given_p: 0
+    charasToUnlock_threat_p: 
+    relationshipChangeAmount_threat_p: 0
+    cardsToLimit_threat_p: []
+    cardsLimitedTo_threat_p: []
+    cardsToDestory_threat_p: []
+    dialogue_threatened_n: []
+    cards_threatened_n: []
+    threatenedCard_given_n: 0
+    charasToUnlock_threat_n: 
+    relationshipChangeAmount_threat_n: 0
+    cardsToLimit_threat_n: []
+    cardsLimitedTo_threat_n: []
+    cardsToDestory_threat_n: []
+    dialogue_trading:
+    - "\u6211\u53EF\u4EE5\u544A\u8BC9\u4F60\u4E00\u4E9B\u4FE1\u606F\uFF0C\u4E5F\u8BB8\u5BF9\u4F60\u6709\u4E00\u4E9B\u5E2E\u52A9\u3002\u4F5C\u4E3A\u4EA4\u6362\uFF0C\u4F60\u544A\u8BC9\u6211\u4E00\u4E9B\u53EA\u6709\u4F60\u77E5\u9053\u7684\u4E8B\u7ED9\u6211\uFF0C\u5982\u4F55\uFF1F"
+    - "\u519C\u6C11\uFF1A\u6211\u80FD\u6709\u5565\u4F60\u4E0D\u77E5\u9053\u7684\u554A\uFF0C\u8FD9\u706B\u8DDF\u6211\u662F\u771F\u6CA1\u5565\u5173\u7CFB\u554A\u2026\u2026"
+    - "\u54E6\u5BF9\u4E86\uFF0C\u4E0A\u6B21\u6709\u4E2A\u5DE5\u4EBA\u95EE\u6211\u8FD8\u6709\u6CA1\u6709\u4E0D\u8981\u7684\u80A5\u6599\uFF0C\u53CD\u6B63\u6211\u5730\u91CC\u79CD\u4E0D\u4E86\u83DC\uFF0C\u4E5F\u6CA1\u591A\u60F3\u5C31\u7ED9\u4ED6\u4E86"
+    - "\u5BF9\u4E86\uFF0C\u5382\u957F\u7684\u786E\u4E0D\u662F\u4EC0\u4E48\u597D\u4EBA\u2026\u2026\u6211\u4E86\u89E3\u5230\u526F\u533A\u957F\u6709\u548C\u963F\u5A46\u6709\u4E92\u76F8\u6765\u5F80\u7684\u4FE1\u4EF6"
+    - "\u4F60\u770B\u8FD9\u5C01\u4FE1\u3002\u770B\u4E0A\u53BB\u963F\u5A46\u786E\u5B9E\u633A\u4FE1\u4EFB\u8FD9\u4E2A\u533A\u957F\u7684\uFF0C\u6CA1\u60F3\u5230\u4ED6\u5C45\u7136\u6CA1\u6709\u5C65\u884C\u627F\u8BFA\u2026\u2026"
+    - "\uFF08\u519C\u6C11\u770B\u4F3C\u5F88\u6FC0\u52A8\uFF09"
+    - "\u519C\u6C11\uFF1A\u4ED6\u4E0D\u914D\u5F53\u8FD9\u4E2A\u5B98\uFF01\u8DDF\u963F\u5A46\u4E0A\u8BBF\u4E86\u90A3\u4E48\u591A\u6B21\u8981\u6C42\u6574\u6CBB\uFF0C\u4ED6\u5F53\u65F6\u660E\u660E\u5C31\u7B54\u5E94\u4E86\u6211\u4EEC\u8BF4\u8981\u597D\u597D\u6539\uFF01"
+    - "\u519C\u6C11\uFF1A\u7ED3\u679C\u5462\uFF1F\u4E3A\u4E86\u8FD9\u9876\u4E4C\u7EB1\u5E3D\uFF0C\u4ED6\u8FD8\u8BA9\u533B\u9662\u5E2E\u4ED6\u9690\u7792\u963F\u5A46\u53BB\u4E16\u7684\u539F\u56E0\u2026\u2026\u8FD9\u9F9F\u5B59\u5C31\u4E0D\u662F\u4E2A\u4EBA\uFF01"
+    - "\u4F60\u8BF4\u4ED6\u8BA9\u533B\u9662\u9690\u7792\u2026\u2026\u4F60\u4ECE\u54EA\u91CC\u542C\u5230\u7684\u8FD9\u4E2A\u6D88\u606F\u5462\uFF1F"
+    - "\u519C\u6C11\uFF1A\u963F\u5A46\u8D70\u4E4B\u524D\uFF0C\u5C31\u5728\u533B\u9662\u91CC\u542C\u5230\u7684\uFF0C\u548C\u90A3\u4E2A\u5F20\u533B\u751F\u8BF4\u7684\u3002\u8FD9\u4E2A\u653F\u5E9C\u548C\u533B\u9662\uFF0C\u90FD\u662F\u4E00\u809A\u5B50\u574F\u6C34"
+    - "\u519C\u6C11\uFF1A\u6211\u4E4B\u524D\u548C\u963F\u5A46\u4E00\u8D77\u53BB\u653F\u5E9C\u8BF4\u8FC7\uFF0C\u4F60\u770B\u2026\u2026\uFF0C\u627F\u8BFA\u8FC7\u7684\u4E8B\u60C5\uFF0C\u90FD\u662F\u653E\u5C41\uFF01"
+    - "\u519C\u6C11\uFF1A\u54CE\uFF0C\u674E\u963F\u5A46\u8FD9\u513F\u5B50\u4E5F\u662F\uFF0C\u5C31\u77E5\u9053\u62A4\u7740\u4ED6\u8001\u677F\u8FD9\u5382\u5B50\uFF0C\u6210\u5929\u76EF\u7740\u5927\u4F19\uFF0C\u8FD9\u79CD\u4EBA\u5C31\u662F\u8D44\u672C\u5BB6\u7684\u8D70\u72D7\u3002"
+    - "\u674E\u963F\u5A46\u6709\u4E2A\u513F\u5B50\u662F\u5427\uFF1F\u6210\uFF0C\u4EE5\u540E\u6211\u4F1A\u518D\u53BB\u91C7\u8BBF\u5979\u7684\u513F\u5B50\uFF0C\u770B\u770B\u4ED6\u77E5\u4E0D\u77E5\u9053\u4E9B\u4EC0\u4E48"
+    - 
+    cards_trading:
+    - {fileID: 4270974583676908371, guid: 8882c68edd4f22a489c9adfbc7d5f6d6, type: 3}
+    - {fileID: 4270974583676908371, guid: 18ee15cf8b85141468e0d7eabc0acc09, type: 3}
+    - {fileID: 4270974583676908371, guid: 490d15b619628574da2701a869caebf1, type: 3}
+    tradingCard_given: 0
+    charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
+    dialogue_trading_p: []
+    cards_trading_p: []
+    tradingCard_given_p: 0
+    charasToUnlock_trade_p: 
+    relationshipChangeAmount_trading_p: 0
+    cardsToLimit_trade_p: []
+    cardsLimitedTo_trade_p: []
+    cardsToDestory_trade_p: []
+    dialogue_trading_n: []
+    cards_trading_n: []
+    tradingCard_given_n: 0
+    charasToUnlock_trade_n: 
+    relationshipChangeAmount_trading_n: 0
+    cardsToLimit_trade_n: []
+    cardsLimitedTo_trade_n: []
+    cardsToDestory_trade_n: []
+  - preconditions: 
+    triggerIDs: 18000000
+    dialogue_inquiring:
+    - "\u6211\u7785\u7740\u62A5\u7EB8\u4E0A\u8FD9\u62DB\u8058\u4FE1\u606F\uFF0C\u8FD9\u5DE5\u5382\u4F3C\u4E4E\u5F88\u7F3A\u4EBA\u5462\uFF1F\u90FD\u662F\u6025\u62DB"
+    - "\u519C\u6C11\uFF1A\u53EF\u4E0D\u561B\uFF0C\u9547\u4E0A\u597D\u591A\u5C0F\u5E74\u8F7B\u90FD\u9009\u62E9\u53BB\u4E86\u5382\u91CC\u3002\u4ED6\u4EEC\u7684\u5DE5\u4F5C\u673A\u4F1A\u662F\u591A\u4E86\uFF0C\u6211\u7684\u6D3B\u8DEF\u53EF\u5C31\u5C11\u4E86\u2026\u2026"
+    - "\u6B64\u8BDD\u600E\u8BB2?\u542C\u4E0A\u53BB\u662F\u8BF4\u5DE5\u5382\u6324\u538B\u4E86\u4F60\u4EEC\u7684\u751F\u5B58\u7A7A\u95F4\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u5DE5\u5382\u6392\u653E\u7684\u6BD2\u6C14\uFF0C\u65E9\u5C31\u8BA9\u5730\u91CC\u7684\u79CD\u5B50\u6CA1\u6CD5\u957F\u4E86\uFF0C\u4ED6\u62DB\u7684\u4EBA\u8D8A\u591A\uFF0C\u8FD9\u5730\u6C61\u67D3\u5C31\u8D8A\u91CD\uFF0C\u8FDF\u65E9\u6709\u4E00\u5929\uFF0C\u8FD9\u5730\u65B9\u5C31\u7B97\u5B8C\u4E86"
+    - "\u6CA1\u6709\u4EBA\u6027\u7684\u8D44\u672C\u2026\u2026\u82E6\u4E86\u5927\u5BB6\u554A"
+    - 
+    cards_inquiring:
+    - {fileID: 4270974583676908371, guid: 16f7ba2eace28c248b8a28d2ad6a2b2a, type: 3}
+    inquiringCard_given: 0
+    charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
+    cardsToLimit_inquire: []
+    cardsLimitedTo_inquire: []
+    cardsToDestory_inquire: []
+    dialogue_inquiring_p: []
+    cards_inquiring_p: []
+    inquiringCard_given_p: 0
+    charasToUnlock_inquire_p: 
+    relationshipChangeAmount_inquire_p: 0
+    cardsToLimit_inquire_p: []
+    cardsLimitedTo_inquire_p: []
+    cardsToDestory_inquire_p: []
+    dialogue_inquiring_n: []
+    cards_inquiring_n: []
+    inquiringCard_given_n: 0
+    charasToUnlock_inquire_n: 
+    relationshipChangeAmount_inquire_n: 0
+    cardsToLimit_inquire_n: []
+    cardsLimitedTo_inquire_n: []
+    cardsToDestory_inquire_n: []
+    dialogue_threatened: []
+    cards_threatened: []
+    threatenedCard_given: 0
+    charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
+    dialogue_threatened_p: []
+    cards_threatened_p: []
+    threatenedCard_given_p: 0
+    charasToUnlock_threat_p: 
+    relationshipChangeAmount_threat_p: 0
+    cardsToLimit_threat_p: []
+    cardsLimitedTo_threat_p: []
+    cardsToDestory_threat_p: []
+    dialogue_threatened_n: []
+    cards_threatened_n: []
+    threatenedCard_given_n: 0
+    charasToUnlock_threat_n: 
+    relationshipChangeAmount_threat_n: 0
+    cardsToLimit_threat_n: []
+    cardsLimitedTo_threat_n: []
+    cardsToDestory_threat_n: []
+    dialogue_trading:
+    - "\u6211\u7785\u7740\u62A5\u7EB8\u4E0A\u8FD9\u62DB\u8058\u4FE1\u606F\uFF0C\u8FD9\u5DE5\u5382\u4F3C\u4E4E\u5F88\u7F3A\u4EBA\u5462\uFF1F\u90FD\u662F\u6025\u62DB"
+    - "\u519C\u6C11\uFF1A\u53EF\u4E0D\u561B\uFF0C\u9547\u4E0A\u597D\u591A\u5C0F\u5E74\u8F7B\u90FD\u9009\u62E9\u53BB\u4E86\u5382\u91CC\u3002\u4ED6\u4EEC\u7684\u5DE5\u4F5C\u673A\u4F1A\u662F\u591A\u4E86\uFF0C\u6211\u7684\u6D3B\u8DEF\u53EF\u5C31\u5C11\u4E86\u2026\u2026"
+    - "\u6B64\u8BDD\u600E\u8BB2?\u542C\u4E0A\u53BB\u662F\u8BF4\u5DE5\u5382\u6324\u538B\u4E86\u4F60\u4EEC\u7684\u751F\u5B58\u7A7A\u95F4\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u5DE5\u5382\u6392\u653E\u7684\u8D4C\u6C14\uFF0C\u65E9\u5C31\u8BA9\u5730\u91CC\u7684\u79CD\u5B50\u6CA1\u6CD5\u957F\u4E86\uFF0C\u4ED6\u62DB\u7684\u4EBA\u8D8A\u591A\uFF0C\u8FD9\u5730\u6C61\u67D3\u5C31\u8D8A\u91CD\uFF0C\u8FDF\u65E9\u6709\u4E00\u5929\uFF0C\u8FD9\u5730\u65B9\u5C31\u7B97\u5B8C\u4E86"
+    - "\u6CA1\u6709\u4EBA\u6027\u7684\u8D44\u672C\u2026\u2026\u82E6\u4E86\u5927\u5BB6\u554A"
+    - 
+    cards_trading:
+    - {fileID: 4270974583676908371, guid: 16f7ba2eace28c248b8a28d2ad6a2b2a, type: 3}
+    tradingCard_given: 0
+    charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 5
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
+    dialogue_trading_p: []
+    cards_trading_p: []
+    tradingCard_given_p: 0
+    charasToUnlock_trade_p: 
+    relationshipChangeAmount_trading_p: 0
+    cardsToLimit_trade_p: []
+    cardsLimitedTo_trade_p: []
+    cardsToDestory_trade_p: []
+    dialogue_trading_n: []
+    cards_trading_n: []
+    tradingCard_given_n: 0
+    charasToUnlock_trade_n: 
+    relationshipChangeAmount_trading_n: 0
+    cardsToLimit_trade_n: []
+    cardsLimitedTo_trade_n: []
+    cardsToDestory_trade_n: []
+  - preconditions: 
+    triggerIDs: 15000000
+    dialogue_inquiring:
+    - "\u8BF7\u95EE\u4F60\u77E5\u9053\u674E\u963F\u5A46\u7684\u75C5\u5386\u662F\u600E\u4E48\u4E00\u56DE\u4E8B\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u2026\u2026\u4EC0\u4E48\u75C5\u5386\uFF1F"
+    - "\u674E\u963F\u5A46\u7684\u75C5\u5386"
+    - "\u519C\u6C11\uFF1A\u54EA\u4E2A\u963F\u5A46\uFF1F"
+    - "\u2026\u2026\u674E\u963F\u5A46"
+    - "\u519C\u6C11\uFF1A\u674E\u963F\u5A46\u554A\uFF0C\u4E0D\u6E05\u695A\uFF0C\u5979\u75C5\u5386\u600E\u4E48\u4E86\uFF1F"
+    - "\u4E5F\u6CA1\u4EC0\u4E48\uFF0C\u5C31\u662F\u5BF9\u8FD9\u75C5\u6709\u70B9\u597D\u5947\u2026\u2026\u6CA1\u4E8B\uFF0C\u6211\u540E\u9762\u518D\u53BB\u95EE\u95EE\u533B\u751F\u5427"
+    - 
+    cards_inquiring: []
+    inquiringCard_given: 0
+    charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
+    cardsToLimit_inquire: []
+    cardsLimitedTo_inquire: []
+    cardsToDestory_inquire: []
+    dialogue_inquiring_p: []
+    cards_inquiring_p: []
+    inquiringCard_given_p: 0
+    charasToUnlock_inquire_p: 
+    relationshipChangeAmount_inquire_p: 0
+    cardsToLimit_inquire_p: []
+    cardsLimitedTo_inquire_p: []
+    cardsToDestory_inquire_p: []
+    dialogue_inquiring_n: []
+    cards_inquiring_n: []
+    inquiringCard_given_n: 0
+    charasToUnlock_inquire_n: 
+    relationshipChangeAmount_inquire_n: 0
+    cardsToLimit_inquire_n: []
+    cardsLimitedTo_inquire_n: []
+    cardsToDestory_inquire_n: []
+    dialogue_threatened:
+    - "\u4F60\u662F\u4E0D\u662F\u77E5\u9053\u4E00\u4E9B\u5185\u5E55\uFF0C\u6BD4\u5982\u8BF4\u674E\u963F\u5A46\u771F\u5B9E\u7684\u75C5\u60C5\uFF1F\u4F60\u6700\u597D\u628A\u4F60\u77E5\u9053\u7684\u5168\u90FD\u8BF4\u51FA\u6765"
+    - "\u6211\u80FD\u77E5\u9053\u5565\u554A\uFF0C\u4F60\u81EA\u5DF1\u53BB\u95EE\u90A3\u5E2E\u4EBA\u5427\u3002\u674E\u963F\u5A46\u8FD9\u4E48\u4FE1\u4EFB\u4ED6\u4EEC\uFF0C\u6211\u65E9\u5C31\u77E5\u9053\u4F1A\u8FD9\u6837\u2026\u2026"
+    - "\u90A3\u5E2E\u4EBA\uFF0C\u662F\u6307\u533A\u957F\u548C\u5382\u957F\u4ED6\u4EEC\u5417\uFF1F"
+    - "\u2026\u2026\uFF08\u6C89\u9ED8\uFF09"
+    - "\u4F60\u77E5\u9053\u6211\u5728\u8BF4\u4EC0\u4E48\u5BF9\u5427\uFF1F"
+    - "\u4F60\u81EA\u5DF1\u53BB\u95EE\u5427\uFF0C\u8FD9\u4F1A\u6211\u6CA1\u5DE5\u592B\u7406\u4F60"
     - 
     cards_threatened: []
     threatenedCard_given: 0
@@ -158,9 +348,7 @@ MonoBehaviour:
     cardsToLimit_threat: []
     cardsLimitedTo_threat: []
     cardsToDestory_threat: []
-    dialogue_threatened_p:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
+    dialogue_threatened_p: []
     cards_threatened_p: []
     threatenedCard_given_p: 0
     charasToUnlock_threat_p: 
@@ -168,9 +356,7 @@ MonoBehaviour:
     cardsToLimit_threat_p: []
     cardsLimitedTo_threat_p: []
     cardsToDestory_threat_p: []
-    dialogue_threatened_n:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
+    dialogue_threatened_n: []
     cards_threatened_n: []
     threatenedCard_given_n: 0
     charasToUnlock_threat_n: 
@@ -179,244 +365,406 @@ MonoBehaviour:
     cardsLimitedTo_threat_n: []
     cardsToDestory_threat_n: []
     dialogue_trading:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_trading: []
-    tradingCard_given: 0
-    charasToUnlock_trade: 
-    relationshipChangeAmount_trading: 0
-    cardsToLimit_trade: []
-    cardsLimitedTo_trade: []
-    cardsToDestory_trade: []
-    dialogue_trading_p:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_trading_p: []
-    tradingCard_given_p: 0
-    charasToUnlock_trade_p: 
-    relationshipChangeAmount_trading_p: 0
-    cardsToLimit_trade_p: []
-    cardsLimitedTo_trade_p: []
-    cardsToDestory_trade_p: []
-    dialogue_trading_n:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_trading_n: []
-    tradingCard_given_n: 0
-    charasToUnlock_trade_n: 
-    relationshipChangeAmount_trading_n: 0
-    cardsToLimit_trade_n: []
-    cardsLimitedTo_trade_n: []
-    cardsToDestory_trade_n: []
-  - preconditions: 
-    triggerIDs: 1f000000
-    dialogue_inquiring:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_inquiring: []
-    inquiringCard_given: 0
-    charasToUnlock_inquire: 
-    relationshipChangeAmount_inquire: 0
-    cardsToLimit_inquire: []
-    cardsLimitedTo_inquire: []
-    cardsToDestory_inquire: []
-    dialogue_inquiring_p:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_inquiring_p: []
-    inquiringCard_given_p: 0
-    charasToUnlock_inquire_p: 
-    relationshipChangeAmount_inquire_p: 0
-    cardsToLimit_inquire_p: []
-    cardsLimitedTo_inquire_p: []
-    cardsToDestory_inquire_p: []
-    dialogue_inquiring_n:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_inquiring_n: []
-    inquiringCard_given_n: 0
-    charasToUnlock_inquire_n: 
-    relationshipChangeAmount_inquire_n: 0
-    cardsToLimit_inquire_n: []
-    cardsLimitedTo_inquire_n: []
-    cardsToDestory_inquire_n: []
-    dialogue_threatened:
-    - "\u6211\uFF1A\u4F60\u4E4B\u524D\u662F\u548C\u5382\u957F\u6709\u8FC7\u51B2\u7A81\u5427\uFF1F\u662F\u4E0D\u662F\u66FE\u7ECF\u5C31\u53BB\u95F9\u8FC7\u4E8B\u4E86\uFF1F"
-    - "\u519C\u6C11\uFF1A\u662F\u2026\u2026\u4E0D\u7792\u4F60\u8BF4\uFF0C\u54E5\u51E0\u4E2A\u4E4B\u524D\u5C31\u53BB\u627E\u8FC7\u8FD9\u5382\u957F\u4E86\uFF0C\u4F46\u662F\u6CA1\u7528\u554A\uFF0C\u4EBA\u5173\u7CFB\u786C\u3002"
-    - "\u6211\uFF1A\u8FD9\u4E48\u7B80\u5355\uFF1F\u90A3\u5BF9\u4E8E\u8FD9\u6B21\u706B\u707E\uFF0C\u4F60\u8FD8\u77E5\u9053\u4E9B\u4EC0\u4E48\uFF1F"
-    - "\u519C\u6C11\uFF1A\u8FD9\u706B\u771F\u8DDF\u6211\u6CA1\u5565\u5173\u7CFB\u554A\u2026\u2026"
-    - "\u519C\u6C11\uFF1A\u54E6\u5BF9\u4E86\uFF0C\u4E0A\u6B21\u6709\u4E2A\u5DE5\u4EBA\u6765\u627E\u6211\u8981\u4E86\u51E0\u888B\u80A5\u6599\uFF0C\u53CD\u6B63\u6211\u5730\u91CC\u79CD\u4E0D\u4E86\u83DC\uFF0C\u4E5F\u6CA1\u591A\u60F3\u5C31\u7ED9\u4ED6\u4E86\uFF0C\u4F60\u95EE\u4ED6\u53BB\u5427\u3002"
-    - 
-    cards_threatened:
-    - {fileID: 4270974583676908371, guid: 8882c68edd4f22a489c9adfbc7d5f6d6, type: 3}
-    threatenedCard_given: 0
-    charasToUnlock_threat: 
-    relationshipChangeAmount_threat: 0
-    cardsToLimit_threat: []
-    cardsLimitedTo_threat: []
-    cardsToDestory_threat: []
-    dialogue_threatened_p:
-    - "\u6211\uFF1A\u4F60\u4E4B\u524D\u662F\u548C\u5382\u957F\u6709\u8FC7\u51B2\u7A81\u5427\uFF1F\u662F\u4E0D\u662F\u66FE\u7ECF\u5C31\u53BB\u95F9\u8FC7\u4E8B\u4E86\uFF1F"
-    - "\u519C\u6C11\uFF1A\u662F\u2026\u2026\u4E0D\u7792\u4F60\u8BF4\uFF0C\u54E5\u51E0\u4E2A\u4E4B\u524D\u5C31\u53BB\u627E\u8FC7\u8FD9\u5382\u957F\u4E86\uFF0C\u4F46\u662F\u6CA1\u7528\u554A\uFF0C\u4EBA\u5173\u7CFB\u786C\u3002"
-    - "\u6211\uFF1A\u8FD9\u4E48\u7B80\u5355\uFF1F\u90A3\u5BF9\u4E8E\u8FD9\u6B21\u706B\u707E\uFF0C\u4F60\u8FD8\u77E5\u9053\u4E9B\u4EC0\u4E48\uFF1F"
-    - "\u519C\u6C11\uFF1A\u8FD9\u706B\u771F\u8DDF\u6211\u6CA1\u5565\u5173\u7CFB\u554A\u2026\u2026"
-    - "\u519C\u6C11\uFF1A\u54E6\u5BF9\u4E86\uFF0C\u4E0A\u6B21\u6709\u4E2A\u5DE5\u4EBA\u6765\u627E\u6211\u8981\u4E86\u51E0\u888B\u80A5\u6599\uFF0C\u53CD\u6B63\u6211\u5730\u91CC\u79CD\u4E0D\u4E86\u83DC\uFF0C\u4E5F\u6CA1\u591A\u60F3\u5C31\u7ED9\u4ED6\u4E86\uFF0C\u4F60\u95EE\u4ED6\u53BB\u5427\u3002"
-    - 
-    cards_threatened_p:
-    - {fileID: 4270974583676908371, guid: 8882c68edd4f22a489c9adfbc7d5f6d6, type: 3}
-    threatenedCard_given_p: 0
-    charasToUnlock_threat_p: 
-    relationshipChangeAmount_threat_p: 0
-    cardsToLimit_threat_p: []
-    cardsLimitedTo_threat_p: []
-    cardsToDestory_threat_p: []
-    dialogue_threatened_n:
-    - "\u519C\u6C11\uFF1A\u5173\u4F60\u4EC0\u4E48\u4E8B\uFF1F"
-    - 
-    cards_threatened_n: []
-    threatenedCard_given_n: 0
-    charasToUnlock_threat_n: 
-    relationshipChangeAmount_threat_n: 0
-    cardsToLimit_threat_n: []
-    cardsLimitedTo_threat_n: []
-    cardsToDestory_threat_n: []
-    dialogue_trading:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_trading: []
-    tradingCard_given: 0
-    charasToUnlock_trade: 
-    relationshipChangeAmount_trading: 0
-    cardsToLimit_trade: []
-    cardsLimitedTo_trade: []
-    cardsToDestory_trade: []
-    dialogue_trading_p:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_trading_p: []
-    tradingCard_given_p: 0
-    charasToUnlock_trade_p: 
-    relationshipChangeAmount_trading_p: 0
-    cardsToLimit_trade_p: []
-    cardsLimitedTo_trade_p: []
-    cardsToDestory_trade_p: []
-    dialogue_trading_n:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_trading_n: []
-    tradingCard_given_n: 0
-    charasToUnlock_trade_n: 
-    relationshipChangeAmount_trading_n: 0
-    cardsToLimit_trade_n: []
-    cardsLimitedTo_trade_n: []
-    cardsToDestory_trade_n: []
-  - preconditions: 
-    triggerIDs: 17000000
-    dialogue_inquiring:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_inquiring: []
-    inquiringCard_given: 0
-    charasToUnlock_inquire: 
-    relationshipChangeAmount_inquire: 0
-    cardsToLimit_inquire: []
-    cardsLimitedTo_inquire: []
-    cardsToDestory_inquire: []
-    dialogue_inquiring_p:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_inquiring_p: []
-    inquiringCard_given_p: 0
-    charasToUnlock_inquire_p: 
-    relationshipChangeAmount_inquire_p: 0
-    cardsToLimit_inquire_p: []
-    cardsLimitedTo_inquire_p: []
-    cardsToDestory_inquire_p: []
-    dialogue_inquiring_n:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_inquiring_n: []
-    inquiringCard_given_n: 0
-    charasToUnlock_inquire_n: 
-    relationshipChangeAmount_inquire_n: 0
-    cardsToLimit_inquire_n: []
-    cardsLimitedTo_inquire_n: []
-    cardsToDestory_inquire_n: []
-    dialogue_threatened:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_threatened:
-    - {fileID: 4270974583676908371, guid: 8882c68edd4f22a489c9adfbc7d5f6d6, type: 3}
-    threatenedCard_given: 0
-    charasToUnlock_threat: 
-    relationshipChangeAmount_threat: 0
-    cardsToLimit_threat: []
-    cardsLimitedTo_threat: []
-    cardsToDestory_threat: []
-    dialogue_threatened_p:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_threatened_p:
-    - {fileID: 4270974583676908371, guid: 8882c68edd4f22a489c9adfbc7d5f6d6, type: 3}
-    threatenedCard_given_p: 0
-    charasToUnlock_threat_p: 
-    relationshipChangeAmount_threat_p: 0
-    cardsToLimit_threat_p: []
-    cardsLimitedTo_threat_p: []
-    cardsToDestory_threat_p: []
-    dialogue_threatened_n:
-    - "\u65E0\u53EF\u5949\u544A"
-    - 
-    cards_threatened_n: []
-    threatenedCard_given_n: 0
-    charasToUnlock_threat_n: 
-    relationshipChangeAmount_threat_n: 0
-    cardsToLimit_threat_n: []
-    cardsLimitedTo_threat_n: []
-    cardsToDestory_threat_n: []
-    dialogue_trading:
-    - "\u6211\uFF1A\u8FD9\u4E2A\u5382\u957F\u7684\u786E\u4E0D\u662F\u4EC0\u4E48\u597D\u4EBA\u2026\u2026\u6211\u4E86\u89E3\u5230\u526F\u533A\u957F\u6709\u548C\u963F\u5A46\u6709\u4E92\u76F8\u6765\u5F80\u7684\u4FE1\u4EF6\uFF0C\u4F60\u770B\u8FD9\u5C01\u4FE1\u3002"
-    - "\u6211\uFF1A\u770B\u4E0A\u53BB\u963F\u5A46\u786E\u5B9E\u633A\u4FE1\u4EFB\u8FD9\u4E2A\u533A\u957F\u7684\uFF0C\u6CA1\u60F3\u5230\u4ED6\u5C45\u7136\u6CA1\u6709\u5C65\u884C\u627F\u8BFA\u2026\u2026"
-    - "\u519C\u6C11\uFF1A\uFF08\u6FC0\u8D77\u5171\u9E23\uFF09\u4ED6\u4E0D\u914D\u5F53\u8FD9\u4E2A\u5B98\uFF01\u4E3A\u4E86\u8FD9\u9876\u4E4C\u7EB1\u5E3D\uFF0C\u4ED6\u8FD8\u8BA9\u533B\u9662\u5E2E\u4ED6\u9690\u7792\u963F\u5A46\u53BB\u4E16\u7684\u539F\u56E0\u2026\u2026\u8FD9\u9F9F\u5B59\u5C31\u4E0D\u662F\u4E2A\u4EBA!"
-    - "\u6211\uFF1A\u4F60\u8BF4\u4ED6\u8BA9\u533B\u9662\u9690\u7792\u2026\u2026\u4F60\u4ECE\u54EA\u91CC\u542C\u5230\u7684\u8FD9\u4E2A\u6D88\u606F\u5462\uFF1F"
-    - "\u519C\u6C11\uFF1A\u963F\u5A46\u8D70\u4E4B\u524D\uFF0C\u5C31\u5728\u533B\u9662\u91CC\u542C\u5230\u7684\uFF0C\u548C\u90A3\u4E2A\u5F20\u533B\u751F\u8BF4\u7684\u3002"
-    - "\u519C\u6C11\uFF1A\u8FD9\u4E2A\u653F\u5E9C\u548C\u533B\u9662\uFF0C\u90FD\u662F\u4E00\u809A\u5B50\u574F\u6C34\u3002\u6211\u4E4B\u524D\u548C\u963F\u5A46\u4E00\u8D77\u53BB\u653F\u5E9C\u8BF4\u8FC7\uFF0C\u4F60\u770B\u2026\u2026\uFF0C\u627F\u8BFA\u8FC7\u7684\u4E8B\u60C5\uFF0C\u90FD\u662F\u653E\u5C41\uFF01"
-    - "\u519C\u6C11\uFF1A\u54CE\uFF0C\u674E\u963F\u5A46\u8FD9\u513F\u5B50\u4E5F\u662F\uFF0C\u5C31\u77E5\u9053\u62A4\u7740\u4ED6\u8001\u677F\u8FD9\u5382\u5B50\uFF0C\u6210\u5929\u76EF\u7740\u5927\u4F19\uFF0C\u8FD9\u79CD\u4EBA\u5C31\u662F\u8D44\u672C\u5BB6\u7684\u8D70\u72D7\u3002"
-    - "\u6211\uFF1A\u674E\u963F\u5A46\u6709\u4E2A\u513F\u5B50\u662F\u5427\uFF1F\u6210\uFF0C\u6211\u5F97\u53BB\u95EE\u95EE\u4ED6\u513F\u5B50\uFF0C\u770B\u770B\u4ED6\u77E5\u4E0D\u77E5\u9053\u4E9B\u4EC0\u4E48\u3002"
+    - "\u6211\u8FD9\u6709\u4E00\u4EFD\u674E\u963F\u5A46\u7684\u75C5\u5386\uFF0C\u8BF7\u95EE\u60A8\u4E86\u89E3\u674E\u963F\u5A46\u771F\u5B9E\u7684\u75C5\u60C5\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u5F53\u7136\u77E5\u9053\u2026\u2026\u6839\u672C\u5C31\u4E0D\u662F\u75C5\u5386\u4E0A\u5199\u7684\u90A3\u56DE\u4E8B\u3002"
+    - "\u519C\u6C11\uFF1A\u674E\u963F\u5A46\u4E4B\u524D\u8FD9\u4E48\u4FE1\u4EFB\u4ED6\u4EEC\uFF0C\u8C01\u77E5\u9053\u674E\u963F\u5A46\u8D70\u7684\u65F6\u5019\uFF0C\u90A3\u5E2E\u4EBA\u7F3A\u4E00\u70B9\u90FD\u6CA1\u6709\u4EBA\u5473\u2026\u2026\u4ED6\u4EEC\u4E0D\u662F\u4EBA"
+    - "\u90A3\u5E2E\u4EBA\uFF0C\u662F\u6307\u533A\u957F\u548C\u5382\u957F\u4ED6\u4EEC\u5417\uFF1F "
+    - "\u519C\u6C11\uFF1A\u5BF9\uFF0C\u8FD8\u80FD\u6709\u8C01"
+    - "\u6240\u4EE5\u662F\u4ED6\u4EEC\u548C\u533B\u9662\u5546\u91CF\u597D\u4E86\u4E00\u8D77\u8FD9\u4E48\u5E72\u7684\u662F\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u4E0D\u8FD9\u4E48\u5E72\uFF0C\u4ED6\u4EEC\u90A3\u5DE5\u5382\uFF0C\u8FD8\u80FD\u5F00\u4E48\uFF1F"
+    - "\u90A3\u8FD9\u75C5\u60C5\uFF0C\u60A8\u65B9\u4FBF\u8DDF\u6211\u8BE6\u7EC6\u591A\u900F\u9732\u4E00\u4E9B\u5417\u2026\u2026"
+    - "\u519C\u6C11\uFF1A\u4F60\u4E0D\u662F\u91C7\u8BBF\u8FC7\u963F\u5A46\u5417\uFF0C\u4F60\u8BB0\u4E0D\u8BB0\u5F97\uFF0C\u5979\u95FB\u4E0D\u5230\u4E1C\u897F\u7684\u5473\u9053\uFF1F"
+    - "\u662F\u6709\u8FD9\u4E48\u56DE\u4E8B"
+    - "\u519C\u6C11\uFF1A\u5E74\u8F7B\u4EBA\uFF0C\u8111\u74DC\u5B50\u7075\uFF0C\u81EA\u5DF1\u60F3\u5427\u3002\u54B1\u4EEC\u7956\u7956\u8F88\u8F88\uFF0C\u90FD\u8DD1\u4E0D\u6389\uFF0C\u8FD9\u5DE5\u5382\u554A\u2026\u2026"
+    - "\u2026\u2026\u8BB0\u4E0B\u4E86\uFF0C\u770B\u6765\u6211\u5F97\u518D\u53BB\u8C03\u67E5\u4E0B\u8FD9\u4EF6\u4E8B"
+    - "\u90A3\u6700\u540E\u518D\u8DDF\u60A8\u786E\u8BA4\u4E0B\uFF0C\u8FD8\u6709\u53D1\u73B0\u4EC0\u4E48\u522B\u7684\u7EBF\u7D22\u5417\uFF1F\u4EC0\u4E48\u90FD\u884C\uFF0C\u968F\u4FBF\u8BF4"
+    - "\u519C\u6C11\uFF1A\u6CA1\u4EC0\u4E48\u7279\u522B\u7684\u2026\u2026\u6211\u60F3\u60F3\u2026\u2026\u4E0A\u6B21\u4ED8\u5DE5\u95EE\u6211\u501F\u51E0\u888B\u5316\u80A5"
+    - "\u519C\u6C11\uFF1A\u6211\u60F3\u7740\u5730\u91CC\u8FD9\u60C5\u51B5\uFF0C\u4E5F\u7528\u4E0D\u4E0A\uFF0C\u5C31\u505A\u4E86\u4E2A\u987A\u6C34\u4EBA\u60C5\uFF0C\u73B0\u5728\u60F3\u60F3\u4ED6\u62FF\u5316\u80A5\u662F\u4E3A\u4E86\u56FE\u4E2A\u5565\u5462\u2026\u2026"
+    - "\u5316\u80A5\uFF1F\u8FD9\u4F3C\u4E4E\u662F\u4E2A\u7EBF\u7D22\u3002\u8C22\u4E86\u8001\u9648\uFF01"
+    - "\uFF08\u6446\u6446\u624B\uFF09\u5BA2\u6C14"
     - 
     cards_trading:
-    - {fileID: 4270974583676908371, guid: 490d15b619628574da2701a869caebf1, type: 3}
-    - {fileID: 4270974583676908371, guid: 18ee15cf8b85141468e0d7eabc0acc09, type: 3}
+    - {fileID: 4270974583676908371, guid: 8882c68edd4f22a489c9adfbc7d5f6d6, type: 3}
+    - {fileID: 4270974583676908371, guid: f9080011e7cfaed4ab8c6a6095976210, type: 3}
     tradingCard_given: 0
-    charasToUnlock_trade: 09000000
-    relationshipChangeAmount_trading: 1
+    charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 5
     cardsToLimit_trade: []
     cardsLimitedTo_trade: []
-    cardsToDestory_trade:
-    - {fileID: 4270974583676908371, guid: ed1f974f0d3f6e94ab92cce7d046fc3f, type: 3}
-    dialogue_trading_p:
-    - "\u6211\uFF1A\u8FD9\u4E2A\u5382\u957F\u7684\u786E\u4E0D\u662F\u4EC0\u4E48\u597D\u4EBA\u2026\u2026\u6211\u4E86\u89E3\u5230\u526F\u533A\u957F\u6709\u548C\u963F\u5A46\u6709\u4E92\u76F8\u6765\u5F80\u7684\u4FE1\u4EF6\uFF0C\u4F60\u770B\u8FD9\u5C01\u4FE1\u3002"
-    - "\u6211\uFF1A\u770B\u4E0A\u53BB\u963F\u5A46\u786E\u5B9E\u633A\u4FE1\u4EFB\u8FD9\u4E2A\u533A\u957F\u7684\uFF0C\u6CA1\u60F3\u5230\u4ED6\u5C45\u7136\u6CA1\u6709\u5C65\u884C\u627F\u8BFA\u2026\u2026"
-    - "\u519C\u6C11\uFF1A\uFF08\u6FC0\u8D77\u5171\u9E23\uFF09\u4ED6\u4E0D\u914D\u5F53\u8FD9\u4E2A\u5B98\uFF01\u4E3A\u4E86\u8FD9\u9876\u4E4C\u7EB1\u5E3D\uFF0C\u4ED6\u8FD8\u8BA9\u533B\u9662\u5E2E\u4ED6\u9690\u7792\u963F\u5A46\u53BB\u4E16\u7684\u539F\u56E0\u2026\u2026\u8FD9\u9F9F\u5B59\u5C31\u4E0D\u662F\u4E2A\u4EBA!"
-    - "\u6211\uFF1A\u4F60\u8BF4\u4ED6\u8BA9\u533B\u9662\u9690\u7792\u2026\u2026\u4F60\u4ECE\u54EA\u91CC\u542C\u5230\u7684\u8FD9\u4E2A\u6D88\u606F\u5462\uFF1F"
-    - "\u519C\u6C11\uFF1A\u963F\u5A46\u8D70\u4E4B\u524D\uFF0C\u5C31\u5728\u533B\u9662\u91CC\u542C\u5230\u7684\uFF0C\u548C\u90A3\u4E2A\u5F20\u533B\u751F\u8BF4\u7684\u3002"
-    - "\u519C\u6C11\uFF1A\u8FD9\u4E2A\u653F\u5E9C\u548C\u533B\u9662\uFF0C\u90FD\u662F\u4E00\u809A\u5B50\u574F\u6C34\u3002\u6211\u4E4B\u524D\u548C\u963F\u5A46\u4E00\u8D77\u53BB\u653F\u5E9C\u8BF4\u8FC7\uFF0C\u4F60\u770B\u2026\u2026\uFF0C\u627F\u8BFA\u8FC7\u7684\u4E8B\u60C5\uFF0C\u90FD\u662F\u653E\u5C41\uFF01"
-    - "\u519C\u6C11\uFF1A\u54CE\uFF0C\u674E\u963F\u5A46\u8FD9\u513F\u5B50\u4E5F\u662F\uFF0C\u5C31\u77E5\u9053\u62A4\u7740\u4ED6\u8001\u677F\u8FD9\u5382\u5B50\uFF0C\u6210\u5929\u76EF\u7740\u5927\u4F19\uFF0C\u8FD9\u79CD\u4EBA\u5C31\u662F\u8D44\u672C\u5BB6\u7684\u8D70\u72D7\u3002"
-    - "\u6211\uFF1A\u674E\u963F\u5A46\u6709\u4E2A\u513F\u5B50\u662F\u5427\uFF1F\u6210\uFF0C\u6211\u5F97\u53BB\u95EE\u95EE\u4ED6\u513F\u5B50\uFF0C\u770B\u770B\u4ED6\u77E5\u4E0D\u77E5\u9053\u4E9B\u4EC0\u4E48\u3002"
-    - 
-    cards_trading_p:
-    - {fileID: 4270974583676908371, guid: 490d15b619628574da2701a869caebf1, type: 3}
-    - {fileID: 4270974583676908371, guid: 18ee15cf8b85141468e0d7eabc0acc09, type: 3}
+    cardsToDestory_trade: []
+    dialogue_trading_p: []
+    cards_trading_p: []
     tradingCard_given_p: 0
-    charasToUnlock_trade_p: 09000000
-    relationshipChangeAmount_trading_p: 1
+    charasToUnlock_trade_p: 
+    relationshipChangeAmount_trading_p: 0
     cardsToLimit_trade_p: []
     cardsLimitedTo_trade_p: []
-    cardsToDestory_trade_p:
-    - {fileID: 4270974583676908371, guid: ed1f974f0d3f6e94ab92cce7d046fc3f, type: 3}
-    dialogue_trading_n:
-    - "\u65E0\u53EF\u5949\u544A"
+    cardsToDestory_trade_p: []
+    dialogue_trading_n: []
+    cards_trading_n: []
+    tradingCard_given_n: 0
+    charasToUnlock_trade_n: 
+    relationshipChangeAmount_trading_n: 0
+    cardsToLimit_trade_n: []
+    cardsLimitedTo_trade_n: []
+    cardsToDestory_trade_n: []
+  - preconditions: 
+    triggerIDs: 1a000000
+    dialogue_inquiring:
+    - "\u90A3\u4F60\u77E5\u9053\u2026\u2026\u5382\u957F\u548C\u533A\u957F\u4ED6\u4EEC\u4E32\u901A\u5728\u4E00\u8D77\u5E72\u5565\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u8FD9\u6211\u54EA\u77E5\u9053\uFF0C\u6211\u8DDF\u4ED6\u4EEC\u53EF\u4E0D\u592A\u719F"
     - 
+    cards_inquiring: []
+    inquiringCard_given: 0
+    charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
+    cardsToLimit_inquire: []
+    cardsLimitedTo_inquire: []
+    cardsToDestory_inquire: []
+    dialogue_inquiring_p: []
+    cards_inquiring_p: []
+    inquiringCard_given_p: 0
+    charasToUnlock_inquire_p: 
+    relationshipChangeAmount_inquire_p: 0
+    cardsToLimit_inquire_p: []
+    cardsLimitedTo_inquire_p: []
+    cardsToDestory_inquire_p: []
+    dialogue_inquiring_n: []
+    cards_inquiring_n: []
+    inquiringCard_given_n: 0
+    charasToUnlock_inquire_n: 
+    relationshipChangeAmount_inquire_n: 0
+    cardsToLimit_inquire_n: []
+    cardsLimitedTo_inquire_n: []
+    cardsToDestory_inquire_n: []
+    dialogue_threatened: []
+    cards_threatened: []
+    threatenedCard_given: 0
+    charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
+    dialogue_threatened_p: []
+    cards_threatened_p: []
+    threatenedCard_given_p: 0
+    charasToUnlock_threat_p: 
+    relationshipChangeAmount_threat_p: 0
+    cardsToLimit_threat_p: []
+    cardsLimitedTo_threat_p: []
+    cardsToDestory_threat_p: []
+    dialogue_threatened_n: []
+    cards_threatened_n: []
+    threatenedCard_given_n: 0
+    charasToUnlock_threat_n: 
+    relationshipChangeAmount_threat_n: 0
+    cardsToLimit_threat_n: []
+    cardsLimitedTo_threat_n: []
+    cardsToDestory_threat_n: []
+    dialogue_trading:
+    - "\u6211\u53EF\u4EE5\u544A\u8BC9\u4F60\u4E00\u4E9B\u4FE1\u606F\uFF0C\u4E5F\u8BB8\u5BF9\u4F60\u6709\u4E00\u4E9B\u5E2E\u52A9\u3002\u4F5C\u4E3A\u4EA4\u6362\uFF0C\u4F60\u544A\u8BC9\u6211\u4E00\u4E9B\u53EA\u6709\u4F60\u77E5\u9053\u7684\u4E8B\u7ED9\u6211\uFF0C\u5982\u4F55\uFF1F"
+    - "\u519C\u6C11\uFF1A\u6211\u80FD\u6709\u5565\u4F60\u4E0D\u77E5\u9053\u7684\u554A\uFF0C\u8FD9\u706B\u8DDF\u6211\u662F\u771F\u6CA1\u5565\u5173\u7CFB\u554A\u2026\u2026"
+    - "\u519C\u6C11\uFF1A\u54E6\u5BF9\u4E86\uFF0C\u4E0A\u6B21\u6709\u4E2A\u5DE5\u4EBA\u95EE\u6211\u8FD8\u6709\u6CA1\u6709\u4E0D\u8981\u7684\u80A5\u6599\uFF0C\u53CD\u6B63\u6211\u5730\u91CC\u79CD\u4E0D\u4E86\u83DC\uFF0C\u4E5F\u6CA1\u591A\u60F3\u5C31\u7ED9\u4ED6\u4E86"
+    - "\u4E86\u89E3\u4E86\u3002\u6211\u60F3\u548C\u4F60\u8BF4\u7684\u5C31\u662F\u8FD9\u4E2A\u77ED\u4FE1\uFF0C\u662F\u5382\u957F\u53D1\u7ED9\u533A\u957F\u7684"
+    - "\u4ED6\u4EEC\u5E94\u8BE5\u662F\u6697\u4E2D\u8FBE\u6210\u4E86\u4E00\u4E9B\u4EA4\u6613\u7684\uFF0C\u8BA9\u533A\u957F\u505A\u4F60\u7684\u5DE5\u4F5C"
+    - "\u519C\u6C11\uFF1A\u8FD9\u662F\u6211\u60F3\u6253\u6270\u4ED6\u4E48\uFF1F\u4ED6\u8981\u662F\u80FD\u89E3\u51B3\u95EE\u9898\uFF0C\u6211\u53BB\u54EA\uFF0C\u4E5F\u4E0D\u4F1A\u60F3\u53BB\u627E\u4ED6\u554A"
+    - "\u6211\u77E5\u9053\u7684\u5C31\u8FD9\u4E48\u591A\uFF0C\u81F3\u4E8E\u522B\u7684\u2026\u2026\u8FD8\u9700\u8981\u6162\u6162\u8C03\u67E5\u4E86"
+    - 
+    cards_trading:
+    - {fileID: 4270974583676908371, guid: 8882c68edd4f22a489c9adfbc7d5f6d6, type: 3}
+    tradingCard_given: 0
+    charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
+    dialogue_trading_p: []
+    cards_trading_p: []
+    tradingCard_given_p: 0
+    charasToUnlock_trade_p: 
+    relationshipChangeAmount_trading_p: 0
+    cardsToLimit_trade_p: []
+    cardsLimitedTo_trade_p: []
+    cardsToDestory_trade_p: []
+    dialogue_trading_n: []
+    cards_trading_n: []
+    tradingCard_given_n: 0
+    charasToUnlock_trade_n: 
+    relationshipChangeAmount_trading_n: 0
+    cardsToLimit_trade_n: []
+    cardsLimitedTo_trade_n: []
+    cardsToDestory_trade_n: []
+  - preconditions: 
+    triggerIDs: 19000000
+    dialogue_inquiring:
+    - "\u8FD9\u5DE5\u5382\u6C61\u67D3\u8FD9\u4E48\u5927\uFF0C\u653F\u5E9C\u4E0D\u7BA1\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u653F\u5E9C\uFF1F\u7BA1\u4E8B\u7684\u526F\u533A\u957F\u65E9\u5C31\u88AB\u8FD9\u9F9F\u5B59\u6536\u4E70\u4E86\uFF0C\u54EA\u91CC\u4F1A\u7BA1\uFF01\u6211\u4EEC\u4E0D\u662F\u6CA1\u6709\u4E0A\u8BBF\uFF0C\u4F60\u770B\uFF0C\u8FD9\u662F\u4ED6\u767D\u7EB8\u9ED1\u5B57\u5199\u7740\u7ED9\u6211\u548C\u674E\u963F\u5A46\u7684\u627F\u8BFA\uFF0C\u53EF\u6709\u7528\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u4EBA\u8BF4\u4E00\u5957\uFF0C\u505A\u4E00\u5957\u3002\u6211\u4EEC\u5E73\u5934\u767E\u59D3\u80FD\u600E\u4E48\u529E\uFF1F\u6211\u4EEC\u5BB6\u4E09\u4EE3\u52A1\u519C\uFF0C\u5E72\u7684\u597D\u597D\u7684\uFF0C\u8C01\u77E5\u5230\u6211\u8FD9\u4EE3\uFF0C\u54CE\u2026\u2026"
+    - "\u519C\u6C11\uFF1A\u4F60\u77E5\u9053\u5417\uFF1F\u7956\u7956\u8F88\u8F88\u90FD\u5728\u5E72\u7684\u6D3B\uFF0C\u5230\u6211\u8FD9\u5E72\u4E0D\u4E0B\u53BB\u4E86\uFF0C\u6211\u600E\u4E48\u5411\u4ED6\u4EEC\u4EA4\u4EE3\uFF1F"
+    - "\u519C\u6C11\uFF1A\u6211\u4E0D\u6C42\u5927\u5BCC\u5927\u8D35\uFF0C\u53EF\u66FE\u60F3\u73B0\u5728\u8FDE\u7956\u5B97\u7684\u672C\u90FD\u4E22\u4E86\uFF0C\u8FDE\u7CCA\u53E3\u7684\u6D3B\u90FD\u6CA1\u4E86\uFF0C\u6211\u8FD8\u80FD\u9760\u4EC0\u4E48\u5462"
+    - "\u519C\u6C11\uFF1A\u6211\u4E5F\u60F3\u8FC7\u79BB\u5F00\u8FD9\u4E2A\u5730\u65B9\uFF0C\u4E0D\u8BF4\u79BB\u5F00\u4E86\u7956\u5B97\u4E16\u4E16\u4EE3\u4EE3\u751F\u6D3B\u5730\u65B9\u662F\u7F6A\u8FC7\uFF0C\u800C\u4E14\u54EA\u91CC\u80FD\u5BB9\u5F97\u4E0B\u6211\u5462\uFF1F"
+    - "\u519C\u6C11\uFF1A\u6211\u2026\u2026\u4E0D\u914D\u5F53\u9648\u5BB6\u7684\u5B50\u5B59\uFF08\u8001\u9648\u75DB\u82E6\u5730\u63A9\u9762\uFF09"
+    - "\u60A8\u8BF4\u7684\u6211\u90FD\u8BB0\u4E0B\u4E86\uFF0C\u5982\u679C\u4E8B\u60C5\u5C5E\u5B9E\uFF0C\u76F8\u4FE1\u5DE5\u5382\u548C\u653F\u5E9C\u4F1A\u7ED9\u5927\u4F19\u4E00\u4E2A\u8BF4\u6CD5\u7684\uFF01"
+    - "\uFF08\u6B64\u65F6\uFF0C\u4F60\u6CE8\u610F\u5230\u519C\u6C11\u7684\u624B\u6307\u4E0A\u6709\u6761\u521A\u7ED3\u4E86\u75C2\u7684\u8840\u75D5\uFF0C\u4F46\u788D\u4E8E\u65F6\u95F4\uFF0C\u4F60\u6CA1\u6709\u591A\u95EE\u3002\uFF09"
+    - 
+    cards_inquiring: []
+    inquiringCard_given: 0
+    charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
+    cardsToLimit_inquire: []
+    cardsLimitedTo_inquire: []
+    cardsToDestory_inquire: []
+    dialogue_inquiring_p: []
+    cards_inquiring_p: []
+    inquiringCard_given_p: 0
+    charasToUnlock_inquire_p: 
+    relationshipChangeAmount_inquire_p: 0
+    cardsToLimit_inquire_p: []
+    cardsLimitedTo_inquire_p: []
+    cardsToDestory_inquire_p: []
+    dialogue_inquiring_n: []
+    cards_inquiring_n: []
+    inquiringCard_given_n: 0
+    charasToUnlock_inquire_n: 
+    relationshipChangeAmount_inquire_n: 0
+    cardsToLimit_inquire_n: []
+    cardsLimitedTo_inquire_n: []
+    cardsToDestory_inquire_n: []
+    dialogue_threatened:
+    - "\u8FD9\u5DE5\u5382\u6C61\u67D3\u8FD9\u4E48\u5927\uFF0C\u653F\u5E9C\u4E0D\u7BA1\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u653F\u5E9C\uFF1F\u7BA1\u4E8B\u7684\u526F\u533A\u957F\u65E9\u5C31\u88AB\u8FD9\u9F9F\u5B59\u6536\u4E70\u4E86\uFF0C\u54EA\u91CC\u4F1A\u7BA1\uFF01\u6211\u4EEC\u4E0D\u662F\u6CA1\u6709\u4E0A\u8BBF\uFF0C\u4F60\u770B\uFF0C\u8FD9\u662F\u4ED6\u767D\u7EB8\u9ED1\u5B57\u5199\u7740\u7ED9\u6211\u548C\u674E\u963F\u5A46\u7684\u627F\u8BFA\uFF0C\u53EF\u6709\u7528\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u4EBA\u8BF4\u4E00\u5957\uFF0C\u505A\u4E00\u5957\u3002\u6211\u4EEC\u5E73\u5934\u767E\u59D3\u80FD\u600E\u4E48\u529E\uFF1F\u6211\u4EEC\u5BB6\u4E09\u4EE3\u52A1\u519C\uFF0C\u5E72\u7684\u597D\u597D\u7684\uFF0C\u8C01\u77E5\u5230\u6211\u8FD9\u4EE3\uFF0C\u54CE\u2026\u2026"
+    - "\u519C\u6C11\uFF1A\u4F60\u77E5\u9053\u5417\uFF1F\u7956\u7956\u8F88\u8F88\u90FD\u5728\u5E72\u7684\u6D3B\uFF0C\u5230\u6211\u8FD9\u5E72\u4E0D\u4E0B\u53BB\u4E86\uFF0C\u6211\u600E\u4E48\u5411\u4ED6\u4EEC\u4EA4\u4EE3\uFF1F"
+    - "\u519C\u6C11\uFF1A\u6211\u4E0D\u6C42\u5927\u5BCC\u5927\u8D35\uFF0C\u53EF\u66FE\u60F3\u73B0\u5728\u8FDE\u7956\u5B97\u7684\u672C\u90FD\u4E22\u4E86\uFF0C\u8FDE\u7CCA\u53E3\u7684\u6D3B\u90FD\u6CA1\u4E86\uFF0C\u6211\u8FD8\u80FD\u9760\u4EC0\u4E48\u5462"
+    - "\u519C\u6C11\uFF1A\u6211\u4E5F\u60F3\u8FC7\u79BB\u5F00\u8FD9\u4E2A\u5730\u65B9\uFF0C\u4E0D\u8BF4\u79BB\u5F00\u4E86\u7956\u5B97\u4E16\u4E16\u4EE3\u4EE3\u751F\u6D3B\u5730\u65B9\u662F\u7F6A\u8FC7\uFF0C\u800C\u4E14\u54EA\u91CC\u80FD\u5BB9\u5F97\u4E0B\u6211\u5462\uFF1F"
+    - "\u519C\u6C11\uFF1A\u6211\u2026\u2026\u4E0D\u914D\u5F53\u9648\u5BB6\u7684\u5B50\u5B59\uFF08\u8001\u9648\u75DB\u82E6\u5730\u63A9\u9762\uFF09"
+    - "\u60A8\u8BF4\u7684\u6211\u90FD\u8BB0\u4E0B\u4E86\uFF0C\u5982\u679C\u4E8B\u60C5\u5C5E\u5B9E\uFF0C\u76F8\u4FE1\u5DE5\u5382\u548C\u653F\u5E9C\u4F1A\u7ED9\u5927\u4F19\u4E00\u4E2A\u8BF4\u6CD5\u7684\uFF01"
+    - "\uFF08\u6B64\u65F6\uFF0C\u4F60\u6CE8\u610F\u5230\u519C\u6C11\u7684\u624B\u6307\u4E0A\u6709\u6761\u521A\u7ED3\u4E86\u75C2\u7684\u8840\u75D5\uFF0C\u4F46\u788D\u4E8E\u65F6\u95F4\uFF0C\u4F60\u6CA1\u6709\u591A\u95EE\u3002\uFF09"
+    - 
+    cards_threatened: []
+    threatenedCard_given: 0
+    charasToUnlock_threat: 
+    relationshipChangeAmount_threat: -5
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
+    dialogue_threatened_p: []
+    cards_threatened_p: []
+    threatenedCard_given_p: 0
+    charasToUnlock_threat_p: 
+    relationshipChangeAmount_threat_p: 0
+    cardsToLimit_threat_p: []
+    cardsLimitedTo_threat_p: []
+    cardsToDestory_threat_p: []
+    dialogue_threatened_n: []
+    cards_threatened_n: []
+    threatenedCard_given_n: 0
+    charasToUnlock_threat_n: 
+    relationshipChangeAmount_threat_n: 0
+    cardsToLimit_threat_n: []
+    cardsLimitedTo_threat_n: []
+    cardsToDestory_threat_n: []
+    dialogue_trading:
+    - "\u8FD9\u5DE5\u5382\u6C61\u67D3\u8FD9\u4E48\u5927\uFF0C\u653F\u5E9C\u4E0D\u7BA1\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u653F\u5E9C\uFF1F\u7BA1\u4E8B\u7684\u526F\u533A\u957F\u65E9\u5C31\u88AB\u8FD9\u9F9F\u5B59\u6536\u4E70\u4E86\uFF0C\u54EA\u91CC\u4F1A\u7BA1\uFF01\u6211\u4EEC\u4E0D\u662F\u6CA1\u6709\u4E0A\u8BBF\uFF0C\u4F60\u770B\uFF0C\u8FD9\u662F\u4ED6\u767D\u7EB8\u9ED1\u5B57\u5199\u7740\u7ED9\u6211\u548C\u674E\u963F\u5A46\u7684\u627F\u8BFA\uFF0C\u53EF\u6709\u7528\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u4EBA\u8BF4\u4E00\u5957\uFF0C\u505A\u4E00\u5957\u3002\u6211\u4EEC\u5E73\u5934\u767E\u59D3\u80FD\u600E\u4E48\u529E\uFF1F\u6211\u4EEC\u5BB6\u4E09\u4EE3\u52A1\u519C\uFF0C\u5E72\u7684\u597D\u597D\u7684\uFF0C\u8C01\u77E5\u5230\u6211\u8FD9\u4EE3\uFF0C\u54CE\u2026\u2026"
+    - "\u519C\u6C11\uFF1A\u4F60\u77E5\u9053\u5417\uFF1F\u7956\u7956\u8F88\u8F88\u90FD\u5728\u5E72\u7684\u6D3B\uFF0C\u5230\u6211\u8FD9\u5E72\u4E0D\u4E0B\u53BB\u4E86\uFF0C\u6211\u600E\u4E48\u5411\u4ED6\u4EEC\u4EA4\u4EE3\uFF1F"
+    - "\u519C\u6C11\uFF1A\u6211\u4E0D\u6C42\u5927\u5BCC\u5927\u8D35\uFF0C\u53EF\u66FE\u60F3\u73B0\u5728\u8FDE\u7956\u5B97\u7684\u672C\u90FD\u4E22\u4E86\uFF0C\u8FDE\u7CCA\u53E3\u7684\u6D3B\u90FD\u6CA1\u4E86\uFF0C\u6211\u8FD8\u80FD\u9760\u4EC0\u4E48\u5462"
+    - "\u519C\u6C11\uFF1A\u6211\u4E5F\u60F3\u8FC7\u79BB\u5F00\u8FD9\u4E2A\u5730\u65B9\uFF0C\u4E0D\u8BF4\u79BB\u5F00\u4E86\u7956\u5B97\u4E16\u4E16\u4EE3\u4EE3\u751F\u6D3B\u5730\u65B9\u662F\u7F6A\u8FC7\uFF0C\u800C\u4E14\u54EA\u91CC\u80FD\u5BB9\u5F97\u4E0B\u6211\u5462\uFF1F"
+    - "\u519C\u6C11\uFF1A\u6211\u2026\u2026\u4E0D\u914D\u5F53\u9648\u5BB6\u7684\u5B50\u5B59\uFF08\u8001\u9648\u75DB\u82E6\u5730\u63A9\u9762\uFF09"
+    - "\u60A8\u8BF4\u7684\u6211\u90FD\u8BB0\u4E0B\u4E86\uFF0C\u5982\u679C\u4E8B\u60C5\u5C5E\u5B9E\uFF0C\u76F8\u4FE1\u5DE5\u5382\u548C\u653F\u5E9C\u4F1A\u7ED9\u5927\u4F19\u4E00\u4E2A\u8BF4\u6CD5\u7684\uFF01"
+    - "\uFF08\u6B64\u65F6\uFF0C\u4F60\u6CE8\u610F\u5230\u519C\u6C11\u7684\u624B\u6307\u4E0A\u6709\u6761\u521A\u7ED3\u4E86\u75C2\u7684\u8840\u75D5\uFF0C\u4F46\u788D\u4E8E\u65F6\u95F4\uFF0C\u4F60\u6CA1\u6709\u591A\u95EE\u3002\uFF09"
+    - 
+    cards_trading: []
+    tradingCard_given: 0
+    charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
+    dialogue_trading_p: []
+    cards_trading_p: []
+    tradingCard_given_p: 0
+    charasToUnlock_trade_p: 
+    relationshipChangeAmount_trading_p: 0
+    cardsToLimit_trade_p: []
+    cardsLimitedTo_trade_p: []
+    cardsToDestory_trade_p: []
+    dialogue_trading_n: []
+    cards_trading_n: []
+    tradingCard_given_n: 0
+    charasToUnlock_trade_n: 
+    relationshipChangeAmount_trading_n: 0
+    cardsToLimit_trade_n: []
+    cardsLimitedTo_trade_n: []
+    cardsToDestory_trade_n: []
+  - preconditions: 
+    triggerIDs: 0e000000
+    dialogue_inquiring:
+    - "\u5BF9\u4E86\uFF0C\u542C\u4ED8\u5F3A\u8BF4\uFF0C\u4F60\u5F53\u65F6\u53BB\u5DE5\u5382\u65F6\u5E26\u4E86\u4E00\u4E9B\u4E1C\u897F\uFF0C\u65B9\u4FBF\u900F\u9732\u4E0B\u662F\u4EC0\u4E48\u4E1C\u897F\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u90A3\u5929\u5C31\u662F\u987A\u9053\u60F3\u628A\u4E1C\u897F\u5E26\u7ED9\u6211\u670B\u53CB\u2026\u2026\u4F46\u4ED6\u4E0D\u5728\u5DE5\u5382\uFF0C\u5C31\u53C8\u5E26\u56DE\u53BB\u4E86"
+    - "\u8FD9\u6837\u5417\u2026\u2026\uFF08\u60F3\u8D77\u4E4B\u524D\u91C7\u8BBF\u65F6\u770B\u5230\u519C\u6C11\u624B\u6307\u4E0A\u6709\u8840\u75D5\uFF0C\u611F\u5230\u6709\u7591\u70B9\uFF09"
+    - 
+    cards_inquiring: []
+    inquiringCard_given: 0
+    charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
+    cardsToLimit_inquire: []
+    cardsLimitedTo_inquire: []
+    cardsToDestory_inquire: []
+    dialogue_inquiring_p: []
+    cards_inquiring_p: []
+    inquiringCard_given_p: 0
+    charasToUnlock_inquire_p: 
+    relationshipChangeAmount_inquire_p: 0
+    cardsToLimit_inquire_p: []
+    cardsLimitedTo_inquire_p: []
+    cardsToDestory_inquire_p: []
+    dialogue_inquiring_n: []
+    cards_inquiring_n: []
+    inquiringCard_given_n: 0
+    charasToUnlock_inquire_n: 
+    relationshipChangeAmount_inquire_n: 0
+    cardsToLimit_inquire_n: []
+    cardsLimitedTo_inquire_n: []
+    cardsToDestory_inquire_n: []
+    dialogue_threatened:
+    - "\u4F60\u5F53\u65F6\u53BB\u5DE5\u5382\u65F6\uFF0C\u5E26\u7740\u5F88\u591A\u5DE5\u5177\u5427\uFF0C\u5E26\u7740\u8FD9\u4E9B\u5DE5\u5177\u53BB\u7684\u76EE\u7684\u662F\uFF1F"
+    - "\u519C\u6C11\uFF1A\u6211\u5C31\u662F\u2026\u2026\u60F3\u628A\u4E1C\u897F\u5E26\u7ED9\u6211\u4E00\u4E2A\u670B\u53CB\u5440\u2026\u2026\u4F46\u4ED6\u4E0D\u5728\u5DE5\u5382\uFF0C\u5C31\u53C8\u5E26\u56DE\u53BB\u4E86"
+    - "\u6211\u8BB0\u5F97\u4E4B\u524D\u91C7\u8BBF\u4F60\u65F6\u4F60\u624B\u6307\u4E0A\u6709\u521A\u7ED3\u4E86\u75C2\u7684\u8840\u75D5\uFF0C\u8FD9\u70B9\u4F60\u600E\u4E48\u89E3\u91CA\uFF1F"
+    - "\u519C\u6C11\uFF1A\u2026\u2026\u5C31\u662F\u4E4B\u524D\u5E72\u6D3B\u6454\u4E86\u4E0B\uFF0C\u6CA1\u5565\u5927\u4E0D\u4E86\u7684"
+    - "\u4F60\u6700\u597D\u5982\u5B9E\u548C\u6211\u8BF4\u660E\uFF0C\u4E0D\u8981\u6253\u9A6C\u864E\u773C"
+    - "\u771F\u7684\u5C31\u662F\u5E72\u6D3B\u6454\u7684\uFF0C\u548C\u5DE5\u5382\u6CA1\u5173\u7CFB\u2026\u2026"
+    - "\u884C\uFF0C\u90A3\u5C31\u5148\u95EE\u5230\u8FD9\u5427"
+    - 
+    cards_threatened: []
+    threatenedCard_given: 0
+    charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
+    dialogue_threatened_p: []
+    cards_threatened_p: []
+    threatenedCard_given_p: 0
+    charasToUnlock_threat_p: 
+    relationshipChangeAmount_threat_p: 0
+    cardsToLimit_threat_p: []
+    cardsLimitedTo_threat_p: []
+    cardsToDestory_threat_p: []
+    dialogue_threatened_n: []
+    cards_threatened_n: []
+    threatenedCard_given_n: 0
+    charasToUnlock_threat_n: 
+    relationshipChangeAmount_threat_n: 0
+    cardsToLimit_threat_n: []
+    cardsLimitedTo_threat_n: []
+    cardsToDestory_threat_n: []
+    dialogue_trading: []
+    cards_trading: []
+    tradingCard_given: 0
+    charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
+    dialogue_trading_p: []
+    cards_trading_p: []
+    tradingCard_given_p: 0
+    charasToUnlock_trade_p: 
+    relationshipChangeAmount_trading_p: 0
+    cardsToLimit_trade_p: []
+    cardsLimitedTo_trade_p: []
+    cardsToDestory_trade_p: []
+    dialogue_trading_n: []
+    cards_trading_n: []
+    tradingCard_given_n: 0
+    charasToUnlock_trade_n: 
+    relationshipChangeAmount_trading_n: 0
+    cardsToLimit_trade_n: []
+    cardsLimitedTo_trade_n: []
+    cardsToDestory_trade_n: []
+  - preconditions: 
+    triggerIDs: 11000000
+    dialogue_inquiring:
+    - "\u8FD9\u5F20\u503C\u73ED\u8868\u5199\u7740\u4F60\u53BB\u95F9\u4E8B\uFF0C\u4F60\u4EEC\u90A3\u5929\u53D1\u751F\u4EC0\u4E48\u4E89\u5435\u4E86\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u554A\u2026\u2026\u5C31\u662F\u503C\u73ED\u7684\u4EBA\u4E0D\u80AF\u653E\u6211\u8FDB\u53BB\uFF0C\u6211\u8DDF\u4ED6\u89E3\u91CA\u8001\u534A\u5929\u4E86\uFF0C\u8FD9\u4EBA\u8F74\u7684\u5F88\uFF0C\u5C31\u662F\u4E0D\u8BA9\u6211\u8FDB\u53BB\u2026\u2026"
+    - "\u519C\u6C11\uFF1A\u540E\u9762\u8FD8\u662F\u6253\u7535\u8BDD\u7ED9\u5382\u957F\u624D\u80AF\u8BA9\u6211\u8FDB\u53BB\u7684\u3002\u4F30\u8BA1\u8BF4\u7684\u662F\u8FD9\u4E8B\u5427"
+    - "\u4E86\u89E3\u4E86"
+    - 
+    cards_inquiring: []
+    inquiringCard_given: 0
+    charasToUnlock_inquire: 
+    relationshipChangeAmount_inquire: 0
+    cardsToLimit_inquire: []
+    cardsLimitedTo_inquire: []
+    cardsToDestory_inquire: []
+    dialogue_inquiring_p: []
+    cards_inquiring_p: []
+    inquiringCard_given_p: 0
+    charasToUnlock_inquire_p: 
+    relationshipChangeAmount_inquire_p: 0
+    cardsToLimit_inquire_p: []
+    cardsLimitedTo_inquire_p: []
+    cardsToDestory_inquire_p: []
+    dialogue_inquiring_n: []
+    cards_inquiring_n: []
+    inquiringCard_given_n: 0
+    charasToUnlock_inquire_n: 
+    relationshipChangeAmount_inquire_n: 0
+    cardsToLimit_inquire_n: []
+    cardsLimitedTo_inquire_n: []
+    cardsToDestory_inquire_n: []
+    dialogue_threatened:
+    - "\u8FD9\u5F20\u503C\u73ED\u8868\u53EF\u662F\u767D\u7EB8\u9ED1\u5B57\u5199\u4E86\u4F60\u5F53\u65F6\u53BB\u95F9\u4E8B\u4E86\uFF0C\u4F60\u53EF\u4EE5\u89E3\u91CA\u4E0B\u8FD9\u662F\u600E\u4E48\u4E00\u56DE\u4E8B\u5417\uFF1F"
+    - "\u519C\u6C11\uFF1A\u6211\u5C31\u662F\u60F3\u53BB\u5413\u552C\u4ED6\u4E00\u4E0B\uFF0C\u6CA1\u60F3\u52A8\u624B\uFF0C\u4F46\u540E\u9762\u60C5\u51B5\u6709\u70B9\u4E0D\u53D7\u63A7\u5236\uFF0C\u4E8E\u662F\u5C31\u2026\u2026"
+    - "\u4F60\u4E4B\u524D\u624B\u6307\u4E0A\u7684\u8840\u75D5\u2026\u2026\u6240\u4EE5\u4F60\u6253\u67B6\u4E86\uFF1F"
+    - "\u519C\u6C11\uFF1A\u662F\u3002\u4E0D\u7ED9\u4ED6\u4EEC\u70B9\u989C\u8272\u770B\u770B\uFF0C\u4ED6\u4EEC\u771F\u4EE5\u4E3A\u81EA\u5DF1\u591A\u80FD\u8010\u5462\u2026\u2026"
+    - "\u4F60\u4E0D\u662F\u8BF4\u5382\u957F\u6CA1\u5728\u5417\uFF0C\u4F60\u548C\u8C01\u6253\u4E86\u4E00\u67B6\uFF1F"
+    - "\u519C\u6C11\uFF1A\u5C31\uFF0C\u4ED6\u4EEC\u90A3\u4E9B\u5728\u573A\u7684\u4EBA\uFF0C\u5168\u90FD\u662F\u4E00\u6761\u7EF3\u4E0A\u7684\u8682\u86B1\uFF01"
+    - "\u4E0D\u7BA1\u600E\u6837\uFF0C\u4E0B\u6B21\u5C3D\u91CF\u4E0D\u8981\u8FD9\u6837\u4E86\uFF0C\u51FA\u4E86\u4E8B\u8C01\u90FD\u4E0D\u597D\u62C5\u8D23\uFF0C\u662F\u5427"
+    - "\u2026\u2026"
+    - 
+    cards_threatened: []
+    threatenedCard_given: 0
+    charasToUnlock_threat: 
+    relationshipChangeAmount_threat: 0
+    cardsToLimit_threat: []
+    cardsLimitedTo_threat: []
+    cardsToDestory_threat: []
+    dialogue_threatened_p: []
+    cards_threatened_p: []
+    threatenedCard_given_p: 0
+    charasToUnlock_threat_p: 
+    relationshipChangeAmount_threat_p: 0
+    cardsToLimit_threat_p: []
+    cardsLimitedTo_threat_p: []
+    cardsToDestory_threat_p: []
+    dialogue_threatened_n: []
+    cards_threatened_n: []
+    threatenedCard_given_n: 0
+    charasToUnlock_threat_n: 
+    relationshipChangeAmount_threat_n: 0
+    cardsToLimit_threat_n: []
+    cardsLimitedTo_threat_n: []
+    cardsToDestory_threat_n: []
+    dialogue_trading: []
+    cards_trading: []
+    tradingCard_given: 0
+    charasToUnlock_trade: 
+    relationshipChangeAmount_trading: 0
+    cardsToLimit_trade: []
+    cardsLimitedTo_trade: []
+    cardsToDestory_trade: []
+    dialogue_trading_p: []
+    cards_trading_p: []
+    tradingCard_given_p: 0
+    charasToUnlock_trade_p: 
+    relationshipChangeAmount_trading_p: 0
+    cardsToLimit_trade_p: []
+    cardsLimitedTo_trade_p: []
+    cardsToDestory_trade_p: []
+    dialogue_trading_n: []
     cards_trading_n: []
     tradingCard_given_n: 0
     charasToUnlock_trade_n: 
@@ -425,89 +773,39 @@ MonoBehaviour:
     cardsLimitedTo_trade_n: []
     cardsToDestory_trade_n: []
   defaultDialogues:
-  - "\u6211\uFF1A\u8001\u9648\u4F60\u597D\uFF0C\u5C31\u8FD9\u6B21\u706B\u707E\u7684\u4E8B\u60C5\uFF0C\u6211\u60F3\u5355\u72EC\u548C\u4F60\u804A\u804A\uFF0C\u4F60\u73B0\u5728\u65B9\u4FBF\u5417\uFF1F"
-  - "\u519C\u6C11\uFF1A\u706B\u707E\u2026\u2026\u548C\u6211\u6709\u5565\u5173\u7CFB\uFF0C\u4F60\u60F3\u95EE\u5565\u8D76\u7D27\u95EE\u5427\uFF0C\u95EE\u5B8C\u6211\u8FD8\u5F97\u5E72\u6D3B\u5462\u3002\r"
+  - "\u8001\u9648\u4F60\u597D\uFF0C\u6211\u662F\u6765\u81EATC\u62A5\u793E\u7684\u53F6\u8BB0\u8005\uFF0C\u5C31\u8FD9\u6B21\u706B\u707E\u7684\u4E8B\u60C5\uFF0C\u6211\u60F3\u5355\u72EC\u548C\u4F60\u804A\u804A\uFF0C\u73B0\u5728\u65B9\u4FBF\u5417\uFF1F"
+  - "\u519C\u6C11\uFF1A\u706B\u707E\u2026\u2026\u548C\u6211\u6709\u5565\u5173\u7CFB\uFF0C\u4F60\u60F3\u95EE\u5565\u8D76\u7D27\u95EE\u5427\uFF0C\u95EE\u5B8C\u6211\u8FD8\u5F97\u5E72\u6D3B\u5462"
+  - "\u4F60\u53EF\u4EE5\u8BF4\u8BF4\u706B\u707E\u5F53\u5929\u4F60\u5728\u54EA\u91CC\u505A\u4EC0\u4E48\u4E8B\u60C5\u5417\uFF1F\u522B\u8BEF\u4F1A\uFF0C\u5C31\u662F\u4F8B\u884C\u516C\u4E8B\u800C\u5DF2"
+  - "\u90A3\u5929\u2026\u2026\u5382\u5B50\u70E7\u7740\u4E4B\u524D\uFF0C\u6211\u5230\u90A3\u60F3\u5E2E\u963F\u5A46\u8BA8\u4E2A\u8BF4\u6CD5\uFF0C\u5382\u957F\u90A3\u4E2A\u9F9F\u5B59\uFF0C\u5C31\u662F\u4ED6\u5BB3\u6B7B\u4E86\u674E\u963F\u5A46\uFF01"
+  - "\u6211\u5BB6\u5AB3\u5987\u4E5F\u5C31\u662F\u56E0\u4E3A\u4ED6\uFF0C\u624D\u67D3\u4E0A\u8FD9\u75C5\u3002\u8FD9\u9F9F\u5B59\u53EF\u597D\uFF0C\u6210\u5929\u5F00\u7740\u90A3\u5DE5\u5382\uFF0C\u6709\u591A\u5C11\u4EBA\u56E0\u4E3A\u4ED6\u751F\u4E86\u75C5\u2026\u2026"
+  - "\u963F\u5A46\u4E4B\u524D\u662F\u76F8\u4FE1\u8FD9\u533A\u957F\uFF0C\u6211\u4E0D\u597D\u8BF4\u4EC0\u4E48\uFF0C\u4F46\u6211\u65E9\u5C31\u770B\u4ED6\u4E2B\u4E0D\u723D\u5F88\u4E45\u4E86"
+  - "\u90A3\u4F60\u8D70\u7684\u65F6\u5019\uFF0C\u6709\u6CA1\u6709\u5BDF\u89C9\u5230\u5DE5\u5382\u7684\u4EC0\u4E48\u5F02\u6837\uFF1F"
+  - "\u519C\u6C11\uFF1A\u90A3\u5929\u5DE5\u5382\u6CA1\u522B\u4EBA\uFF0C\u5C31\u51E0\u4E2A\u52A9\u624B\u5728\u90A3"
+  - "\u519C\u6C11\uFF1A\u73B0\u5728\u60F3\u60F3\u4E5F\u662F\u5947\u602A\uFF0C\u96BE\u9053\u8FD8\u662F\u4ED6\u4EEC\u81EA\u5DF1\u653E\u7684\u706B\u4E0D\u6210\uFF1F\u5982\u679C\u4E0D\u662F\uFF0C\u90A3\u8FD9\u706B\u5C31\u662F\u90A3\u5806\u94C1\u73A9\u610F\u513F\u81EA\u5DF1\u51FA\u95EE\u9898\u4E86\u5427"
   - 
   cardlessDialogues:
   - options:
     - preconditionCharas: []
-      question: "\u4F60\u53EF\u4EE5\u8BF4\u8BF4\u706B\u707E\u5F53\u5929\u4F60\u5728\u54EA\u91CC\u505A\u4EC0\u4E48\u4E8B\u60C5\u5417\uFF1F\u522B\u8BEF\u4F1A\uFF0C\u5C31\u662F\u4F8B\u884C\u516C\u4E8B\u800C\u5DF2\u3002"
+      question: "\uFF08\u8FD9\u4F4D\u91C7\u8BBF\u8005\u4F3C\u4E4E\u548C\u5DE5\u5382\u7684\u5382\u957F\u6709\u77DB\u76FE\uFF0C\u4E0D\u5982\u63A5\u4E0B\u6765\u5C31\u53BB\u91C7\u8BBF\u4E00\u4E0B\u5382\u957F\u5427\uFF09"
       shown: 0
       precondition_met: 0
       dialogues:
-      - "\u519C\u6C11\uFF1A\u90A3\u5929\u2026\u2026\u5382\u5B50\u70E7\u7740\u4E4B\u524D\uFF0C\u6211\u5230\u90A3\u60F3\u5E2E\u963F\u5A46\u8BA8\u4E2A\u8BF4\u6CD5\uFF0C\u5382\u957F\u90A3\u4E2A\u9F9F\u5B59\uFF0C\u5C31\u662F\u4ED6\u5BB3\u6B7B\u4E86\u674E\u963F\u5A46\uFF01"
-      - "\u519C\u6C11\uFF1A\u6211\u5BB6\u5AB3\u5987\u4E5F\u5C31\u662F\u56E0\u4E3A\u4ED6\uFF0C\u624D\u67D3\u4E0A\u8FD9\u75C5\u3002\u8FD9\u9F9F\u5B59\u53EF\u597D\uFF0C\u6210\u5929\u5F00\u7740\u90A3\u5DE5\u5382\uFF0C\u6709\u591A\u5C11\u4EBA\u56E0\u4E3A\u4ED6\u751F\u4E86\u75C5\u2026\u2026"
-      - "\u519C\u6C11\uFF1A\u963F\u5A46\u4E4B\u524D\u662F\u76F8\u4FE1\u8FD9\u533A\u957F\uFF0C\u6211\u4E0D\u597D\u8BF4\u4EC0\u4E48\uFF0C\u4F46\u6211\u65E9\u5C31\u770B\u4ED6\u4E2B\u4E0D\u723D\u5F88\u4E45\u4E86\u3002"
+      - "\uFF08\u8BA9\u6211\u67E5\u67E5\u8FD9\u4E2A\u5382\u957F\u4EBA\u5728\u54EA\uFF09"
       - 
-      cardsItGives:
-      - {fileID: 4270974583676908371, guid: 6be9cffc47fa43a42b25fcde10be48d8, type: 3}
-      - {fileID: 4270974583676908371, guid: 0531182df7353ba428477f041a2e29d6, type: 3}
-      - {fileID: 4270974583676908371, guid: a1b7edb5952829d4cb8a5887c398c656, type: 3}
+      cardsItGives: []
       relationshipChangeAmount: 0
-      charasToUnlock: 
+      charasToUnlock: 0b000000
       cardsItLimits: []
       cardsLimitedTo: []
       cardsItDestroys: []
-      dialogues_p:
-      - "\u519C\u6C11\uFF1A\u90A3\u5929\u2026\u2026\u5382\u5B50\u70E7\u7740\u4E4B\u524D\uFF0C\u6211\u5230\u90A3\u60F3\u5E2E\u963F\u5A46\u8BA8\u4E2A\u8BF4\u6CD5\uFF0C\u5382\u957F\u90A3\u4E2A\u9F9F\u5B59\uFF0C\u5C31\u662F\u4ED6\u5BB3\u6B7B\u4E86\u674E\u963F\u5A46\uFF01"
-      - "\u519C\u6C11\uFF1A\u6211\u5BB6\u5AB3\u5987\u4E5F\u5C31\u662F\u56E0\u4E3A\u4ED6\uFF0C\u624D\u67D3\u4E0A\u8FD9\u75C5\u3002\u8FD9\u9F9F\u5B59\u53EF\u597D\uFF0C\u6210\u5929\u5F00\u7740\u90A3\u5DE5\u5382\uFF0C\u6709\u591A\u5C11\u4EBA\u56E0\u4E3A\u4ED6\u751F\u4E86\u75C5\u2026\u2026"
-      - "\u519C\u6C11\uFF1A\u963F\u5A46\u4E4B\u524D\u662F\u76F8\u4FE1\u8FD9\u533A\u957F\uFF0C\u6211\u4E0D\u597D\u8BF4\u4EC0\u4E48\uFF0C\u4F46\u6211\u65E9\u5C31\u770B\u4ED6\u4E2B\u4E0D\u723D\u5F88\u4E45\u4E86\u3002"
-      - 
-      cardsItGives_p:
-      - {fileID: 4270974583676908371, guid: 6be9cffc47fa43a42b25fcde10be48d8, type: 3}
-      - {fileID: 4270974583676908371, guid: 0531182df7353ba428477f041a2e29d6, type: 3}
-      - {fileID: 4270974583676908371, guid: a1b7edb5952829d4cb8a5887c398c656, type: 3}
+      dialogues_p: []
+      cardsItGives_p: []
       relationshipChangeAmount_p: 0
       charasToUnlock_p: 
       cardsItLimits_p: []
       cardsLimitedTo_p: []
       cardsItDestroys_p: []
-      dialogues_n:
-      - "(\u4E0D\u8BF4\u8BDD)"
-      - 
-      cardsItGives_n: []
-      relationshipChangeAmount_n: 0
-      charasToUnlock_n: 
-      cardsItLimits_n: []
-      cardsLimitedTo_n: []
-      cardsItDestroys_n: []
-    noneOptionUnlocked: 0
-  - options:
-    - preconditionCharas: []
-      question: "\u8FD9\u5DE5\u5382\u6C61\u67D3\u8FD9\u4E48\u5927\uFF0C\u653F\u5E9C\u4E0D\u7BA1\u5417\uFF1F"
-      shown: 0
-      precondition_met: 0
-      dialogues:
-      - "\u519C\u6C11\uFF1A\u653F\u5E9C\uFF1F\u7BA1\u4E8B\u7684\u526F\u533A\u957F\u65E9\u5C31\u88AB\u8FD9\u9F9F\u5B59\u6536\u4E70\u4E86\uFF0C\u54EA\u91CC\u4F1A\u7BA1\uFF01"
-      - "\u519C\u6C11\uFF1A\u6211\u4EEC\u4E0D\u662F\u6CA1\u6709\u4E0A\u8BBF\uFF0C\u4F60\u770B\uFF0C\u8FD9\u662F\u4ED6\u767D\u7EB8\u9ED1\u5B57\u5199\u7740\u7ED9\u6211\u548C\u674E\u963F\u5A46\u7684\u627F\u8BFA\uFF0C\u53EF\u6709\u7528\u5417\uFF1F"
-      - "\u519C\u6C11\uFF1A\u4EBA\u8BF4\u4E00\u5957\uFF0C\u505A\u4E00\u5957\u3002\u6211\u4EEC\u5E73\u5934\u767E\u59D3\u80FD\u600E\u4E48\u529E\uFF1F\u6211\u4EEC\u5BB6\u4E09\u4EE3\u52A1\u519C\uFF0C\u5E72\u7684\u597D\u597D\u7684\uFF0C\u8C01\u77E5\u5230\u6211\u8FD9\u4EE3\uFF0C\u54CE\u2026\u2026\uFF08\u9677\u5165\u60B2\u4F24\uFF09"
-      - "\u6211\uFF1A\u60A8\u8BF4\u7684\u6211\u7279\u522B\u80FD\u7406\u89E3\uFF0C\u8FD9\u786E\u5B9E\u662F\u5DE5\u5382\u7684\u95EE\u9898\u2026\u2026"
-      - "\u6211\uFF1A\u603B\u4E4B\uFF0C\u60A8\u8BF4\u7684\u6211\u90FD\u8BB0\u4E0B\u4E86\uFF0C\u5982\u679C\u4E8B\u60C5\u5C5E\u5B9E\uFF0C\u76F8\u4FE1\u5DE5\u5382\u548C\u653F\u5E9C\u4F1A\u7ED9\u5927\u4F19\u4E00\u4E2A\u8BF4\u6CD5\u7684\uFF01"
-      - 
-      cardsItGives:
-      - {fileID: 4270974583676908371, guid: 490d15b619628574da2701a869caebf1, type: 3}
-      relationshipChangeAmount: 0
-      charasToUnlock: 
-      cardsItLimits: []
-      cardsLimitedTo: []
-      cardsItDestroys: []
-      dialogues_p:
-      - "\u519C\u6C11\uFF1A\u653F\u5E9C\uFF1F\u7BA1\u4E8B\u7684\u526F\u533A\u957F\u65E9\u5C31\u88AB\u8FD9\u9F9F\u5B59\u6536\u4E70\u4E86\uFF0C\u54EA\u91CC\u4F1A\u7BA1\uFF01"
-      - "\u519C\u6C11\uFF1A\u6211\u4EEC\u4E0D\u662F\u6CA1\u6709\u4E0A\u8BBF\uFF0C\u4F60\u770B\uFF0C\u8FD9\u662F\u4ED6\u767D\u7EB8\u9ED1\u5B57\u5199\u7740\u7ED9\u6211\u548C\u674E\u963F\u5A46\u7684\u627F\u8BFA\uFF0C\u53EF\u6709\u7528\u5417\uFF1F"
-      - "\u519C\u6C11\uFF1A\u4EBA\u8BF4\u4E00\u5957\uFF0C\u505A\u4E00\u5957\u3002\u6211\u4EEC\u5E73\u5934\u767E\u59D3\u80FD\u600E\u4E48\u529E\uFF1F\u6211\u4EEC\u5BB6\u4E09\u4EE3\u52A1\u519C\uFF0C\u5E72\u7684\u597D\u597D\u7684\uFF0C\u8C01\u77E5\u5230\u6211\u8FD9\u4EE3\uFF0C\u54CE\u2026\u2026\uFF08\u9677\u5165\u60B2\u4F24\uFF09"
-      - "\u6211\uFF1A\u60A8\u8BF4\u7684\u6211\u7279\u522B\u80FD\u7406\u89E3\uFF0C\u8FD9\u786E\u5B9E\u662F\u5DE5\u5382\u7684\u95EE\u9898\u2026\u2026"
-      - "\u6211\uFF1A\u603B\u4E4B\uFF0C\u60A8\u8BF4\u7684\u6211\u90FD\u8BB0\u4E0B\u4E86\uFF0C\u5982\u679C\u4E8B\u60C5\u5C5E\u5B9E\uFF0C\u76F8\u4FE1\u5DE5\u5382\u548C\u653F\u5E9C\u4F1A\u7ED9\u5927\u4F19\u4E00\u4E2A\u8BF4\u6CD5\u7684\uFF01"
-      - 
-      cardsItGives_p:
-      - {fileID: 4270974583676908371, guid: 490d15b619628574da2701a869caebf1, type: 3}
-      relationshipChangeAmount_p: 0
-      charasToUnlock_p: 
-      cardsItLimits_p: []
-      cardsLimitedTo_p: []
-      cardsItDestroys_p: []
-      dialogues_n:
-      - "(\u4E0D\u8BF4\u8BDD)"
-      - 
+      dialogues_n: []
       cardsItGives_n: []
       relationshipChangeAmount_n: 0
       charasToUnlock_n: 
@@ -523,8 +821,10 @@ MonoBehaviour:
   destoryMe: 0
   re_interview_ability: 1
   canBeChosen: 1
-  info: {fileID: 8969239778247777678}
---- !u!61 &-7973237963578344564
+  info: {fileID: 688474185057966078}
+  canAdvanceDialogue: 1
+  usableIDs: 
+--- !u!61 &6077264212469041718
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -541,16 +841,16 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.24, y: 2.24}
-    newSize: {x: 2.24, y: 2.24}
+    oldSize: {x: 4.285, y: 4.31}
+    newSize: {x: 4.285, y: 4.31}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.24, y: 2.24}
+  m_Size: {x: 4.285, y: 4.31}
   m_EdgeRadius: 0
---- !u!1 &3861707478220860901
+--- !u!1 &672428993741239841
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,44 +858,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1690309632937392724}
-  - component: {fileID: 5074085356740126034}
-  - component: {fileID: 3330316210468684474}
-  - component: {fileID: 5359674359258018885}
+  - component: {fileID: 2245249840575842164}
+  - component: {fileID: 2731570293991467415}
+  - component: {fileID: 7384235274483041351}
+  - component: {fileID: 4545053457514107437}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Canvas (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1690309632937392724
+--- !u!224 &2245249840575842164
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861707478220860901}
+  m_GameObject: {fileID: 672428993741239841}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8018293175386609496}
+  - {fileID: 8814075405463866620}
   m_Father: {fileID: 648202926039254869}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 489.375, y: 267.5}
-  m_SizeDelta: {x: 978.75, y: 551}
+  m_AnchoredPosition: {x: 1194.05, y: 524.23}
+  m_SizeDelta: {x: 2400, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!223 &5074085356740126034
+--- !u!223 &2731570293991467415
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861707478220860901}
+  m_GameObject: {fileID: 672428993741239841}
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
@@ -610,35 +910,35 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &3330316210468684474
+--- !u!114 &7384235274483041351
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861707478220860901}
+  m_GameObject: {fileID: 672428993741239841}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2400, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &5359674359258018885
+--- !u!114 &4545053457514107437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861707478220860901}
+  m_GameObject: {fileID: 672428993741239841}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
@@ -649,7 +949,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1 &4950764843888926619
+--- !u!1 &4760351764607648780
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -657,9 +957,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8018293175386609496}
-  - component: {fileID: 7403247395195847683}
-  - component: {fileID: 8969239778247777678}
+  - component: {fileID: 8814075405463866620}
+  - component: {fileID: 2137116417223180307}
+  - component: {fileID: 688474185057966078}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -667,40 +967,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &8018293175386609496
+--- !u!224 &8814075405463866620
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4950764843888926619}
+  m_GameObject: {fileID: 4760351764607648780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1690309632937392724}
+  m_Father: {fileID: 2245249840575842164}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -489.38, y: -266.12}
-  m_SizeDelta: {x: 2.0543213, y: 0.96102905}
+  m_AnchoredPosition: {x: -1194.06, y: -526.76}
+  m_SizeDelta: {x: 3.1237793, y: 0.6866911}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7403247395195847683
+--- !u!222 &2137116417223180307
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4950764843888926619}
+  m_GameObject: {fileID: 4760351764607648780}
   m_CullTransparentMesh: 0
---- !u!114 &8969239778247777678
+--- !u!114 &688474185057966078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4950764843888926619}
+  m_GameObject: {fileID: 4760351764607648780}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -713,10 +1013,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\u519C\u6C11"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 57864b3fce913cf4687f981544254246, type: 2}
-  m_sharedMaterial: {fileID: -3525995633598858701, guid: 57864b3fce913cf4687f981544254246,
+  m_fontAsset: {fileID: 11400000, guid: ac00cc7d84ec3924383ee7d416c57692, type: 2}
+  m_sharedMaterial: {fileID: -544626459598026762, guid: ac00cc7d84ec3924383ee7d416c57692,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

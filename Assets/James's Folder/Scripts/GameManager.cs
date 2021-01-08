@@ -34,6 +34,18 @@ public class GameManager : MonoBehaviour
 	// relationship displayer
 	public TextMeshProUGUI relationship_D;
 
+	// clue board related
+	public GameObject clueboardButton;
+	public GameObject newCardNotification;
+	public GameObject newCharaNotification;
+	public GameObject cam;
+
+	// for worker relationship
+	public int workerOneRelationship;
+
+	// fore debugging
+	public TextMeshProUGUI debugText;
+
 	private void Start()
 	{
 		me = this;
@@ -54,15 +66,57 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	private void Update()
+	private void ForPlaytest()
 	{
+		// clue board playtest
+		//if (Input.GetKeyDown(KeyCode.M))
+		//{
+		//	ClueBoard.me.UnlockMayor();
+		//}
+		//if (Input.GetKeyDown(KeyCode.F))
+		//{
+		//	ClueBoard.me.UnlockFarmer();
+		//}
+		//if (Input.GetKeyDown(KeyCode.W))
+		//{
+		//	ClueBoard.me.UnlockWorker();
+		//}
+		//if (Input.GetKeyDown(KeyCode.Y))
+		//{
+		//	ClueBoard.me.UnlockYoung();
+		//}
+		// skip day 1 play test
 		if (Input.GetKeyDown(KeyCode.S))
 		{
-			StateManagerScript.me.state = StateManagerScript.States.dayTwo;
-			StateManagerScript.me.EnterDayTwo();
+			CutSceneManager.me.blackCover.GetComponent<Transition>().FadeOut(5, null);
+			cam.transform.position = new Vector3(60, 0, -10);
+			clueboardButton.SetActive(false);
 		}
+		// show card usage script variables
+		if (Input.GetKey(KeyCode.C))
+		{
+			if (CardUsageScript.me.cardInUsed != null)
+			{
+				debugText.text = "card being used: " + CardUsageScript.me.cardInUsed.name + "\n" +
+								 "card id: " + CardUsageScript.me.cardId + "\n" +
+								 "showButtons: " + CardUsageScript.me.showButtons;
+			}
+		}
+		else
+		{
+			debugText.text = "";
+		}
+	}
+
+	private void Update()
+	{
+		ForPlaytest();
 		if (state == choose)
 		{
+			if (Mathf.Approximately(cam.transform.position.x, 0))
+			{
+				clueboardButton.SetActive(true);
+			}
 			relationship_D.text = "";
 			// hide [back] button when choosing who to interview
 			backButton.SetActive(false);
@@ -99,6 +153,11 @@ public class GameManager : MonoBehaviour
 						// set its pos
 						Vector3 pos = new Vector3(rosterSect_startPos.x + (i + 1) * rosterSect_length / (unlockedCharaPrefabs.Count + 1), rosterSect_startPos.y, 0);
 						character.transform.position = pos;
+						// if it's worker, make its relationship equal to day 1 version of him's
+						if (character.name == "worker - 2(Clone)")
+						{
+							character.GetComponent<CharacterScript>().relationship = workerOneRelationship;
+						}
 						// add it to roster
 						roster.Add(character);
 					}
@@ -113,6 +172,7 @@ public class GameManager : MonoBehaviour
 			// if an interviewee is selected, go to interview state
 			else if (interviewee != null)
 			{
+				clueboardButton.SetActive(false);
 				// activate cardless dialogue manager if the cardless dialogue for the selected chara hasn't been shown
 				if (!interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished) 
 				{
@@ -171,6 +231,7 @@ public class GameManager : MonoBehaviour
 						if (player.GetComponent<PlayerScript>().disableMeNHand)
 						{
 							ActivatePlayer();
+							player.GetComponent<PlayerScript>().ShowUsableCards_Player();
 						}
 					}
 				}
@@ -185,7 +246,7 @@ public class GameManager : MonoBehaviour
 				}
 				// put interviewee chara to interview pos and scale up
 				interviewee.transform.position = interviewee_pos;
-				interviewee.transform.localScale = new Vector3(2, 2, 1);
+				interviewee.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
 				
 				// set state to interview state
 				state = interview;
@@ -193,9 +254,20 @@ public class GameManager : MonoBehaviour
 		}
 		else if (state == interview)
 		{
+			// when in interview, hide all other characters' colliders
+			foreach (var chara in roster)
+			{
+				if (chara != interviewee)
+				{
+					chara.GetComponent<BoxCollider2D>().enabled = false;
+				}
+			}
 			relationship_D.text = "好感度: " + interviewee.GetComponent<CharacterScript>().relationship;
 			// when in interview (and cardless dialogues are finished), show [back] button
-			if (interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished)
+			//print("cardlessDialogueFinished: " + interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished);
+			//print("!CardUsageScript.me.showButtons: " + !CardUsageScript.me.showButtons);
+			if (interviewee.GetComponent<CharacterScript>().cardlessDialogueFinished &&
+				!CardUsageScript.me.showButtons)
 			{
 				backButton.SetActive(true);
 			}
@@ -204,6 +276,7 @@ public class GameManager : MonoBehaviour
 
 	public void ExitInterview()
 	{
+		SoundManager.me.PlayClick();
 		// reset index
 		DialogueManagerScript.me.index = 0;
 		// set interviewee back to before selected
@@ -222,6 +295,7 @@ public class GameManager : MonoBehaviour
 		// tell player to hide itself and hand (if player exists)
 		if (player != null)
 		{
+			player.GetComponent<PlayerScript>().ArrangeCards();
 			player.GetComponent<PlayerScript>().disableMeNHand = true;
 		}
 		// set roster pos
@@ -234,11 +308,19 @@ public class GameManager : MonoBehaviour
 		if (StateManagerScript.me.state == StateManagerScript.States.dayOne &&
 			interviewed.Count == unlockedCharaPrefabs.Count)
 		{
-			StateManagerScript.me.state = StateManagerScript.States.dayTwo;
-			StateManagerScript.me.EnterDayTwo();
+			//StateManagerScript.me.state = StateManagerScript.States.dayTwo;
+			//StateManagerScript.me.EnterDayTwo();
+			CutSceneManager.me.blackCover.GetComponent<Transition>().FadeOut(5, null);
+			cam.transform.position = new Vector3(60, 0, -10);
+			clueboardButton.SetActive(false);
 		}
 		// reset interviewee
 		interviewee = null;
+		// activate all characters' colliders
+		foreach (var chara in roster)
+		{
+			chara.GetComponent<BoxCollider2D>().enabled = true;
+		}
 	}
 
 	public void ActivatePlayer()

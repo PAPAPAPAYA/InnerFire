@@ -14,6 +14,8 @@ public class DialogueManagerScript : MonoBehaviour
 	private float timer; // timer to limit the speed of the player's clicking
 	private float interval = .2f; // speed of the player's clicking
 
+	public List<GameObject> availableCards;
+
 	public enum Approaches // approaches enum
 	{
 		threaten, trade, inquire, na
@@ -26,6 +28,7 @@ public class DialogueManagerScript : MonoBehaviour
 		me = this; // singleton
 		timer = interval; // set timer
 		chunk = default;
+		availableCards = new List<GameObject>();
 	}
 
 	private void Update()
@@ -61,7 +64,7 @@ public class DialogueManagerScript : MonoBehaviour
 				{
 					CardDialogueEnd_Actions(); // give player the card this approach gives; unlock characters; change relationship
 					CardUsageScript.me.cardInUsed = null;
-					CardUsageScript.me.showButtons = true;
+					//CardUsageScript.me.showButtons = true;
 					//dDisplayer.gameObject.SetActive(false);
 					myApproach = Approaches.na;
 					chunk = default;
@@ -89,6 +92,7 @@ public class DialogueManagerScript : MonoBehaviour
 					else
 					{
 						GameManager.me.ActivatePlayer();
+						GameManager.me.player.GetComponent<PlayerScript>().ShowUsableCards_Player();
 					}
 				}
 			}
@@ -113,7 +117,10 @@ public class DialogueManagerScript : MonoBehaviour
 			else
 			{
 				currentDialogue = CardlessDialogueManager.me.currentListOf_correspondingDialogues;
-				dDisplayer.text = currentDialogue[index];
+				//if (currentDialogue.Count > 0)
+				{
+					dDisplayer.text = currentDialogue[index]; ////////////////////////////
+				}
 			}
 		}
 		// show inquire/trade/threaten dialogue
@@ -134,6 +141,7 @@ public class DialogueManagerScript : MonoBehaviour
 					}
 				}
 			}
+			
 		}
 	}
 
@@ -148,13 +156,29 @@ public class DialogueManagerScript : MonoBehaviour
 			}
 			else if (relationship > 0)
 			{
-				dDisplayer.text = chunk.dialogue_inquiring_p[index];
-				currentDialogue = chunk.dialogue_inquiring_p;
+				if (chunk.dialogue_inquiring_p.Count == 0) // if no positive inquire text, use neutral
+				{
+					dDisplayer.text = chunk.dialogue_inquiring[index];
+					currentDialogue = chunk.dialogue_inquiring;
+				}
+				else
+				{
+					dDisplayer.text = chunk.dialogue_inquiring_p[index];
+					currentDialogue = chunk.dialogue_inquiring_p;
+				}
 			}
 			else if (relationship < 0)
 			{
-				dDisplayer.text = chunk.dialogue_inquiring_n[index];
-				currentDialogue = chunk.dialogue_inquiring_n;
+				if (chunk.dialogue_inquiring_n.Count == 0) // if no negative inquire text, use neutral
+				{
+					dDisplayer.text = chunk.dialogue_inquiring[index];
+					currentDialogue = chunk.dialogue_inquiring;
+				}
+				else
+				{
+					dDisplayer.text = chunk.dialogue_inquiring_n[index];
+					currentDialogue = chunk.dialogue_inquiring_n;
+				}
 			}
 		}
 		else if (appr == Approaches.trade)
@@ -166,13 +190,29 @@ public class DialogueManagerScript : MonoBehaviour
 			}
 			else if (relationship > 0)
 			{
-				dDisplayer.text = chunk.dialogue_trading_p[index];
-				currentDialogue = chunk.dialogue_trading_p;
+				if (chunk.dialogue_trading_p.Count == 0) // if no positive trading text, use neutral
+				{
+					dDisplayer.text = chunk.dialogue_trading[index];
+					currentDialogue = chunk.dialogue_trading;
+				}
+				else
+				{
+					dDisplayer.text = chunk.dialogue_trading_p[index];
+					currentDialogue = chunk.dialogue_trading_p;
+				}
 			}
 			else if (relationship < 0)
 			{
-				dDisplayer.text = chunk.dialogue_trading_n[index];
-				currentDialogue = chunk.dialogue_trading_n;
+				if (chunk.dialogue_trading_n.Count == 0) // if no negative trading text, use neutral
+				{
+					dDisplayer.text = chunk.dialogue_trading[index];
+					currentDialogue = chunk.dialogue_trading;
+				}
+				else
+				{
+					dDisplayer.text = chunk.dialogue_trading_n[index];
+					currentDialogue = chunk.dialogue_trading_n;
+				}
 			}
 		}
 		else if (appr == Approaches.threaten)
@@ -184,13 +224,29 @@ public class DialogueManagerScript : MonoBehaviour
 			}
 			else if (relationship > 0)
 			{
-				dDisplayer.text = chunk.dialogue_threatened_p[index];
-				currentDialogue = chunk.dialogue_threatened_p;
+				if (chunk.dialogue_threatened_p.Count == 0)
+				{
+					dDisplayer.text = chunk.dialogue_threatened[index];
+					currentDialogue = chunk.dialogue_threatened;
+				}
+				else
+				{
+					dDisplayer.text = chunk.dialogue_threatened_p[index];
+					currentDialogue = chunk.dialogue_threatened_p;
+				}
 			}
 			else if (relationship < 0)
 			{
-				dDisplayer.text = chunk.dialogue_threatened_n[index];
-				currentDialogue = chunk.dialogue_threatened_n;
+				if (chunk.dialogue_threatened_n.Count == 0)
+				{
+					dDisplayer.text = chunk.dialogue_threatened[index];
+					currentDialogue = chunk.dialogue_threatened;
+				}
+				else
+				{
+					dDisplayer.text = chunk.dialogue_threatened_n[index];
+					currentDialogue = chunk.dialogue_threatened_n;
+				}
 			}
 		}
 	}
@@ -214,8 +270,7 @@ public class DialogueManagerScript : MonoBehaviour
 		CheckCondition_thenEndAction(myApproach, GameManager.me.interviewee.GetComponent<CharacterScript>().relationship);
 		
 		GameManager.me.player.GetComponent<PlayerScript>().ArrangeCards();
-		// check if advance to day 2
-		
+		GameManager.me.player.GetComponent<PlayerScript>().ShowUsableCards_Player();
 	}
 
 	private void CheckCondition_thenEndAction(Approaches appr, int relationship)
@@ -234,23 +289,49 @@ public class DialogueManagerScript : MonoBehaviour
 			}
 			else if (relationship > 0)
 			{
-				EndAction_with(chunk.cards_inquiring_p,
+				if (chunk.dialogue_inquiring_p.Count == 0) // if no postive inquire text
+				{
+					EndAction_with(chunk.cards_inquiring,
+							   chunk.inquiringCard_given_p, // here the card given is still using the bool from positive dialogue
+							   chunk.charasToUnlock_inquire,
+							   chunk.relationshipChangeAmount_inquire,
+							   chunk.cardsToLimit_inquire,
+							   chunk.cardsLimitedTo_inquire,
+							   chunk.cardsToDestory_inquire);
+				}
+				else
+				{
+					EndAction_with(chunk.cards_inquiring_p,
 							   chunk.inquiringCard_given_p,
 							   chunk.charasToUnlock_inquire_p,
 							   chunk.relationshipChangeAmount_inquire_p,
 							   chunk.cardsToLimit_inquire_p,
 							   chunk.cardsLimitedTo_inquire_p,
 							   chunk.cardsToDestory_inquire_p);
+				}
 			}
 			else if (relationship < 0)
 			{
-				EndAction_with(chunk.cards_inquiring_n,
+				if (chunk.dialogue_inquiring_n.Count == 0) // if no negative inquire text
+				{
+					EndAction_with(chunk.cards_inquiring,
 							   chunk.inquiringCard_given_n,
-							   chunk.charasToUnlock_inquire_n,
-							   chunk.relationshipChangeAmount_inquire_n,
-							   chunk.cardsToLimit_inquire_n,
-							   chunk.cardsLimitedTo_inquire_n,
-							   chunk.cardsToDestory_inquire_n);
+							   chunk.charasToUnlock_inquire,
+							   chunk.relationshipChangeAmount_inquire,
+							   chunk.cardsToLimit_inquire,
+							   chunk.cardsLimitedTo_inquire,
+							   chunk.cardsToDestory_inquire);
+				}
+				else
+				{
+					EndAction_with(chunk.cards_inquiring_n,
+								  chunk.inquiringCard_given_n,
+								  chunk.charasToUnlock_inquire_n,
+								  chunk.relationshipChangeAmount_inquire_n,
+								  chunk.cardsToLimit_inquire_n,
+								  chunk.cardsLimitedTo_inquire_n,
+								  chunk.cardsToDestory_inquire_n);
+				}
 			}
 		}
 		else if (appr == Approaches.trade)
@@ -267,23 +348,49 @@ public class DialogueManagerScript : MonoBehaviour
 			}
 			else if (relationship > 0)
 			{
-				EndAction_with(chunk.cards_trading_p,
+				if (chunk.dialogue_trading_p.Count == 0)
+				{
+					EndAction_with(chunk.cards_trading,
+							   chunk.tradingCard_given_p,
+							   chunk.charasToUnlock_trade,
+							   chunk.relationshipChangeAmount_trading,
+							   chunk.cardsToLimit_trade,
+							   chunk.cardsLimitedTo_trade,
+							   chunk.cardsToDestory_trade);
+				}
+				else
+				{
+					EndAction_with(chunk.cards_trading_p,
 							   chunk.tradingCard_given_p,
 							   chunk.charasToUnlock_trade_p,
 							   chunk.relationshipChangeAmount_trading_p,
 							   chunk.cardsToLimit_trade_p,
 							   chunk.cardsLimitedTo_trade_p,
 							   chunk.cardsToDestory_trade_p);
+				}
 			}
 			else if (relationship < 0)
 			{
-				EndAction_with(chunk.cards_trading_n,
+				if (chunk.dialogue_trading_n.Count == 0)
+				{
+					EndAction_with(chunk.cards_trading,
+							   chunk.tradingCard_given_n,
+							   chunk.charasToUnlock_trade,
+							   chunk.relationshipChangeAmount_trading,
+							   chunk.cardsToLimit_trade,
+							   chunk.cardsLimitedTo_trade,
+							   chunk.cardsToDestory_trade);
+				}
+				else
+				{
+					EndAction_with(chunk.cards_trading_n,
 							   chunk.tradingCard_given_n,
 							   chunk.charasToUnlock_trade_n,
 							   chunk.relationshipChangeAmount_trading_n,
 							   chunk.cardsToLimit_trade_n,
 							   chunk.cardsLimitedTo_trade_n,
 							   chunk.cardsToDestory_trade_n);
+				}
 			}
 		}
 		else if (appr == Approaches.threaten)
@@ -300,23 +407,49 @@ public class DialogueManagerScript : MonoBehaviour
 			}
 			else if (relationship > 0)
 			{
-				EndAction_with(chunk.cards_threatened_p,
+				if (chunk.dialogue_threatened_p.Count == 0)
+				{
+					EndAction_with(chunk.cards_threatened,
 							   chunk.threatenedCard_given_p,
-							   chunk.charasToUnlock_threat_p,
-							   chunk.relationshipChangeAmount_threat_p,
-							   chunk.cardsToLimit_threat_p,
-							   chunk.cardsLimitedTo_threat_p,
-							   chunk.cardsToDestory_threat_p);
+							   chunk.charasToUnlock_threat,
+							   chunk.relationshipChangeAmount_threat,
+							   chunk.cardsToLimit_threat,
+							   chunk.cardsLimitedTo_threat,
+							   chunk.cardsToDestory_threat);
+				}
+				else
+				{
+					EndAction_with(chunk.cards_threatened_p,
+								  chunk.threatenedCard_given_p,
+								  chunk.charasToUnlock_threat_p,
+								  chunk.relationshipChangeAmount_threat_p,
+								  chunk.cardsToLimit_threat_p,
+								  chunk.cardsLimitedTo_threat_p,
+								  chunk.cardsToDestory_threat_p);
+				}
 			}
 			else if (relationship < 0)
 			{
-				EndAction_with(chunk.cards_threatened_n,
+				if (chunk.dialogue_threatened_n.Count == 0)
+				{
+					EndAction_with(chunk.cards_threatened,
 							   chunk.threatenedCard_given_n,
-							   chunk.charasToUnlock_threat_n,
-							   chunk.relationshipChangeAmount_threat_n,
-							   chunk.cardsToLimit_threat_n,
-							   chunk.cardsLimitedTo_threat_n,
-							   chunk.cardsToDestory_threat_n);
+							   chunk.charasToUnlock_threat,
+							   chunk.relationshipChangeAmount_threat,
+							   chunk.cardsToLimit_threat,
+							   chunk.cardsLimitedTo_threat,
+							   chunk.cardsToDestory_threat);
+				}
+				else
+				{
+					EndAction_with(chunk.cards_threatened_n,
+								chunk.threatenedCard_given_n,
+								chunk.charasToUnlock_threat_n,
+								chunk.relationshipChangeAmount_threat_n,
+								chunk.cardsToLimit_threat_n,
+								chunk.cardsLimitedTo_threat_n,
+								chunk.cardsToDestory_threat_n);
+				}
 			}
 		}
 	}
@@ -335,10 +468,29 @@ public class DialogueManagerScript : MonoBehaviour
 		{
 			foreach (var card in cardsToGive)
 			{
+				HandToClueboard htc = card.GetComponent<HandToClueboard>();
+				CardScript cs = card.GetComponent<CardScript>();
+				// instantiate card
 				GameObject instantiatedCard = Instantiate(card);
 				instantiatedCard.GetComponent<CardScript>().canBeDragged = true;
-				GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
-				print(instantiatedCard.GetComponent<CardScript>().canBeDragged);
+				// check to see if player hand already has this card
+				if (GameManager.me.player.GetComponent<PlayerScript>().hand.Contains(instantiatedCard))
+				{
+					//print("already has this card, therefore don't give");
+					// if yes, destroy it
+					Destroy(instantiatedCard);
+				}
+				else
+				{
+					//print("player get new card");
+					// if no, add it to hand then check if add to clue board
+					GameManager.me.player.GetComponent<PlayerScript>().hand.Add(instantiatedCard);
+					if (htc.addMeToClueBoard) // check if this card should be added to clue board, if yes
+					{
+						GameManager.me.newCardNotification.SetActive(true);
+						ClueBoard.me.UnlockClueBoardCard(cs.namae, cs.description, htc.motiveText, htc.fireText, htc.whoToConnect, htc.imAMotiveCard, htc.imAFireCard, instantiatedCard);
+					}
+				}
 			}
 			GameManager.me.player.GetComponent<PlayerScript>().ArrangeCards();
 			SetCardGiven();
@@ -353,6 +505,7 @@ public class DialogueManagerScript : MonoBehaviour
 		}
 		// change relationship
 		GameManager.me.interviewee.GetComponent<CharacterScript>().relationship += relationship_changeAmount;
+		//GameManager.me.interviewee.GetComponent<CharacterScript>().relationship = Mathf.Clamp(GameManager.me.interviewee.GetComponent<CharacterScript>().relationship, -1, 1);
 		// limit cards
 		foreach (var card in cardsToLimit)
 		{
@@ -364,12 +517,13 @@ public class DialogueManagerScript : MonoBehaviour
 			card.GetComponent<CardScript>().promisedTo = GameManager.me.interviewee;
 		}
 		// destroy cards
-		if (cardsToDestroy.Count > 0)
+		//if (cardsToDestroy.Count > 0)
 		{
-			foreach (var card in cardsToDestroy)
-			{
-				PlayerScript.me.DestroyCard(card.name);
-			}
+			//foreach (var card in cardsToDestroy)
+			//{
+			//	PlayerScript.me.DestroyCard(card.name);
+			//}
+			PlayerScript.me.DestroyCard(CardUsageScript.me.cardInUsed.name);
 		}
 	}
 
@@ -438,5 +592,23 @@ public class DialogueManagerScript : MonoBehaviour
 			}
 		}
 	}
+	
+	//public void ShowUsableCardsOnly()
+	//{
+	//	CharacterScript iS = GameManager.me.interviewee.GetComponent<CharacterScript>();
+	//	if (availableCards.Count < iS.usableIDs.Count)
+	//	{
+	//		foreach (var card in GameManager.me.player.GetComponent<PlayerScript>().hand)
+	//		{
+	//			foreach (var id in iS.usableIDs)
+	//			{
+	//				if (card.GetComponent<CardScript>().id == id)
+	//				{
+	//					availableCards.Add(card);
+	//				}
+	//			}
+	//		}
+	//	}
 
+	//}
 }

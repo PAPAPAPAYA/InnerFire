@@ -46,6 +46,8 @@ MonoBehaviour:
   handPrefabs:
   - {fileID: 4270974583676908371, guid: a0db2721c61136e41ae6f8488b5f662d, type: 3}
   hand: []
-  handSect_startPos: {x: -10, y: -3.6, z: 0}
+  handSect_startPos: {x: -10, y: -8, z: 0}
   handSect_length: 20
   disableMeNHand: 0
+  usableCards_startPos: {x: -10, y: -3.6, z: 0}
+  usableCards_length: 20

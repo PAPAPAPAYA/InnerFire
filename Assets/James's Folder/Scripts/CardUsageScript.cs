@@ -27,10 +27,29 @@ public class CardUsageScript : MonoBehaviour
 		{
 			if (showButtons && cardInUsed!=null) // if there is a card being used, show buttons
 			{
-				
-				inquire.SetActive(true);
-				trade.SetActive(true);
-				threaten.SetActive(true);
+				CharacterScript iS = GameManager.me.interviewee.GetComponent<CharacterScript>();
+				// first get all dialouges
+				foreach (var dialogue in iS.dialogues)
+				{
+					// then get the dialogue that is corresponding with card in used
+					if (dialogue.triggerIDs.Contains(cardInUsed.GetComponent<CardScript>().id))
+					{
+						// finally show approach buttons based on available approaches
+						if (dialogue.dialogue_inquiring.Count > 0)
+						{
+							inquire.SetActive(true);
+						}
+						if (dialogue.dialogue_threatened.Count > 0)
+						{
+							threaten.SetActive(true);
+						}
+						if (dialogue.dialogue_trading.Count > 0)
+						{
+							trade.SetActive(true);
+						}
+					}
+				}
+				DialogueManagerScript.me.dDisplayer.gameObject.SetActive(false);
 			}
 			else // if none, hide buttons
 			{
@@ -44,29 +63,33 @@ public class CardUsageScript : MonoBehaviour
 	// button functions
 	public void Threaten()
 	{
-		BreakPromise();
+		//BreakPromise();
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.threaten;
 		cardInUsed.GetComponent<CardScript>().AddChara_n_approach(GameManager.me.interviewee, DialogueManagerScript.Approaches.threaten);
 		showButtons = false;
 		DialogueManagerScript.me.dDisplayer.gameObject.SetActive(true);
+		DialogueManagerScript.me.index = 0;
 	}
 	public void Trade()
 	{
-		BreakPromise();
+		//BreakPromise();
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.trade;
 		cardInUsed.GetComponent<CardScript>().charasIWasUsedTo.Add(GameManager.me.interviewee);
 		cardInUsed.GetComponent<CardScript>().howIWasUsed.Add(DialogueManagerScript.Approaches.trade);
+		print("showButtons to false");
 		showButtons = false;
 		DialogueManagerScript.me.dDisplayer.gameObject.SetActive(true);
+		DialogueManagerScript.me.index = 0;
 	}
 	public void Inquire()
 	{
-		BreakPromise();
+		//BreakPromise();
 		DialogueManagerScript.me.myApproach = DialogueManagerScript.Approaches.inquire;
 		cardInUsed.GetComponent<CardScript>().charasIWasUsedTo.Add(GameManager.me.interviewee);
 		cardInUsed.GetComponent<CardScript>().howIWasUsed.Add(DialogueManagerScript.Approaches.inquire);
 		showButtons = false;
 		DialogueManagerScript.me.dDisplayer.gameObject.SetActive(true);
+		DialogueManagerScript.me.index = 0;
 	}
 
 	private void BreakPromise()
